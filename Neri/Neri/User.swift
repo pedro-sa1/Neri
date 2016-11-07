@@ -11,7 +11,7 @@ import Foundation
 class User {
     
     var name: String!
-    var birthDay: String!
+    var birthDay: String!   // String format: MM/dd/yyyy
     var phone: String!
     
     init (name: String, birthDay: String, phone: String) {
@@ -24,11 +24,27 @@ class User {
         
         /*******************************************************
          **                                                   **
-         **        PROCURAR FUNÇÃO PARA CALCULAR IDADE        **
+         **         FUNCTION TO CALCULATE USER AGE            **
          **                                                   **
          *******************************************************/
         
-        return 0
+        /* Function assertions
+         
+         * User string birthDay format: MM/dd/yyy
+         * Function separates birthDay string to get day, month and year, returning user current age.
+         
+         */
+        
+        let separatedString = birthDay.components(separatedBy: "/")
+        
+        let month = separatedString[0]     //MM
+        let day = separatedString[1]       //dd
+        let year = separatedString[2]      //yyyy
+
+        let dateOfBirth = Calendar.current.date(from: DateComponents(year: Int(year), month: Int(month), day: Int(day)))
+        
+        return Calendar.current.dateComponents([.year], from: dateOfBirth!, to: Date()).year!
+        
     }
     
 }

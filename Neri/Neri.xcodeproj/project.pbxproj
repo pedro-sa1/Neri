@@ -68,8 +68,8 @@
 		65D170FB1DCCFA7C0042E6B3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EB5E7A131DCCF6440073923D /* AppDelegate.swift */,
 				EB5E7A151DCCF6440073923D /* ViewController.swift */,
+				EB5E7A131DCCF6440073923D /* AppDelegate.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

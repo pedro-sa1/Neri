@@ -8,12 +8,9 @@
 
 import Foundation
 import UIKit
-
-/*******************************************************
- **                                                   **
- **  VERIFICAR PESO, ALTURA, BATIMENTO E LOCALIZAÇÃO  **
- **                                                   **
- *******************************************************/
+import CoreMotion
+import HealthKit
+import CoreLocation
 
 class Elder: User {
     
@@ -23,8 +20,16 @@ class Elder: User {
     var state: String!
     var weight: String!
     var height: String!
-    var currentHeartRate: String?
-    var location: String?
+    var currentHeartRate: String?       // Heartbeat -> String = 87
+    var location: [String]?             // Location  -> [String, String] = [latitude, longitude]
+    
+    /* Units:
+     
+     * Weight    : kilograms
+     * Height    : meters
+     * HeartBeat : BPM (Beats per Minute)
+     
+     */
     
     init (name: String, birthDay: String, phone: String, street: String, houseNumber: Int, city: String, state: String, weight: String, height: String) {
         
@@ -36,6 +41,68 @@ class Elder: User {
         self.state = state
         self.weight = weight
         self.height = height
+        
+    }
+    
+    func callCaretaker(caretakerPhone: String) -> ErrorType {
+        
+        return ErrorType.OK
+        
+    }
+    
+    func verifyFall(accelerometerData: CMAccelerometerData) -> ErrorType {
+        
+        return ErrorType.OK
+        
+    }
+    
+    func verifyHeartBeat(heartBeat: Double) -> ErrorType {
+        
+        return ErrorType.OK
+        
+    }
+    
+    func sendLowHeartBeatNotification() -> ErrorType {
+        
+        return ErrorType.OK
+        
+    }
+    
+    func sendHighHeartBeatNotification() -> ErrorType {
+        
+        return ErrorType.OK
+        
+    }
+    
+    func sendFallNotification() -> ErrorType {
+        
+        return ErrorType.OK
+        
+    }
+    
+    func sendLocation() -> ErrorType {
+        
+        return ErrorType.OK
+        
+    }
+    
+    func calculateBMI() -> Double {
+        
+        /*******************************************************
+         **                                                   **
+         **         FUNCTION TO CALCULATE ELDER BMI           **
+         **                                                   **
+         *******************************************************/
+        
+        /* Function assertions
+         
+         * Weight is stored in kilograms
+         * Height is stored in meters
+         * Using Metric Method: weight/heightˆ2
+         
+         */
+
+        return (Double(self.weight))!/(Double(self.height)!*Double(self.height)!)
         
     }
     
