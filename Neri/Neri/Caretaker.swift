@@ -7,10 +7,23 @@
 //
 
 import Foundation
+import UIKit
 
 class Caretaker: User {
     
     func updateData() -> ErrorType {
+       
+       /*******************************************************
+        **                                                   **
+        **               UPDATE DATA FUNCTION                **
+        **                                                   **
+        *******************************************************/
+        
+        /*
+         
+         *
+         
+         */
         
        /*******************************************************
         **                                                   **
@@ -19,6 +32,31 @@ class Caretaker: User {
         *******************************************************/
         
         return ErrorType.OK
+        
+    }
+    
+    func callCaretaker(elderPhone: String) -> ErrorType {
+        
+        /*******************************************************
+         **                                                   **
+         **            CALLING CARETAKER FUNCTION             **
+         **                                                   **
+         *******************************************************/
+        
+        /*
+         
+         * Elder phone must exist
+         * If the phone is for another region (country or state), it has to be complete
+         * In case the call can't be completed the app shows an alert
+         
+         */
+        
+        if let url = NSURL(string: "tel://\(elderPhone)") {
+            UIApplication.shared.open(url as URL)
+            return ErrorType.OK
+        } else {
+            return ErrorType.CallFailed
+        }
         
     }
     

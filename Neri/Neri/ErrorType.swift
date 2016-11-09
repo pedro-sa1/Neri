@@ -24,7 +24,24 @@ enum ErrorType {
     
 }
 
-func presentErrorMessage(errorType: ErrorType) -> UIAlertController {
+func getErrorMessage(errorType: ErrorType) -> UIAlertController {
+    
+    /*******************************************************
+     **                                                   **
+     **                 GET ERROR MESSAGE                 **
+     **                                                   **
+     *******************************************************/
+    
+    /*
+     
+     * Creates an alert using error given
+        * Possible errors: enum ErrorType
+     * Sets a title and a message for the user
+     * The alerts have only an OK Button
+     * Returns the alert to the current View Controller
+     * The View Controller is responsable to present the alert to the user
+     
+     */
     
     let alertController = UIAlertController()
     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -39,7 +56,7 @@ func presentErrorMessage(errorType: ErrorType) -> UIAlertController {
         
     case .CallFailed:
         alertController.title = "Call Failed"
-        alertController.message = "There was an error trying to call this person. Please verify your phone."
+        alertController.message = "There was an error trying to call this person. Please verify the phone number registered."
         
     case .VerificationFailed:
         alertController.title = "Verification Failed"

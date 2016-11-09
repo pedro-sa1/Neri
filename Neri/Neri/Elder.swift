@@ -46,11 +46,52 @@ class Elder: User {
     
     func callCaretaker(caretakerPhone: String) -> ErrorType {
         
-        return ErrorType.OK
+        /*******************************************************
+         **                                                   **
+         **            CALLING CARETAKER FUNCTION             **
+         **                                                   **
+         *******************************************************/
+        
+        /*
+         
+         * Caretaker phone must exist
+         * If the phone is for another region (country or state), it has to be complete
+         * In case the call can't be completed the app shows an alert with the error message
+         
+         */
+        
+        if let url = NSURL(string: "tel://\(caretakerPhone)") {
+            UIApplication.shared.open(url as URL)
+            return ErrorType.OK
+        } else {
+            return ErrorType.CallFailed
+        }
         
     }
     
     func verifyFall(accelerometerData: CMAccelerometerData) -> ErrorType {
+        
+        /*******************************************************
+         **                                                   **
+         **             ALGORITHM TO VERIFY FALL              **
+         **                                                   **
+         *******************************************************/
+        
+        /*
+         
+         * Uses an algorithm to analise the accelerometer data
+         * Neural Network used to learn from the user
+         * User has 15 seconds to confirm that he's OK
+         * If the time passes or the user asks for help, send notification to emergency contact
+         
+         */
+        
+        // Vai jogando os dados recebidos em vetores de tamanho 10
+        // Caso já esteaj cheio, retira a primeira infromação e anda com o resto para frente
+        // Joga a informação nova na ultima casa
+        // Analisa os dados do acelerometro pela equação gerada pelos dados
+        // Futuramente, usará rede neural pra analisar
+        // Caso aconteça algum problema, mandar notificação
         
         return ErrorType.OK
         
@@ -58,11 +99,41 @@ class Elder: User {
     
     func verifyHeartBeat(heartBeat: Double) -> ErrorType {
         
+        /*******************************************************
+         **                                                   **
+         **     EVALUATE HEARTRATE BASED ON BMI AND AGE       **
+         **                                                   **
+         *******************************************************/
+        
+        /*
+         
+         * Table (Matrix) BMI x Age to get ideal heart rate
+         * Verify maximum and low heart rate
+         * Send notification in case something wrong happens
+         
+         */
+        
         return ErrorType.OK
         
     }
     
     func sendLowHeartBeatNotification() -> ErrorType {
+        
+        /*******************************************************
+         **                                                   **
+         **         SEND LOW HEARTRATE NOTIFICATION           **
+         **                                                   **
+         *******************************************************/
+        
+        /*
+         
+         * Send Low Heart Rate notification based on the emergency level
+            * Low Level: Push Notification to the main caretaker
+            * Medium Level: Push Notification to all caretakers and text message to the main caretaker
+            * High Level: Push Notification, e-mail and text message to all caretakers
+         * If is there any error, the app shows an alert with an error message
+         
+         */
         
         return ErrorType.OK
         
@@ -70,17 +141,57 @@ class Elder: User {
     
     func sendHighHeartBeatNotification() -> ErrorType {
         
+        /*******************************************************
+         **                                                   **
+         **         SEND HIGH HEARTRATE NOTIFICATION          **
+         **                                                   **
+         *******************************************************/
+        
+        /*
+         
+         * Send High Heart Rate notification based on the emergency level
+            * Low Level: Push Notification to the main caretaker
+            * Medium Level: Push Notification to all caretakers and text message to the main caretaker
+            * High Level: Push Notification, e-mail and text message to all caretakers
+         * If is there any error, the app shows an alert with an error message
+         
+         */
+        
         return ErrorType.OK
         
     }
     
     func sendFallNotification() -> ErrorType {
         
+        /*******************************************************
+         **                                                   **
+         **              SEND FALL NOTIFICATION               **
+         **                                                   **
+         *******************************************************/
+        
+        /*
+         
+         *
+         
+         */
+        
         return ErrorType.OK
         
     }
     
     func sendLocation() -> ErrorType {
+        
+        /*******************************************************
+         **                                                   **
+         **         SEND CURRENT LOCATION TO CLOUDKIT         **
+         **                                                   **
+         *******************************************************/
+        
+        /*
+         
+         *
+         
+         */
         
         return ErrorType.OK
         
@@ -94,11 +205,11 @@ class Elder: User {
          **                                                   **
          *******************************************************/
         
-        /* Function assertions
+        /*
          
          * Weight is stored in kilograms
          * Height is stored in meters
-         * Using Metric Method: weight/heightˆ2
+         * This uses the Metric Method: BMI = weight/heightˆ2 (kg/mˆ2)
          
          */
 

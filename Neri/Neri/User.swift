@@ -28,20 +28,20 @@ class User {
          **                                                   **
          *******************************************************/
         
-        /* Function assertions
+        /* 
          
          * User string birthDay format: MM/dd/yyy
          * Function separates birthDay string to get day, month and year, returning user current age.
          
          */
         
-        let separatedString = birthDay.components(separatedBy: "/")
-        
-        let month = separatedString[0]     //MM
-        let day = separatedString[1]       //dd
-        let year = separatedString[2]      //yyyy
+        let separatedDate = birthDay.components(separatedBy: "/")
+         
+        // day   = separatedDate[1] (dd)
+        // month = separatedDate[0] (MM)
+        // year  = separatedDate[2] (yyyy)
 
-        let dateOfBirth = Calendar.current.date(from: DateComponents(year: Int(year), month: Int(month), day: Int(day)))
+        let dateOfBirth = Calendar.current.date(from: DateComponents(year: Int(separatedDate[2]), month: Int(separatedDate[0]), day: Int(separatedDate[1])))
         
         return Calendar.current.dateComponents([.year], from: dateOfBirth!, to: Date()).year!
         
