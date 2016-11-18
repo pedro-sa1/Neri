@@ -20,14 +20,14 @@ class Elder: User {
     var state: String!
     var weight: String!
     var height: String!
-    var currentHeartRate: String?       // Heartbeat -> String = 87
+    var currentHeartRate: String?       // HeartRate -> String = "87"
     var location: [String]?             // Location  -> [String, String] = [latitude, longitude]
     
     /* Units:
      
      * Weight    : kilograms
      * Height    : meters
-     * HeartBeat : BPM (Beats per Minute)
+     * HeartRate : BPM (Beats per Minute)
      
      */
     
@@ -97,7 +97,7 @@ class Elder: User {
         
     }
     
-    func verifyHeartBeat(heartBeat: Double) -> ErrorType {
+    func verifyHeartRate(heartRate: Double) -> ErrorType {
         
         /*******************************************************
          **                                                   **
@@ -117,7 +117,7 @@ class Elder: User {
         
     }
     
-    func sendLowHeartBeatNotification() -> ErrorType {
+    func sendLowHeartRateNotification() -> ErrorType {
         
         /*******************************************************
          **                                                   **
@@ -139,7 +139,7 @@ class Elder: User {
         
     }
     
-    func sendHighHeartBeatNotification() -> ErrorType {
+    func sendHighHeartRateNotification() -> ErrorType {
         
         /*******************************************************
          **                                                   **
