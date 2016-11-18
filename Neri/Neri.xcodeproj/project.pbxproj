@@ -10,7 +10,7 @@
 		6505FD781DD65690003D2A75 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6505FD771DD65690003D2A75 /* HealthKit.framework */; };
 		6505FD7F1DDCDAE1003D2A75 /* HeartRateInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505FD7E1DDCDAE1003D2A75 /* HeartRateInterfaceController.swift */; };
 		651AB8841DDFB65D001014E8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651AB8831DDFB65D001014E8 /* HealthKit.framework */; };
-		657F7AB31DD3864E000D111B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657F7AB11DD3864E000D111B /* Interface.storyboard */; };
+		651AB8871DDFBD63001014E8 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651AB8861DDFBD63001014E8 /* Storyboard.storyboard */; };
 		657F7AB51DD3864E000D111B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657F7AB41DD3864E000D111B /* Assets.xcassets */; };
 		657F7ABC1DD3864E000D111B /* Neri_Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 657F7ABB1DD3864E000D111B /* Neri_Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		657F7AC51DD3864E000D111B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657F7AC41DD3864E000D111B /* ExtensionDelegate.swift */; };
@@ -78,8 +78,8 @@
 		6505FD7E1DDCDAE1003D2A75 /* HeartRateInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeartRateInterfaceController.swift; path = "Neri_Watch Extension/HeartRateInterfaceController.swift"; sourceTree = SOURCE_ROOT; };
 		651AB8831DDFB65D001014E8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		651AB8851DDFB65D001014E8 /* Neri_Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Neri_Watch Extension.entitlements"; sourceTree = "<group>"; };
+		651AB8861DDFBD63001014E8 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		657F7AAF1DD3864E000D111B /* Neri_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neri_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		657F7AB21DD3864E000D111B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		657F7AB41DD3864E000D111B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		657F7AB61DD3864E000D111B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		657F7ABB1DD3864E000D111B /* Neri_Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Neri_Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,7 +135,7 @@
 		657F7AB01DD3864E000D111B /* Neri_Watch */ = {
 			isa = PBXGroup;
 			children = (
-				657F7AB11DD3864E000D111B /* Interface.storyboard */,
+				651AB8861DDFBD63001014E8 /* Storyboard.storyboard */,
 				657F7AD81DD386AB000D111B /* Supporting Files */,
 			);
 			path = Neri_Watch;
@@ -366,7 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				657F7AB51DD3864E000D111B /* Assets.xcassets in Resources */,
-				657F7AB31DD3864E000D111B /* Interface.storyboard in Resources */,
+				651AB8871DDFBD63001014E8 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,14 +432,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		657F7AB11DD3864E000D111B /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				657F7AB21DD3864E000D111B /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
 		EB5E7A1C1DCCF6440073923D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
