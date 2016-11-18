@@ -47,12 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.healthStore.handleAuthorizationForExtension { success, error in
             
-            if error != nil {
-                print(error!)
-                print("Entrei no ShouldRequestHealthAuthorization mas não funcionou...")
-            } else {
-                print("Entrei no ShouldRequestHealthAuthorization e funcionou")
-            }
+            
             
         }
         

@@ -11,6 +11,7 @@ import Foundation
 import HealthKit
 
 class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDelegate {
+    @IBOutlet var startStopButton: WKInterfaceButton!
     
     /*******************************************************
      **                                                   **
@@ -65,6 +66,9 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
              */
             
             //            label.setText("not available")
+            
+            print("HealthKit não autorizado.")
+            
             return
         }
         
@@ -76,6 +80,7 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
         let dataTypes = Set(arrayLiteral: quantityType)
         healthStore.requestAuthorization(toShare: nil, read: dataTypes) { (success, error) -> Void in
             if success == false {
+                print("Não autorizou healthKit")
                 self.displayNotAllowed()
             }
         }
@@ -127,7 +132,9 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
             self.currenQuery = query
             healthStore.execute(query)
         } else {
-            // label.setText("cannot start")
+            
+            self.startStopButton.setTitle("Deu merda")
+        
         }
     }
     
@@ -142,14 +149,14 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
         if (self.workoutActive) {
             //finish the current workout
             self.workoutActive = false
-            // self.startStopButton.setTitle("Start")
+            self.startStopButton.setTitle("Start")
             if let workout = self.session {
                 healthStore.end(workout)
             }
         } else {
             //start a new workout
             self.workoutActive = true
-            // self.startStopButton.setTitle("Stop")
+            self.startStopButton.setTitle("Stop")
             startWorkout()
         }
         
@@ -206,6 +213,8 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
             guard let sample = heartRateSamples.first else{return}
             let value = sample.quantity.doubleValue(for: self.heartRateUnit)
             //            self.label.setText(String(UInt16(value)))
+            
+            print(value)
             
             // retrieve source from sample
             let name = sample.sourceRevision.source.name
