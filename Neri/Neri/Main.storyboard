@@ -92,9 +92,6 @@
                                 <state key="normal" title="Cuidador ▶︎">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="jOE-Y9-gl3" kind="show" identifier="cuidador" id="Czg-zZ-rsN"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyM-6C-g3m">
                                 <rect key="frame" x="133.5" y="375" width="108" height="46"/>
@@ -106,9 +103,6 @@
                                 <state key="normal" title="Idoso ▶︎">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="idoso" id="DDv-1d-6RM"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.32156862745098036" green="0.80392156862745101" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -133,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="-1230" y="141"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignUpViewController" customModule="Neri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -216,11 +210,6 @@
                                                 <state key="normal" title="◀︎ voltar">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="cancelAction:" destination="c4t-m1-U8z" eventType="touchUpInside" id="0ey-vO-Mo0"/>
-                                                    <action selector="presentCaretaker:" destination="CRW-cm-xqe" eventType="touchUpInside" id="yGK-lM-O3L"/>
-                                                    <segue destination="CRW-cm-xqe" kind="show" id="N3O-Gh-Com"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfV-PG-03o">
                                                 <rect key="frame" x="251" y="279" width="108" height="46"/>
@@ -231,9 +220,6 @@
                                                 <state key="normal" title="continuar ▶︎">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="39C-8u-KhQ"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -306,24 +292,15 @@
                             <constraint firstItem="Shf-ex-0CT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fh3-Xg-lNP"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="UFTextfield" destination="Asv-oP-kc2" id="Vo0-kT-Y0e"/>
-                        <outlet property="adressTextfield" destination="Aog-YF-CzH" id="98f-r8-cIq"/>
-                        <outlet property="ageTextfield" destination="VO8-vl-5M4" id="SG1-Uh-mcx"/>
-                        <outlet property="cityTextfield" destination="q7y-0K-u7P" id="edg-dd-SeQ"/>
-                        <outlet property="nameTextfield" destination="1VK-zS-sOn" id="Ana-pQ-g4P"/>
-                        <outlet property="phoneTextfield" destination="eEq-Pp-BrU" id="Ksf-Zl-qAp"/>
-                        <segue destination="TWr-rc-e3W" kind="show" identifier="wait" id="lRw-eD-JOZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-381" y="492"/>
         </scene>
-        <!--Signup View Controller-->
+        <!--View Controller-->
         <scene sceneID="eHn-Rk-PEs">
             <objects>
-                <viewController id="jOE-Y9-gl3" customClass="CTSignupViewController" customModule="Neri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jOE-Y9-gl3" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="59v-ff-zQz"/>
                         <viewControllerLayoutGuide type="bottom" id="vGU-UO-T5k"/>
@@ -383,10 +360,6 @@
                                                 <state key="normal" title="continuar ▶︎">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="continueAction:" destination="jOE-Y9-gl3" eventType="touchUpInside" id="Xve-6R-afz"/>
-                                                    <action selector="presentCaretaker:" destination="CRW-cm-xqe" eventType="touchUpInside" id="WrL-eY-BiE"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZ0-wT-klh">
                                                 <rect key="frame" x="16" y="155" width="108" height="46"/>
@@ -397,11 +370,6 @@
                                                 <state key="normal" title="◀︎ voltar">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="cancelAction:" destination="c4t-m1-U8z" eventType="touchUpInside" id="0Dz-hS-844"/>
-                                                    <action selector="presentCaretaker:" destination="CRW-cm-xqe" eventType="touchUpInside" id="FdK-wZ-kUB"/>
-                                                    <segue destination="CRW-cm-xqe" kind="show" id="Oby-7h-HH8"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -457,20 +425,15 @@
                             <constraint firstItem="bB8-lt-7N9" firstAttribute="top" secondItem="MXQ-9n-CZh" secondAttribute="top" id="dbR-Ol-w5m"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="nameTextfield" destination="0AC-bv-Wrk" id="09o-8L-cxQ"/>
-                        <outlet property="phoneTextfield" destination="K86-9j-EEb" id="SYE-xB-5yP"/>
-                        <segue destination="sJq-ML-yP9" kind="show" identifier="pareamento" id="7jw-De-j6s"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3g-ZA-Ko1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-381.60000000000002" y="-207.34632683658174"/>
         </scene>
-        <!--Pair View Controller-->
+        <!--View Controller-->
         <scene sceneID="Xbe-1q-m7Y">
             <objects>
-                <viewController id="sJq-ML-yP9" customClass="PairViewController" customModule="Neri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sJq-ML-yP9" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sxl-BZ-eUm"/>
                         <viewControllerLayoutGuide type="bottom" id="knq-eZ-EGG"/>
@@ -555,10 +518,6 @@
                                         <state key="normal" title="parear ▶︎">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="pairAction:" destination="sJq-ML-yP9" eventType="touchUpInside" id="HZl-PX-wYv"/>
-                                            <action selector="presentCaretaker:" destination="CRW-cm-xqe" eventType="touchUpInside" id="WLL-SY-rfC"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -597,19 +556,15 @@
                             <constraint firstItem="Yff-5X-Jrg" firstAttribute="top" secondItem="Sdn-6q-fgg" secondAttribute="top" id="vqQ-fY-wuU"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="phoneTextfield" destination="T6U-i6-m4X" id="d2d-qv-XpT"/>
-                        <segue destination="CQZ-ph-Z1k" kind="show" identifier="monitorar" id="Erf-3B-Bvg"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82g-QD-XXi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="380" y="-207.34632683658174"/>
         </scene>
-        <!--Wait View Controller-->
+        <!--View Controller-->
         <scene sceneID="7wM-Ef-1QL">
             <objects>
-                <viewController id="TWr-rc-e3W" customClass="WaitViewController" customModule="Neri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TWr-rc-e3W" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="igw-Be-MaN"/>
                         <viewControllerLayoutGuide type="bottom" id="88g-9t-klk"/>
@@ -667,18 +622,15 @@
                             <constraint firstAttribute="trailing" secondItem="Vwk-Qh-UT5" secondAttribute="trailing" id="e8N-Rd-vgD"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="HVc-NE-8Ag" kind="show" identifier="pareado" id="X3c-vX-rvn"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Zg-79-E24" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="381.60000000000002" y="492.50374812593708"/>
         </scene>
-        <!--Main View Controller-->
+        <!--View Controller-->
         <scene sceneID="Eeu-7M-VJX">
             <objects>
-                <viewController storyboardIdentifier="Idoso" id="HVc-NE-8Ag" customClass="MainViewController" customModule="Neri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Idoso" id="HVc-NE-8Ag" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q1a-ek-1ml"/>
                         <viewControllerLayoutGuide type="bottom" id="2Ym-GY-iRd"/>
@@ -757,9 +709,6 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                 <state key="normal" title="editar ▶︎"/>
-                                                <connections>
-                                                    <segue destination="c4t-m1-U8z" kind="presentation" identifier="editar" id="Cp0-T9-INw"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -948,27 +897,15 @@
                             <constraint firstAttribute="trailing" secondItem="6ji-NY-vbb" secondAttribute="trailing" id="vQs-ok-WH4"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="gradientView" destination="6ji-NY-vbb" id="6ay-Vf-pBV"/>
-                        <outlet property="heartRateLabel" destination="mcw-p4-RXk" id="BPk-XX-Mfq"/>
-                        <outlet property="heartViewBackground" destination="vpy-8V-4if" id="d8F-gs-RKc"/>
-                        <outlet property="map" destination="SAU-8D-89A" id="15G-Rc-JkJ"/>
-                        <outlet property="monitorImage" destination="dPD-OI-YDR" id="IHo-HN-NkF"/>
-                        <outlet property="monitorLabel" destination="44B-Vn-zyT" id="rrM-wu-KAl"/>
-                        <outlet property="movementImage" destination="9I4-K0-vTO" id="bFv-ZI-vlM"/>
-                        <outlet property="movementLabel" destination="Z0e-AB-TDi" id="74Z-Xh-5Id"/>
-                        <outlet property="movementViewBackground" destination="CsY-ny-Vy6" id="Pc7-Ho-NW6"/>
-                        <outlet property="nameLabel" destination="uBp-zS-dNl" id="Lwy-WJ-iHE"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oiz-36-Xoi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1149.5999999999999" y="492.50374812593708"/>
         </scene>
-        <!--Edit View Controller-->
+        <!--View Controller-->
         <scene sceneID="55S-fd-cPj">
             <objects>
-                <viewController id="c4t-m1-U8z" customClass="EditViewController" customModule="Neri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c4t-m1-U8z" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kxg-Kq-4zr"/>
                         <viewControllerLayoutGuide type="bottom" id="dxE-f5-nnh"/>
@@ -1040,10 +977,6 @@
                                         <state key="normal" title="confirmar ▶︎">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="presentCaretaker:" destination="CRW-cm-xqe" eventType="touchUpInside" id="AzZ-YP-4NO"/>
-                                            <action selector="saveAction:" destination="c4t-m1-U8z" eventType="touchUpInside" id="6pj-i7-Lmi"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEN-jm-PPe">
                                         <rect key="frame" x="16" y="279" width="108" height="46"/>
@@ -1056,10 +989,6 @@
                                         <state key="normal" title="◀︎ cancelar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="cancelAction:" destination="c4t-m1-U8z" eventType="touchUpInside" id="yDv-Kr-FKB"/>
-                                            <action selector="presentCaretaker:" destination="CRW-cm-xqe" eventType="touchUpInside" id="pNn-qs-SHW"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1137,24 +1066,15 @@
                             <constraint firstAttribute="trailing" secondItem="vop-mJ-2rZ" secondAttribute="trailing" id="y9a-ag-zXy"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="UFTextfield" destination="cla-38-83q" id="Vbe-7h-ahZ"/>
-                        <outlet property="adressTextfield" destination="jil-G6-qd5" id="Meg-3B-27o"/>
-                        <outlet property="ageTextfield" destination="uz0-0b-qOz" id="3ca-uh-HOC"/>
-                        <outlet property="cityTextfield" destination="V0J-Dl-Xjz" id="iLp-Kb-641"/>
-                        <outlet property="gradientView" destination="vop-mJ-2rZ" id="b6H-Kw-Am9"/>
-                        <outlet property="nameTextfield" destination="0Zf-JL-RTX" id="1su-xn-nla"/>
-                        <outlet property="phoneTextfield" destination="6fh-au-uls" id="zHg-Q0-5hT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F5z-8O-gz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1908" y="492"/>
         </scene>
-        <!--Monitor View Controller-->
+        <!--Monitoriew Controller-->
         <scene sceneID="AuB-4s-eKg">
             <objects>
-                <viewController storyboardIdentifier="Cuidador" id="CQZ-ph-Z1k" customClass="MonitorViewController" customModule="Neri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Cuidador" id="CQZ-ph-Z1k" customClass="MonitoriewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GwT-XT-aWd"/>
                         <viewControllerLayoutGuide type="bottom" id="PvB-mB-LCc"/>
@@ -1199,9 +1119,6 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="8" minY="5" maxX="0.0" maxY="5"/>
                                                 <state key="normal" image="phone"/>
-                                                <connections>
-                                                    <action selector="callElder:" destination="CQZ-ph-Z1k" eventType="touchUpInside" id="E12-8a-xxd"/>
-                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzM-0a-zYc">
                                                 <rect key="frame" x="16" y="76" width="290" height="0.0"/>
@@ -1298,7 +1215,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFs-F9-6xJ" userLabel="4">
                                         <rect key="frame" x="0.0" y="343" width="375" height="161"/>
                                         <subviews>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Si8-jh-G4Z">
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Si8-jh-G4Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
                                             </mapView>
                                         </subviews>
@@ -1399,20 +1316,6 @@
                             <constraint firstAttribute="trailing" secondItem="zrI-RY-LWV" secondAttribute="trailing" id="un6-OJ-KJM"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="ageLabel" destination="Grk-EB-pMK" id="szu-nF-qOu"/>
-                        <outlet property="bpmLabel" destination="p4P-nT-36B" id="6Vp-Wa-pE4"/>
-                        <outlet property="gradientView" destination="zrI-RY-LWV" id="PUZ-fd-fY7"/>
-                        <outlet property="heartRateLabel" destination="x1s-7w-t11" id="nUR-4r-LTe"/>
-                        <outlet property="heartViewBackground" destination="RnV-tq-2IO" id="ThE-eM-ReS"/>
-                        <outlet property="map" destination="Si8-jh-G4Z" id="Brn-85-Cft"/>
-                        <outlet property="monitorImage" destination="7lm-35-8qH" id="FdN-0x-vf2"/>
-                        <outlet property="monitorLabel" destination="FRC-sb-Mmd" id="LJF-9g-CWT"/>
-                        <outlet property="movementImage" destination="GJP-JI-rLW" id="Rg9-8N-Tfm"/>
-                        <outlet property="movementLabel" destination="giP-lW-ZrK" id="TCT-eo-KmF"/>
-                        <outlet property="movementViewBackground" destination="PZp-Ow-j6b" id="B3x-DJ-mFT"/>
-                        <outlet property="nameLabel" destination="xzM-0a-zYc" id="0FK-nH-HQT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMb-Bb-WQk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1427,7 +1330,4 @@
         <image name="phone" width="22" height="24"/>
         <image name="walking" width="57" height="94"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Oby-7h-HH8"/>
-    </inferredMetricsTieBreakers>
 </document>
