@@ -128,9 +128,6 @@
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <connections>
-                        <outlet property="gradientView" destination="CmM-O9-Pi5" id="0RU-T3-Wb5"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ld-mE-COD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -314,7 +311,6 @@
                         <outlet property="adressTextfield" destination="Aog-YF-CzH" id="98f-r8-cIq"/>
                         <outlet property="ageTextfield" destination="VO8-vl-5M4" id="SG1-Uh-mcx"/>
                         <outlet property="cityTextfield" destination="q7y-0K-u7P" id="edg-dd-SeQ"/>
-                        <outlet property="gradientView" destination="Shf-ex-0CT" id="cRg-GH-yyv"/>
                         <outlet property="nameTextfield" destination="1VK-zS-sOn" id="Ana-pQ-g4P"/>
                         <outlet property="phoneTextfield" destination="eEq-Pp-BrU" id="Ksf-Zl-qAp"/>
                         <segue destination="TWr-rc-e3W" kind="show" identifier="wait" id="lRw-eD-JOZ"/>
@@ -462,7 +458,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gradientView" destination="bB8-lt-7N9" id="aUb-2Z-tAW"/>
                         <outlet property="nameTextfield" destination="0AC-bv-Wrk" id="09o-8L-cxQ"/>
                         <outlet property="phoneTextfield" destination="K86-9j-EEb" id="SYE-xB-5yP"/>
                         <segue destination="sJq-ML-yP9" kind="show" identifier="pareamento" id="7jw-De-j6s"/>
@@ -603,7 +598,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gradientView" destination="ghl-57-BFm" id="XDX-l8-WRq"/>
                         <outlet property="phoneTextfield" destination="T6U-i6-m4X" id="d2d-qv-XpT"/>
                         <segue destination="CQZ-ph-Z1k" kind="show" identifier="monitorar" id="Erf-3B-Bvg"/>
                     </connections>
@@ -674,7 +668,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gradientView" destination="Vwk-Qh-UT5" id="rnv-r3-p5e"/>
                         <segue destination="HVc-NE-8Ag" kind="show" identifier="pareado" id="X3c-vX-rvn"/>
                     </connections>
                 </viewController>

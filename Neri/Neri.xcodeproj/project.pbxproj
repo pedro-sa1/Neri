@@ -21,7 +21,7 @@
 		65D171041DCCFDC70042E6B3 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D171031DCCFDC70042E6B3 /* ErrorType.swift */; };
 		E10476A61DDF89ED0056D4C5 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10476A51DDF89ED0056D4C5 /* ProgressHUD.swift */; };
 		E10476A81DDF8A900056D4C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10476A71DDF8A900056D4C5 /* Main.storyboard */; };
-		E10476AA1DDF8EA70056D4C5 /* GradiantLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10476A91DDF8EA70056D4C5 /* GradiantLayer.swift */; };
+		E10476AA1DDF8EA70056D4C5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10476A91DDF8EA70056D4C5 /* GradientView.swift */; };
 		EB5E7A141DCCF6440073923D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E7A131DCCF6440073923D /* AppDelegate.swift */; };
 		EB5E7A161DCCF6440073923D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E7A151DCCF6440073923D /* ViewController.swift */; };
 		EB5E7A1B1DCCF6440073923D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB5E7A1A1DCCF6440073923D /* Assets.xcassets */; };
@@ -88,7 +88,7 @@
 		65D171031DCCFDC70042E6B3 /* ErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		E10476A51DDF89ED0056D4C5 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		E10476A71DDF8A900056D4C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		E10476A91DDF8EA70056D4C5 /* GradiantLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradiantLayer.swift; sourceTree = "<group>"; };
+		E10476A91DDF8EA70056D4C5 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		EB5E7A101DCCF6440073923D /* Neri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5E7A131DCCF6440073923D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB5E7A151DCCF6440073923D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				E10476A51DDF89ED0056D4C5 /* ProgressHUD.swift */,
-				E10476A91DDF8EA70056D4C5 /* GradiantLayer.swift */,
+				E10476A91DDF8EA70056D4C5 /* GradientView.swift */,
 				E10476A71DDF8A900056D4C5 /* Main.storyboard */,
 				EB5E7A1C1DCCF6440073923D /* LaunchScreen.storyboard */,
 			);
@@ -196,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				EB5E7A151DCCF6440073923D /* ViewController.swift */,
-				EB5E7A131DCCF6440073923D /* AppDelegate.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -233,6 +232,7 @@
 		EB5E7A121DCCF6440073923D /* Neri_iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				EB5E7A131DCCF6440073923D /* AppDelegate.swift */,
 				65D170F91DCCFA720042E6B3 /* Model */,
 				65D170FA1DCCFA780042E6B3 /* View */,
 				65D170FB1DCCFA7C0042E6B3 /* Controller */,
@@ -305,7 +305,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Pedro de Sá";
 				TargetAttributes = {
 					657F7AAE1DD3864E000D111B = {
@@ -395,7 +395,7 @@
 				E10476A61DDF89ED0056D4C5 /* ProgressHUD.swift in Sources */,
 				EB5E7A141DCCF6440073923D /* AppDelegate.swift in Sources */,
 				65D171021DCCFAE90042E6B3 /* User.swift in Sources */,
-				E10476AA1DDF8EA70056D4C5 /* GradiantLayer.swift in Sources */,
+				E10476AA1DDF8EA70056D4C5 /* GradientView.swift in Sources */,
 				65D170FE1DCCFAD50042E6B3 /* Elder.swift in Sources */,
 				65D171001DCCFAE00042E6B3 /* Caretaker.swift in Sources */,
 			);
@@ -524,6 +524,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -574,6 +575,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
