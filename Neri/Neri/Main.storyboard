@@ -103,6 +103,9 @@
                                 <state key="normal" title="Idoso ▶︎">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ACA-VW-tIO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.32156862745098036" green="0.80392156862745101" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -127,10 +130,10 @@
             </objects>
             <point key="canvasLocation" x="-1230" y="141"/>
         </scene>
-        <!--View Controller-->
+        <!--Elder Info View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ElderInfoViewController" customModule="Neri" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -220,6 +223,9 @@
                                                 <state key="normal" title="continuar ▶︎">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="continue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bLw-D7-3Oc"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -292,6 +298,15 @@
                             <constraint firstItem="Shf-ex-0CT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fh3-Xg-lNP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adress" destination="Aog-YF-CzH" id="VYq-G1-00b"/>
+                        <outlet property="age" destination="VO8-vl-5M4" id="exQ-tP-DJI"/>
+                        <outlet property="city" destination="q7y-0K-u7P" id="b4u-WL-AmZ"/>
+                        <outlet property="name" destination="1VK-zS-sOn" id="2qp-Sj-EB6"/>
+                        <outlet property="state" destination="Asv-oP-kc2" id="dUt-PY-R5A"/>
+                        <outlet property="telephone" destination="eEq-Pp-BrU" id="LP6-rd-B6i"/>
+                        <segue destination="TWr-rc-e3W" kind="presentation" identifier="go2Share" id="sDB-5q-qcG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -430,10 +445,10 @@
             </objects>
             <point key="canvasLocation" x="-381.60000000000002" y="-207.34632683658174"/>
         </scene>
-        <!--View Controller-->
+        <!--Enter Caretaker View Controller-->
         <scene sceneID="Xbe-1q-m7Y">
             <objects>
-                <viewController id="sJq-ML-yP9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Entrada" id="sJq-ML-yP9" customClass="EnterCaretakerViewController" customModule="Neri" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sxl-BZ-eUm"/>
                         <viewControllerLayoutGuide type="bottom" id="knq-eZ-EGG"/>
@@ -504,7 +519,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefone do idoso" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6U-i6-m4X">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Informe seu telefone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6U-i6-m4X">
                                         <rect key="frame" x="16" y="86" width="343" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
@@ -518,6 +533,9 @@
                                         <state key="normal" title="parear ▶︎">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="continue:" destination="sJq-ML-yP9" eventType="touchUpInside" id="dmb-AY-4Hz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -556,15 +574,19 @@
                             <constraint firstItem="Yff-5X-Jrg" firstAttribute="top" secondItem="Sdn-6q-fgg" secondAttribute="top" id="vqQ-fY-wuU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tel" destination="T6U-i6-m4X" id="RJq-Zz-e0q"/>
+                        <segue destination="CQZ-ph-Z1k" kind="presentation" identifier="go2MainCT" id="dNs-1E-N79"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82g-QD-XXi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="380" y="-207.34632683658174"/>
         </scene>
-        <!--View Controller-->
+        <!--Share View Controller-->
         <scene sceneID="7wM-Ef-1QL">
             <objects>
-                <viewController id="TWr-rc-e3W" sceneMemberID="viewController">
+                <viewController id="TWr-rc-e3W" customClass="ShareViewController" customModule="Neri" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="igw-Be-MaN"/>
                         <viewControllerLayoutGuide type="bottom" id="88g-9t-klk"/>
@@ -577,10 +599,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="tbH-Ds-i1o">
-                                        <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                                        <rect key="frame" x="178" y="324" width="20" height="20"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aguardando pareamento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaN-LV-q7G">
-                                        <rect key="frame" x="81.5" y="267.5" width="212" height="22"/>
+                                        <rect key="frame" x="82" y="268" width="212" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="212" id="bpG-pD-SKV"/>
                                         </constraints>
@@ -588,6 +610,20 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8S-Pt-OQB">
+                                        <rect key="frame" x="133" y="351" width="108" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="108" id="3Mw-3G-bL3"/>
+                                            <constraint firstAttribute="height" constant="46" id="bzl-Hr-NNo"/>
+                                        </constraints>
+                                        <state key="normal" title="share ▶︎">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="continue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dQB-hV-dqU"/>
+                                            <action selector="share:" destination="TWr-rc-e3W" eventType="touchUpInside" id="gik-QT-8zb"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -597,6 +633,8 @@
                                     <constraint firstItem="tbH-Ds-i1o" firstAttribute="centerX" secondItem="Vwk-Qh-UT5" secondAttribute="centerX" id="G8a-Bd-ZJy"/>
                                     <constraint firstItem="tbH-Ds-i1o" firstAttribute="centerY" secondItem="Vwk-Qh-UT5" secondAttribute="centerY" id="gC8-mQ-u44"/>
                                     <constraint firstItem="PaN-LV-q7G" firstAttribute="centerX" secondItem="Vwk-Qh-UT5" secondAttribute="centerX" id="hPn-bg-2wI"/>
+                                    <constraint firstItem="z8S-Pt-OQB" firstAttribute="centerX" secondItem="Vwk-Qh-UT5" secondAttribute="centerX" id="hvc-cl-6dE"/>
+                                    <constraint firstItem="z8S-Pt-OQB" firstAttribute="top" secondItem="tbH-Ds-i1o" secondAttribute="bottom" constant="7" id="noM-Dy-z7K"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="startColor">
@@ -622,10 +660,13 @@
                             <constraint firstAttribute="trailing" secondItem="Vwk-Qh-UT5" secondAttribute="trailing" id="e8N-Rd-vgD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="HVc-NE-8Ag" kind="presentation" identifier="go2MainElder" id="CJE-Wm-PPm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Zg-79-E24" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="381.60000000000002" y="492.50374812593708"/>
+            <point key="canvasLocation" x="380" y="493"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Eeu-7M-VJX">
@@ -1071,10 +1112,10 @@
             </objects>
             <point key="canvasLocation" x="1908" y="492"/>
         </scene>
-        <!--Monitoriew Controller-->
+        <!--Main Care Taker View Controller-->
         <scene sceneID="AuB-4s-eKg">
             <objects>
-                <viewController storyboardIdentifier="Cuidador" id="CQZ-ph-Z1k" customClass="MonitoriewController" sceneMemberID="viewController">
+                <viewController id="CQZ-ph-Z1k" customClass="MainCareTakerViewController" customModule="Neri" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GwT-XT-aWd"/>
                         <viewControllerLayoutGuide type="bottom" id="PvB-mB-LCc"/>
@@ -1120,14 +1161,14 @@
                                                 <inset key="imageEdgeInsets" minX="8" minY="5" maxX="0.0" maxY="5"/>
                                                 <state key="normal" image="phone"/>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzM-0a-zYc">
-                                                <rect key="frame" x="16" y="76" width="290" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzM-0a-zYc">
+                                                <rect key="frame" x="16" y="61.5" width="290" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grk-EB-pMK">
-                                                <rect key="frame" x="16" y="84" width="140" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grk-EB-pMK">
+                                                <rect key="frame" x="16" y="98.5" width="140" height="21.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="Cc6-q1-FLE"/>
                                                 </constraints>
@@ -1215,7 +1256,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFs-F9-6xJ" userLabel="4">
                                         <rect key="frame" x="0.0" y="343" width="375" height="161"/>
                                         <subviews>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Si8-jh-G4Z">
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Si8-jh-G4Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
                                             </mapView>
                                         </subviews>
@@ -1316,6 +1357,10 @@
                             <constraint firstAttribute="trailing" secondItem="zrI-RY-LWV" secondAttribute="trailing" id="un6-OJ-KJM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="elderAge" destination="Grk-EB-pMK" id="zvl-2j-eyl"/>
+                        <outlet property="elderName" destination="xzM-0a-zYc" id="umq-dz-8Dd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMb-Bb-WQk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

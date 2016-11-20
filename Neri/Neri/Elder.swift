@@ -14,6 +14,11 @@ import CoreLocation
 
 class Elder: User {
     
+    static let singleton = Elder()
+    
+    var name = ""
+    var age = ""
+    var careTakerId = ""
     var street: String!
     var houseNumber: Int!
     var city: String!
@@ -31,18 +36,78 @@ class Elder: User {
      
      */
     
-    init (name: String, birthDay: String, phone: String, street: String, houseNumber: Int, city: String, state: String, weight: String, height: String) {
-        
-        super.init(name: name, birthDay: birthDay, phone: phone)
-        
-        self.street = street
-        self.houseNumber = houseNumber
-        self.city = city
-        self.state = state
-        self.weight = weight
-        self.height = height
-        
+    
+    private override init() { }
+    
+    
+    func getElderName() -> String {
+        return name
     }
+    
+    func setElderName(name: String) {
+        self.name = name
+    }
+    
+    func getElderAge() -> String {
+        return age
+    }
+    
+    func setElderAge(age: String) {
+        self.age = age
+    }
+    
+    func getElderPhone() -> String {
+        return phone
+    }
+    
+    func setElderPhone(phone: String) {
+        self.phone = phone
+    }
+    
+    func getElderStreet() -> String {
+        return street
+    }
+    
+    func setElderStreet(street: String) {
+        self.street = street
+    }
+    
+    func getElderCity() -> String {
+        return city
+    }
+    
+    func setElderCity(city: String) {
+        self.city = city
+    }
+    
+    func getElderState() -> String {
+        return state
+    }
+    
+    func setElderState(state: String) {
+        self.state = state
+    }
+    
+    func getEldercareTakerId() -> String {
+        return careTakerId
+    }
+    
+    func setEldercareTakerId(id: String) {
+        self.careTakerId = id
+    }
+    
+//    init (name: String, birthDay: String, phone: String, street: String, houseNumber: Int, city: String, state: String, weight: String, height: String) {
+//        
+//        super.init(name: name, birthDay: birthDay, phone: phone)
+//        
+//        self.street = street
+//        self.houseNumber = houseNumber
+//        self.city = city
+//        self.state = state
+//        self.weight = weight
+//        self.height = height
+//        
+//    }
     
     func callCaretaker(caretakerPhone: String) -> ErrorType {
         

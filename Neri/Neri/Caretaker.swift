@@ -11,6 +11,54 @@ import UIKit
 
 class Caretaker: User {
     
+    
+    static let singleton = Caretaker()
+    
+    var id = ""
+    var elderName = ""
+    var elderAge = ""
+    var elderPhone = ""
+    
+    
+    private override init() {
+        
+    }
+    
+    func getElderName() -> String {
+        return elderName
+    }
+    
+    func setElderName(name: String) {
+        self.elderName = name
+    }
+    
+    func getId() -> String {
+        return id
+    }
+    
+    func setId(id: String) {
+        self.id = id
+    }
+    
+    func getElderAge() -> String {
+        return elderAge
+    }
+    
+    func setElderAge(age: String) {
+        self.elderAge = age
+    }
+    
+    func getElderPhone() -> String {
+        return elderPhone
+    }
+    
+    func setElderPhone(phone: String) {
+        self.elderPhone = phone
+    }
+    
+    
+    
+    
     func updateData() -> ErrorType {
        
        /*******************************************************

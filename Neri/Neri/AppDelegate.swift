@@ -9,12 +9,44 @@
 import UIKit
 import WatchConnectivity
 import HealthKit
+import CloudKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let healthStore = HKHealthStore()
+    
+    var vc = EnterCaretakerViewController()
+    
+    
+    // Sharing:
+    func application(_ application: UIApplication, userDidAcceptCloudKitShareWith cloudKitShareMetadata: CKShareMetadata) {
+        
+        let acceptSharesOperation = CKAcceptSharesOperation(shareMetadatas: [cloudKitShareMetadata])
+        acceptSharesOperation.perShareCompletionBlock = {
+            metadata, share, error in
+            if error != nil {
+                print(error?.localizedDescription)
+            } else {
+                
+                
+//                let vc: EnterCaretakerViewController = self.window?.rootViewController as! EnterCaretakerViewController
+                self.vc.fetchShare(cloudKitShareMetadata)
+                
+                
+                
+                
+                let mainStoryboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let initialViewController : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "Entrada") as UIViewController
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+            }
+        }
+        CKContainer(identifier: cloudKitShareMetadata.containerIdentifier).add(acceptSharesOperation)
+    }
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

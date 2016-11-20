@@ -10,15 +10,15 @@ import Foundation
 
 class User {
     
-    var name: String!
+//    var name: String!
     var birthDay: String!   // String format: MM/dd/yyyy
     var phone: String!
     
-    init (name: String, birthDay: String, phone: String) {
-        self.name = name
-        self.birthDay = birthDay
-        self.phone = phone
-    }
+//    init (name: String, birthDay: String, phone: String) {
+//        self.name = name
+//        self.birthDay = birthDay
+//        self.phone = phone
+//    }
     
     func calculateAge() -> Int {
         
