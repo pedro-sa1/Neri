@@ -14,12 +14,6 @@ class User {
     var birthDay: String!   // String format: MM/dd/yyyy
     var phone: String!
     
-//    init (name: String, birthDay: String, phone: String) {
-//        self.name = name
-//        self.birthDay = birthDay
-//        self.phone = phone
-//    }
-    
     // MARK: - Class Functions -
     
     func calculateAge() -> Int {
