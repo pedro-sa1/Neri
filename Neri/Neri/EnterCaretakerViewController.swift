@@ -16,6 +16,7 @@ class EnterCaretakerViewController: UIViewController {
     var currentRecord: CKRecord?
     var nomeIdoso = String()
     var idadeIdoso = String()
+    var recordID: CKRecordID?
     
     var nextVC = MainCareTakerViewController()
     
@@ -29,6 +30,7 @@ class EnterCaretakerViewController: UIViewController {
         operation.perRecordCompletionBlock = { record, _, error in
             
             print("PRINTANDO DA FETCH SHARE")
+            print(record)
             
             if error != nil {
                 print(error?.localizedDescription as Any)
@@ -40,6 +42,8 @@ class EnterCaretakerViewController: UIViewController {
                 self.currentRecord = record
                 self.nomeIdoso = (record?.object(forKey: "name") as? String)!
                 self.idadeIdoso = (record?.object(forKey: "age") as? String)!
+                self.recordID = record?.recordID
+                print("PRINTANDO O RECORD ID DA ENTER CARETAKER: \(self.recordID)\n")
                 
                 print("OS DADOS DO IDOSO SÃO:\n")
                 print(self.nomeIdoso)
@@ -74,6 +78,7 @@ class EnterCaretakerViewController: UIViewController {
             vc.nome = nomeIdoso
             vc.idade = idadeIdoso
             vc.tel = tel.text!
+            vc.recordid = self.recordID
         }
     }
 }
