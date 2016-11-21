@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFCompactText-Regular.otf">
+            <string>.SFCompactText-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Heart Rate Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="HeartRateInterfaceController" customModule="Neri_Watch_Extension">
+                    <items>
+                        <group width="1" height="141" alignment="center" verticalAlignment="center" backgroundImage="watch-heart" contentMode="scaleAspectFit" layout="vertical" id="Jwk-cn-qvl">
+                            <items>
+                                <label width="136" height="43" alignment="center" verticalAlignment="center" text="-" textAlignment="center" id="DUb-JW-9u3">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" type="system" pointSize="42"/>
+                                </label>
+                                <label width="80" height="22" alignment="center" verticalAlignment="center" text="bpm" textAlignment="center" id="5rW-0L-MMO">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="heartImage" destination="Jwk-cn-qvl" id="dDs-1g-FQO"/>
+                        <outlet property="heartRateLabel" destination="DUb-JW-9u3" id="UvW-FG-bVI"/>
+                        <segue destination="VsA-4a-1Hd" kind="relationship" relationship="nextPage" id="IE4-3x-fKC"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="6H3-DP-MlV">
+            <objects>
+                <controller id="VsA-4a-1Hd">
+                    <items>
+                        <group width="1" height="109" alignment="center" verticalAlignment="bottom" backgroundImage="watch-walking" contentMode="scaleAspectFit" id="2yX-1Z-Zfh"/>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="2yT-Ek-rgM">
+                            <items>
+                                <label height="22" alignment="center" text="está caminhando" textAlignment="center" id="Wrn-gO-HqH">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="movementLabel" destination="Wrn-gO-HqH" id="cb3-Qn-h7a"/>
+                        <segue destination="0Vn-Mr-zqr" kind="relationship" relationship="nextPage" id="4hC-BC-nXn"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="497" y="345"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="hS6-9h-DVX">
+            <objects>
+                <controller id="0Vn-Mr-zqr">
+                    <items>
+                        <map width="1" height="1" alignment="left" id="IQf-lO-naI"/>
+                    </items>
+                    <connections>
+                        <segue destination="Rcq-NP-ajQ" kind="relationship" relationship="nextPage" id="rTb-74-Nb6"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="769" y="345"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="9UL-fF-Spo">
+            <objects>
+                <controller id="Rcq-NP-ajQ">
+                    <items>
+                        <group width="1" height="109" alignment="center" verticalAlignment="bottom" backgroundImage="watch-active" contentMode="scaleAspectFit" id="TVK-0E-2on"/>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="PUE-Qe-GAz">
+                            <items>
+                                <label height="22" alignment="center" text="monitoramento ativo" textAlignment="center" id="6DA-Zj-nc2">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1049" y="345"/>
+        </scene>
+        <!--CountdownInterfaceController-->
+        <scene sceneID="NPm-bf-flt">
+            <objects>
+                <controller identifier="CountdownInterfaceController" id="0Ab-eT-bcR">
+                    <items>
+                        <group width="1" height="0.29999999999999999" alignment="left" verticalAlignment="bottom" layout="vertical" id="1uw-It-TSb">
+                            <items>
+                                <button width="1" height="1" alignment="left" title="Estou bem!" id="WXk-k8-s0e">
+                                    <color key="backgroundColor" red="0.33725490196078434" green="0.78823529411764703" blue="0.7686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="okButtonAction" destination="0Ab-eT-bcR" id="0iF-2U-KFy"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group alignment="center" layout="vertical" id="JYK-yn-CT6">
+                            <items>
+                                <label alignment="center" text="Queda detectada!" textAlignment="center" id="06H-Db-uLi"/>
+                            </items>
+                        </group>
+                        <group height="78" alignment="center" layout="vertical" id="hHL-9v-ErV">
+                            <items>
+                                <label height="55" alignment="center" verticalAlignment="center" text="30" textAlignment="center" id="hri-kR-bed">
+                                    <color key="textColor" red="1" green="0.66274509800000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" name=".SFCompactText-Regular" family=".SF Compact Text" pointSize="50"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="timerLabel" destination="hri-kR-bed" id="znI-7A-mfp"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1344" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <color key="backgroundColor" red="0.33725490200000002" green="0.78823529410000004" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="705"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Neri_Watch" customModuleProvider="target">
+                    <color key="backgroundColor" red="0.33725490200000002" green="0.78823529410000004" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="497" y="705"/>
+        </scene>
+    </scenes>
+</document>

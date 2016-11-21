@@ -24,6 +24,8 @@ enum ErrorType {
     
 }
 
+// MARK: - Class Functions -
+
 func getErrorMessage(errorType: ErrorType) -> UIAlertController {
     
     /*******************************************************

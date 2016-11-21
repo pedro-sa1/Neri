@@ -81,10 +81,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="Vtj-kX-qmn">
-                                <rect key="frame" x="56" y="130" width="263" height="110.5"/>
+                                <rect key="frame" x="56" y="130" width="263" height="111"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29s-kp-ABp">
-                                <rect key="frame" x="133.5" y="310.5" width="108" height="46"/>
+                                <rect key="frame" x="134" y="311" width="108" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="0yc-fV-yI5"/>
                                     <constraint firstAttribute="width" constant="108" id="Fng-nL-CiZ"/>
@@ -94,7 +94,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyM-6C-g3m">
-                                <rect key="frame" x="133.5" y="375" width="108" height="46"/>
+                                <rect key="frame" x="134" y="375" width="108" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="JMG-Sb-AAz"/>
                                     <constraint firstAttribute="width" constant="108" id="t0I-ZO-emY"/>

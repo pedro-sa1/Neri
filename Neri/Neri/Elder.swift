@@ -37,8 +37,9 @@ class Elder: User {
      */
     
     
-    private override init() { }
+    private override init() {
     
+    }
     
     func getElderName() -> String {
         return name
@@ -108,6 +109,8 @@ class Elder: User {
 //        self.height = height
 //        
 //    }
+    
+    // MARK: - Class Functions -
     
     func callCaretaker(caretakerPhone: String) -> ErrorType {
         

@@ -21,7 +21,7 @@ class ShareViewController: UIViewController, UICloudSharingControllerDelegate {
         privateDatabase = container().privateCloudDatabase
         
         print("CURRENT RECORD É:\n")
-        print(currentRecord)
+        print(currentRecord as Any)
     }
     
     
@@ -45,7 +45,7 @@ class ShareViewController: UIViewController, UICloudSharingControllerDelegate {
             modifyRecordsOperation.modifyRecordsCompletionBlock = {
                 records, recordIDs, error in
                 if error != nil {
-                    print(error?.localizedDescription)
+                    print(error?.localizedDescription as Any)
                 }
                 preparationCompletionHandler(share, CKContainer.default(), error)
             }
@@ -54,6 +54,8 @@ class ShareViewController: UIViewController, UICloudSharingControllerDelegate {
         controller.availablePermissions = [.allowPrivate, .allowReadWrite]
         controller.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
         controller.delegate = self
+        
+        
         
         self.present(controller, animated: true)
         
