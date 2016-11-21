@@ -218,10 +218,10 @@
 			children = (
 				EB5E7A131DCCF6440073923D /* AppDelegate.swift */,
 				EB5E7A151DCCF6440073923D /* ViewController.swift */,
+				EB5789A11DE221DA00A0FA04 /* MainCareTakerViewController.swift */,
 				EB8E50E71DE1EEF600177284 /* ElderInfoViewController.swift */,
 				EB8E50EF1DE206BE00177284 /* ShareViewController.swift */,
 				EB57899F1DE21B2000A0FA04 /* EnterCaretakerViewController.swift */,
-				EB5789A11DE221DA00A0FA04 /* MainCareTakerViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

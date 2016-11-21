@@ -40,7 +40,7 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
     
     let healthStore = HKHealthStore()
     
-    //State of the app - is the workout activated
+    // State of the app - is the workout activated
     var workoutActive = false
     
     // define the activity type and location
