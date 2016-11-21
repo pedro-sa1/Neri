@@ -55,6 +55,23 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
      **                                                   **
      *******************************************************/
     
+    
+    /*******************************************************
+     **                                                   **
+     **                CLOUDKIT VARIABLES                 **
+     **                                                   **
+     *******************************************************/
+    
+    
+    var ctUsers = [CKRecord]()
+    var fetchedRecord:CKRecord?
+    
+    /*******************************************************
+     **                                                   **
+     **               END: CLOUDKIT VARIABLES             **
+     **                                                   **
+     *******************************************************/
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -228,7 +245,7 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
             // MANDAR PRO CLOUD KIT ESSE DADO: String(Int(value))
             
             
-            
+            self.fetchRecordZone(heartRate: String(value))
         }
         
     }
@@ -247,7 +264,90 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
     
     // MARK: - CloudKit: Functions -
     
+    func fetchRecordZone(heartRate: String) {
+        
+        let container = CKContainer(identifier: "iCloud.pedro.Neri")
+        let privateData = container.privateCloudDatabase
+        privateData.fetchAllRecordZones { (recordZones, error) in
+            if error != nil {
+                print("DEU MERDA NA FETCH RECORDZONE\n")
+                print(error?.localizedDescription)
+            }
+            if recordZones != nil {
+                print(recordZones)
+                let count = recordZones?.count
+                for item in recordZones!{
+                
+                    let zoneName = (item.value(forKey: "_zoneID") as! CKRecordZoneID).value(forKey: "_zoneName") as! String
+                    print("zone name iS: \(zoneName)")
+                    if(zoneName == "MedicalRecord"){
+                        self.sendHeartRate(id: item.zoneID, heartRate: heartRate)
+                    }
+                }
+            }
+        }
+    }
     
+    func sendHeartRate(id: CKRecordZoneID, heartRate: String) {
+        ctUsers = [CKRecord]()
+        
+        print("SHARED ZONE VERDADEIRA: \(id)")
+        
+        let container = CKContainer(identifier: "iCloud.pedro.Neri")
+        let privateData = container.privateCloudDatabase
+        let predicate = NSPredicate(format: "TRUEPREDICATE")
+        let query = CKQuery(recordType: "Elder", predicate: predicate)
+        
+        privateData.perform(query, inZoneWith: id) { results, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("aaaaaCloud Query Error - Fetch Establishments: \(error)")
+                }
+                return
+            }
+            if results != nil {
+                print("PRINTANDO OS RESULTS\n")
+                print(results as Any)
+                print("\nO ID DO RECORD É:\n")
+                print(results?.first?.recordID as Any)
+                
+                self.fetchRecord(recordid: (results?.first?.recordID)!, completionHandler: { (success) in
+                    if success {
+                        
+                        self.fetchedRecord?.setObject(heartRate as CKRecordValue?, forKey: "HeartRate")
+                        
+                        privateData.save(self.fetchedRecord!, completionHandler: { (record, error) in
+                            if error != nil {
+                                print("DEU MERDA TENTANDO SALVAR O RECORD PUXADO\n")
+                                print(error?.localizedDescription)
+                            } else {
+                                print("RECORD ATUALIZADO!!!!!!!!!\n")
+                            }
+                        })
+                    }
+                })
+            }
+        }
+    }
+    
+    typealias CompletionHandler = (_ success:Bool) -> Void
+    func fetchRecord(recordid: CKRecordID, completionHandler: @escaping CompletionHandler) {
+        
+        let container = CKContainer(identifier: "iCloud.pedro.Neri")
+        let privateData = container.privateCloudDatabase
+        
+        privateData.fetch(withRecordID: recordid, completionHandler: { (record, error) in
+            if error != nil {
+                print("DEU MERDA PROCURANDO O RECORD COM RECORDID\n")
+                print(error?.localizedDescription as Any)
+                completionHandler(false)
+            } else {
+                print("CHEGOU PRA SALVAR NO FETCHED RECORD!!\n")
+                self.fetchedRecord = record
+                completionHandler(true)
+            }
+        })
+    }
     
     /********************************************************
      **                                                    **
