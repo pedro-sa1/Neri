@@ -55,6 +55,8 @@ class ShareViewController: UIViewController, UICloudSharingControllerDelegate {
         controller.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
         controller.delegate = self
         
+        
+        
         self.present(controller, animated: true)
         
        // performSegue(withIdentifier: "go2MainElder", sender: self)
