@@ -36,6 +36,7 @@ class Elder: User {
      
      */
     
+    
     private override init() {
     
     }
@@ -96,6 +97,19 @@ class Elder: User {
         self.careTakerId = id
     }
     
+//    init (name: String, birthDay: String, phone: String, street: String, houseNumber: Int, city: String, state: String, weight: String, height: String) {
+//        
+//        super.init(name: name, birthDay: birthDay, phone: phone)
+//        
+//        self.street = street
+//        self.houseNumber = houseNumber
+//        self.city = city
+//        self.state = state
+//        self.weight = weight
+//        self.height = height
+//        
+//    }
+    
     // MARK: - Class Functions -
     
     func callCaretaker(caretakerPhone: String) -> ErrorType {
@@ -141,7 +155,7 @@ class Elder: User {
          */
         
         // Vai jogando os dados recebidos em vetores de tamanho 10
-        // Caso já esteja cheio, retira a primeira infromação e anda com o resto para frente
+        // Caso já esteaj cheio, retira a primeira infromação e anda com o resto para frente
         // Joga a informação nova na ultima casa
         // Analisa os dados do acelerometro pela equação gerada pelos dados
         // Futuramente, usará rede neural pra analisar
@@ -151,7 +165,7 @@ class Elder: User {
         
     }
     
-    func verifyHeartRate(heartRate: Int) -> ErrorType {
+    func verifyHeartRate(heartRate: Double) -> ErrorType {
         
         /*******************************************************
          **                                                   **
@@ -161,50 +175,17 @@ class Elder: User {
         
         /*
          
-         * Ajeitar função e comentários
+         * Table (Matrix) BMI x Age to get ideal heart rate
+         * Verify maximum and low heart rate
+         * Send notification in case something wrong happens
          
          */
-        
-        let age = self.calculateAge()
-        let maxHeartRate = 220 - age
-        
-        if heartRate >= maxHeartRate {
-            
-            /* High emergency high heart rate notification */
-            return ErrorType.OK
-            
-        } else if Double(heartRate) >= Double(maxHeartRate) * 0.80 {
-            
-            /* Medium emergency high heart rate notification */
-            return ErrorType.OK
-            
-        } else if Double(heartRate) >= Double(maxHeartRate) * 0.75 {
-            
-            /* Low emergency high heart rate notification */
-            return ErrorType.OK
-            
-        } else if Double(heartRate) <= 50 {
-            
-            /* Low emergency low heart rate notification */
-            return ErrorType.OK
-            
-        } else if Double(heartRate) <= 40 {
-            
-            /* Medium emergency low heart rate notification */
-            return ErrorType.OK
-            
-        } else if Double(heartRate) <= 30 {
-            
-            /* High emergency low heart rate notification */
-            return ErrorType.OK
-            
-        }
         
         return ErrorType.OK
         
     }
     
-    func sendLowHeartRateNotification(level: String) -> ErrorType {
+    func sendLowHeartRateNotification() -> ErrorType {
         
         /*******************************************************
          **                                                   **
@@ -226,7 +207,7 @@ class Elder: User {
         
     }
     
-    func sendHighHeartRateNotification(level: String) -> ErrorType {
+    func sendHighHeartRateNotification() -> ErrorType {
         
         /*******************************************************
          **                                                   **
@@ -248,7 +229,7 @@ class Elder: User {
         
     }
     
-    func sendFallNotification(level: String) -> ErrorType {
+    func sendFallNotification() -> ErrorType {
         
         /*******************************************************
          **                                                   **

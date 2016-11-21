@@ -8,7 +8,8 @@
 
 import UIKit
 
-@IBDesignable class GradientView: UIView {
+@IBDesignable class GradientView: UIView
+{
     
     @IBInspectable var startColor: UIColor = UIColor.white
     @IBInspectable var endColor:   UIColor = UIColor.black
@@ -19,12 +20,13 @@ import UIKit
     @IBInspectable var horizontalMode: Bool = false
     @IBInspectable var diagonalMode: Bool = false
     
-    override class var layerClass: AnyClass {
+    override class var layerClass: AnyClass
+    {
         return CAGradientLayer.self
     }
     
-    override func layoutSubviews() {
-        
+    override func layoutSubviews()
+    {
         super.layoutSubviews()
         guard let layer = layer as? CAGradientLayer else { return }
         if horizontalMode {

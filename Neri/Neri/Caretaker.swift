@@ -11,12 +11,14 @@ import UIKit
 
 class Caretaker: User {
     
+    
     static let singleton = Caretaker()
     
     var id = ""
     var elderName = ""
     var elderAge = ""
-    var elderPhone = ""    
+    var elderPhone = ""
+    
     
     private override init() {
         

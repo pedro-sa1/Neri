@@ -16,6 +16,7 @@ public class CloudKitDAO {
     var currentRecord: CKRecord?
     var privateDatabase: CKDatabase?
     
+    
     typealias CompletionHandler2 = (_ success:Bool) -> Void
     func sendElder(usuario: Elder, zoneID: CKRecordZoneID, completionHandler: @escaping CompletionHandler2) -> CKRecord {
         
@@ -53,6 +54,7 @@ public class CloudKitDAO {
         privateDatabase?.add(modifyRecordsOperation)
         return user
     }
+    
     
     typealias CompletionHandler = (_ success:Bool) -> Void
     func loadElderUser(phone: String, completionHandler: @escaping CompletionHandler) {

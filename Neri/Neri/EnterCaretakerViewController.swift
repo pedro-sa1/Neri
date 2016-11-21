@@ -36,7 +36,7 @@ class EnterCaretakerViewController: UIViewController {
             if record != nil {
 
                 print("PRINTANDO O RECORD DA ENTER CARETAKER:\n")
-                print(record as Any)
+                print(record)
                 self.currentRecord = record
                 self.nomeIdoso = (record?.object(forKey: "name") as? String)!
                 self.idadeIdoso = (record?.object(forKey: "age") as? String)!
@@ -44,7 +44,6 @@ class EnterCaretakerViewController: UIViewController {
                 print("OS DADOS DO IDOSO SÃO:\n")
                 print(self.nomeIdoso)
                 print(self.idadeIdoso)
-
             }
         }
         operation.fetchRecordsCompletionBlock = { _, error in

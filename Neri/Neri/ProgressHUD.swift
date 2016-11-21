@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ProgressHUD: UIVisualEffectView {
+class ProgressHUD: UIVisualEffectView
+{
     
     var text: String? {
         didSet {
@@ -44,7 +45,6 @@ class ProgressHUD: UIVisualEffectView {
     }
     
     override func didMoveToSuperview() {
-        
         super.didMoveToSuperview()
         
         if let superview = self.superview {

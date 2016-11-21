@@ -28,9 +28,9 @@
 		EB5789A21DE221DA00A0FA04 /* MainCareTakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5789A11DE221DA00A0FA04 /* MainCareTakerViewController.swift */; };
 		EB5789A41DE22E0200A0FA04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5789A31DE22E0200A0FA04 /* MapKit.framework */; };
 		EB5E7A141DCCF6440073923D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E7A131DCCF6440073923D /* AppDelegate.swift */; };
-		EB5E7A161DCCF6440073923D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E7A151DCCF6440073923D /* ViewController.swift */; };
 		EB5E7A1B1DCCF6440073923D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB5E7A1A1DCCF6440073923D /* Assets.xcassets */; };
 		EB5E7A1E1DCCF6440073923D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB5E7A1C1DCCF6440073923D /* LaunchScreen.storyboard */; };
+		EB8B701C1DE36C58000C9D9A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8B701B1DE36C58000C9D9A /* CloudKit.framework */; };
 		EB8E50E81DE1EEF600177284 /* ElderInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8E50E71DE1EEF600177284 /* ElderInfoViewController.swift */; };
 		EB8E50EA1DE1F22700177284 /* CloudKitDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8E50E91DE1F22700177284 /* CloudKitDAO.swift */; };
 		EB8E50EE1DE1FB9200177284 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8E50ED1DE1FB9200177284 /* CloudKit.framework */; };
@@ -107,10 +107,10 @@
 		EB5789A31DE22E0200A0FA04 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EB5E7A101DCCF6440073923D /* Neri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5E7A131DCCF6440073923D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB5E7A151DCCF6440073923D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EB5E7A1A1DCCF6440073923D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB5E7A1D1DCCF6440073923D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB5E7A1F1DCCF6440073923D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB8B701B1DE36C58000C9D9A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		EB8E50E71DE1EEF600177284 /* ElderInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElderInfoViewController.swift; sourceTree = "<group>"; };
 		EB8E50E91DE1F22700177284 /* CloudKitDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitDAO.swift; sourceTree = "<group>"; };
 		EB8E50ED1DE1FB9200177284 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -123,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				651AB8841DDFB65D001014E8 /* HealthKit.framework in Frameworks */,
+				EB8B701C1DE36C58000C9D9A /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +143,7 @@
 		6505FD761DD65690003D2A75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB8B701B1DE36C58000C9D9A /* CloudKit.framework */,
 				EB5789A31DE22E0200A0FA04 /* MapKit.framework */,
 				EB8E50ED1DE1FB9200177284 /* CloudKit.framework */,
 				651AB8831DDFB65D001014E8 /* HealthKit.framework */,
@@ -216,12 +218,8 @@
 		65D170FB1DCCFA7C0042E6B3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EB5E7A131DCCF6440073923D /* AppDelegate.swift */,
-				EB5E7A151DCCF6440073923D /* ViewController.swift */,
-				EB5789A11DE221DA00A0FA04 /* MainCareTakerViewController.swift */,
-				EB8E50E71DE1EEF600177284 /* ElderInfoViewController.swift */,
-				EB8E50EF1DE206BE00177284 /* ShareViewController.swift */,
-				EB57899F1DE21B2000A0FA04 /* EnterCaretakerViewController.swift */,
+				E10476AC1DE3A23D0056D4C5 /* Caretaker */,
+				E10476AB1DE3A1FD0056D4C5 /* Elder */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -234,6 +232,24 @@
 				EB5E7A1F1DCCF6440073923D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E10476AB1DE3A1FD0056D4C5 /* Elder */ = {
+			isa = PBXGroup;
+			children = (
+				EB8E50E71DE1EEF600177284 /* ElderInfoViewController.swift */,
+				EB8E50EF1DE206BE00177284 /* ShareViewController.swift */,
+			);
+			name = Elder;
+			sourceTree = "<group>";
+		};
+		E10476AC1DE3A23D0056D4C5 /* Caretaker */ = {
+			isa = PBXGroup;
+			children = (
+				EB57899F1DE21B2000A0FA04 /* EnterCaretakerViewController.swift */,
+				EB5789A11DE221DA00A0FA04 /* MainCareTakerViewController.swift */,
+			);
+			name = Caretaker;
 			sourceTree = "<group>";
 		};
 		EB5E7A071DCCF6440073923D = {
@@ -260,6 +276,7 @@
 		EB5E7A121DCCF6440073923D /* Neri_iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				EB5E7A131DCCF6440073923D /* AppDelegate.swift */,
 				65D170F91DCCFA720042E6B3 /* Model */,
 				65D170FA1DCCFA780042E6B3 /* View */,
 				65D170FB1DCCFA7C0042E6B3 /* Controller */,
@@ -347,6 +364,12 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -439,7 +462,6 @@
 			files = (
 				EB8E50E81DE1EEF600177284 /* ElderInfoViewController.swift in Sources */,
 				EB8E50F01DE206BE00177284 /* ShareViewController.swift in Sources */,
-				EB5E7A161DCCF6440073923D /* ViewController.swift in Sources */,
 				65D171041DCCFDC70042E6B3 /* ErrorType.swift in Sources */,
 				E10476A61DDF89ED0056D4C5 /* ProgressHUD.swift in Sources */,
 				EB5E7A141DCCF6440073923D /* AppDelegate.swift in Sources */,
