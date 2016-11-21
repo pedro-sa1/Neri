@@ -55,9 +55,8 @@ class Caretaker: User {
     func setElderPhone(phone: String) {
         self.elderPhone = phone
     }
-    
-    
-    
+
+    // MARK: - Class Functions -
     
     func updateData() -> ErrorType {
        

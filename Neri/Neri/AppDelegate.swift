@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         acceptSharesOperation.perShareCompletionBlock = {
             metadata, share, error in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription as Any)
             } else {
                 
                 

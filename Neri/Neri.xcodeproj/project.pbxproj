@@ -10,7 +10,7 @@
 		6505FD781DD65690003D2A75 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6505FD771DD65690003D2A75 /* HealthKit.framework */; };
 		6505FD7F1DDCDAE1003D2A75 /* HeartRateInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505FD7E1DDCDAE1003D2A75 /* HeartRateInterfaceController.swift */; };
 		651AB8841DDFB65D001014E8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651AB8831DDFB65D001014E8 /* HealthKit.framework */; };
-		651AB8871DDFBD63001014E8 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651AB8861DDFBD63001014E8 /* Storyboard.storyboard */; };
+		656583171DE3577E00D61ECF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656583161DE3577E00D61ECF /* Interface.storyboard */; };
 		657F7AB51DD3864E000D111B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657F7AB41DD3864E000D111B /* Assets.xcassets */; };
 		657F7ABC1DD3864E000D111B /* Neri_Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 657F7ABB1DD3864E000D111B /* Neri_Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		657F7AC51DD3864E000D111B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657F7AC41DD3864E000D111B /* ExtensionDelegate.swift */; };
@@ -85,7 +85,7 @@
 		6505FD7E1DDCDAE1003D2A75 /* HeartRateInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeartRateInterfaceController.swift; path = "Neri_Watch Extension/HeartRateInterfaceController.swift"; sourceTree = SOURCE_ROOT; };
 		651AB8831DDFB65D001014E8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		651AB8851DDFB65D001014E8 /* Neri_Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Neri_Watch Extension.entitlements"; sourceTree = "<group>"; };
-		651AB8861DDFBD63001014E8 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		656583161DE3577E00D61ECF /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
 		657F7AAF1DD3864E000D111B /* Neri_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neri_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		657F7AB41DD3864E000D111B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		657F7AB61DD3864E000D111B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 		657F7AB01DD3864E000D111B /* Neri_Watch */ = {
 			isa = PBXGroup;
 			children = (
-				651AB8861DDFBD63001014E8 /* Storyboard.storyboard */,
+				656583161DE3577E00D61ECF /* Interface.storyboard */,
 				657F7AD81DD386AB000D111B /* Supporting Files */,
 			);
 			path = Neri_Watch;
@@ -162,10 +162,9 @@
 		657F7ABF1DD3864E000D111B /* Neri_Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				651AB8851DDFB65D001014E8 /* Neri_Watch Extension.entitlements */,
 				6505FD7E1DDCDAE1003D2A75 /* HeartRateInterfaceController.swift */,
-				657F7AC41DD3864E000D111B /* ExtensionDelegate.swift */,
 				657F7AC61DD3864E000D111B /* NotificationController.swift */,
+				657F7AC41DD3864E000D111B /* ExtensionDelegate.swift */,
 				657F7AC01DD3864E000D111B /* Supporting Files */,
 			);
 			path = "Neri_Watch Extension";
@@ -174,6 +173,7 @@
 		657F7AC01DD3864E000D111B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				651AB8851DDFB65D001014E8 /* Neri_Watch Extension.entitlements */,
 				657F7AC81DD3864E000D111B /* Assets.xcassets */,
 				657F7ACA1DD3864E000D111B /* Info.plist */,
 				657F7AC11DD3864E000D111B /* PushNotificationPayload.apns */,
@@ -216,6 +216,7 @@
 		65D170FB1DCCFA7C0042E6B3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EB5E7A131DCCF6440073923D /* AppDelegate.swift */,
 				EB5E7A151DCCF6440073923D /* ViewController.swift */,
 				EB8E50E71DE1EEF600177284 /* ElderInfoViewController.swift */,
 				EB8E50EF1DE206BE00177284 /* ShareViewController.swift */,
@@ -259,7 +260,6 @@
 		EB5E7A121DCCF6440073923D /* Neri_iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				EB5E7A131DCCF6440073923D /* AppDelegate.swift */,
 				65D170F91DCCFA720042E6B3 /* Model */,
 				65D170FA1DCCFA780042E6B3 /* View */,
 				65D170FB1DCCFA7C0042E6B3 /* Controller */,
@@ -398,7 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				657F7AB51DD3864E000D111B /* Assets.xcassets in Resources */,
-				651AB8871DDFBD63001014E8 /* Storyboard.storyboard in Resources */,
+				656583171DE3577E00D61ECF /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

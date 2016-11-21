@@ -20,6 +20,8 @@ class User {
 //        self.phone = phone
 //    }
     
+    // MARK: - Class Functions -
+    
     func calculateAge() -> Int {
         
         /*******************************************************

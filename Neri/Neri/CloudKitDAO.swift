@@ -40,9 +40,9 @@ public class CloudKitDAO {
         modifyRecordsOperation.timeoutIntervalForResource = 10
         
         modifyRecordsOperation.modifyRecordsCompletionBlock = { records, recordIDs, error in
-                if let err = error {
+                if error != nil {
                     print("Save Error")
-                    print(error?.localizedDescription)
+                    print(error?.localizedDescription as Any)
                 } else {
                     DispatchQueue.main.async {
                         print("Elder saved successfully")

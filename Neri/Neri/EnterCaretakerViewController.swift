@@ -31,13 +31,13 @@ class EnterCaretakerViewController: UIViewController {
             print("PRINTANDO DA FETCH SHARE")
             
             if error != nil {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription as Any)
             }
             if record != nil {
                 DispatchQueue.main.async() {
                     print("\n****************")
                     print("PRINTANDO O RECORD DA ENTER CARETAKER:\n")
-                    print(record)
+                    print(record as Any)
                     self.currentRecord = record
                     self.nomeIdoso = (record?.object(forKey: "name") as? String)!
                     self.idadeIdoso = (record?.object(forKey: "age") as? String)!
@@ -51,7 +51,7 @@ class EnterCaretakerViewController: UIViewController {
         }
         operation.fetchRecordsCompletionBlock = { _, error in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription as Any)
             }
         }
         CKContainer.default().sharedCloudDatabase.add(operation)
