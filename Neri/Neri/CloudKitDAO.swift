@@ -26,12 +26,13 @@ public class CloudKitDAO {
         
         let user = CKRecord(recordType: "Elder", zoneID: zoneID)
         
-        user["name"] = usuario.getElderName() as CKRecordValue
-        user["age"] = usuario.getElderAge() as CKRecordValue
+        user["name"] = usuario.getUserName() as CKRecordValue
+        user["age"] = usuario.getUserBirthDay() as CKRecordValue
         user["adress"] = usuario.getElderStreet() as CKRecordValue
         user["city"] = usuario.getElderCity() as CKRecordValue
         user["state"] = usuario.getElderState() as CKRecordValue
-        user["telephone"] = usuario.getElderPhone() as CKRecordValue
+        user["telephone"] = usuario.getUserPhone()
+            as CKRecordValue
         user["cloudID"] = usuario.getUserID() as CKRecordValue?
         
         let modifyRecordsOperation = CKModifyRecordsOperation(recordsToSave: [user], recordIDsToDelete: nil)

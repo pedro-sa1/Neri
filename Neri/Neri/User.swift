@@ -10,16 +10,39 @@ import Foundation
 
 class User {
     
-//    var name: String!
+    var name: String!
     var birthDay: String!   // String format: MM/dd/yyyy
     var phone: String!
     var userID: String!
     
+    func getUserName() -> String {
+        return name
+    }
     
+    func setUserName(name: String) {
+        self.name = name
+    }
+    
+    func getUserBirthDay() -> String {
+        return birthDay
+    }
+    
+    func setUserBirthDay(birthDay: String) {
+        self.birthDay = birthDay
+    }
+    
+    func getUserPhone() -> String {
+        return phone
+    }
+    
+    func setUserPhone(phone: String) {
+        self.phone = phone
+    }
     
     func getUserID() -> String {
         return userID
     }
+    
     func setUserID(id: String) {
         self.userID = id
     }

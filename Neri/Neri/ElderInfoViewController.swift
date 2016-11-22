@@ -68,15 +68,15 @@ class ElderInfoViewController: UIViewController/*, UITextFieldDelegate*/ {
         
         if name.text != nil && age.text != nil && adress.text != nil && city.text != nil && state.text != nil && telephone.text != nil {
             
-            Elder.singleton.setElderName(name: name.text!)
-            Elder.singleton.setElderAge(age: age.text!)
+            Elder.singleton.setUserName(name: name.text!)
+            Elder.singleton.setUserBirthDay(birthDay: age.text!)
             Elder.singleton.setElderStreet(street: adress.text!)
             Elder.singleton.setElderCity(city: city.text!)
             Elder.singleton.setElderState(state: state.text!)
-            Elder.singleton.setElderPhone(phone: telephone.text!)
+            Elder.singleton.setUserPhone(phone: telephone.text!)
             
             
-            CloudKitDAO().loadElderUser(phone: Elder.singleton.getElderPhone()) { (success) in
+            CloudKitDAO().loadElderUser(phone: Elder.singleton.getUserPhone()) { (success) in
                 
                 if success { // success = 0 pessoas; salva
                     

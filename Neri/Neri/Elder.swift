@@ -16,9 +16,7 @@ class Elder: User {
     
     static let singleton = Elder()
     
-    var name = ""
-    var age = ""
-    var careTakerId = ""
+    var caretakerId: String!
     var street: String!
     var houseNumber: Int!
     var city: String!
@@ -40,30 +38,20 @@ class Elder: User {
     
     }
     
-    
-    
-    func getElderName() -> String {
-        return name
+    func getElderHeight() -> String {
+        return height
     }
     
-    func setElderName(name: String) {
-        self.name = name
+    func setElderHeight(height: String) {
+        self.height = height
     }
     
-    func getElderAge() -> String {
-        return age
+    func getElderWeight() -> String {
+        return weight
     }
     
-    func setElderAge(age: String) {
-        self.age = age
-    }
-    
-    func getElderPhone() -> String {
-        return phone
-    }
-    
-    func setElderPhone(phone: String) {
-        self.phone = phone
+    func setElderWeight(weight: String) {
+        self.weight = weight
     }
     
     func getElderStreet() -> String {
@@ -91,11 +79,11 @@ class Elder: User {
     }
     
     func getEldercareTakerId() -> String {
-        return careTakerId
+        return caretakerId
     }
     
     func setEldercareTakerId(id: String) {
-        self.careTakerId = id
+        self.caretakerId = id
     }
     
     // MARK: - Class Functions -
@@ -175,7 +163,7 @@ class Elder: User {
             /* High emergency high heart rate notification */
             return ErrorType.OK
             
-        } else if Double(heartRate) >= Double(maxHeartRate) * 0.80 {
+        } else if Double(heartRate) >= Double(maxHeartRate) * 0.85 {
             
             /* Medium emergency high heart rate notification */
             return ErrorType.OK
@@ -199,6 +187,11 @@ class Elder: User {
             
             /* High emergency low heart rate notification */
             return ErrorType.OK
+            
+        } else if Double(heartRate) < 0 {
+            
+            /* Verification Failed */
+            return ErrorType.VerificationFailed
             
         }
         
