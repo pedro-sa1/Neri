@@ -38,6 +38,7 @@
 		EB8E50EA1DE1F22700177284 /* CloudKitDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8E50E91DE1F22700177284 /* CloudKitDAO.swift */; };
 		EB8E50EE1DE1FB9200177284 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8E50ED1DE1FB9200177284 /* CloudKit.framework */; };
 		EB8E50F01DE206BE00177284 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8E50EF1DE206BE00177284 /* ShareViewController.swift */; };
+		EBADCE681DE4C6D8000C2E0A /* MainElderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBADCE671DE4C6D8000C2E0A /* MainElderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		EB8E50E91DE1F22700177284 /* CloudKitDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitDAO.swift; sourceTree = "<group>"; };
 		EB8E50ED1DE1FB9200177284 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		EB8E50EF1DE206BE00177284 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		EBADCE671DE4C6D8000C2E0A /* MainElderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainElderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +282,7 @@
 				EB8E50E71DE1EEF600177284 /* ElderInfoViewController.swift */,
 				EB8E50EF1DE206BE00177284 /* ShareViewController.swift */,
 				EB57899F1DE21B2000A0FA04 /* EnterCaretakerViewController.swift */,
+				EBADCE671DE4C6D8000C2E0A /* MainElderViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 			files = (
 				EB8E50E81DE1EEF600177284 /* ElderInfoViewController.swift in Sources */,
 				EB8E50F01DE206BE00177284 /* ShareViewController.swift in Sources */,
+				EBADCE681DE4C6D8000C2E0A /* MainElderViewController.swift in Sources */,
 				EB5E7A161DCCF6440073923D /* ViewController.swift in Sources */,
 				65D171041DCCFDC70042E6B3 /* ErrorType.swift in Sources */,
 				E10476A61DDF89ED0056D4C5 /* ProgressHUD.swift in Sources */,

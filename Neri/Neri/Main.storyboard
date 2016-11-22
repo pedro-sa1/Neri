@@ -710,6 +710,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="shareButton" destination="z8S-Pt-OQB" id="GTi-GB-GWK"/>
                         <segue destination="HVc-NE-8Ag" kind="presentation" identifier="go2MainElder" id="CJE-Wm-PPm"/>
                     </connections>
                 </viewController>
@@ -717,10 +718,10 @@
             </objects>
             <point key="canvasLocation" x="380" y="492.50374812593708"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Elder View Controller-->
         <scene sceneID="Eeu-7M-VJX">
             <objects>
-                <viewController storyboardIdentifier="Idoso" id="HVc-NE-8Ag" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Idoso" id="HVc-NE-8Ag" customClass="MainElderViewController" customModule="Neri" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q1a-ek-1ml"/>
                         <viewControllerLayoutGuide type="bottom" id="2Ym-GY-iRd"/>
@@ -948,6 +949,11 @@
                             <constraint firstAttribute="trailing" secondItem="6ji-NY-vbb" secondAttribute="trailing" id="vQs-ok-WH4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ageLabel" destination="tD0-pS-4T1" id="Urt-an-ggx"/>
+                        <outlet property="heartRateLabel" destination="mcw-p4-RXk" id="Dp2-hL-LW7"/>
+                        <outlet property="nameLabel" destination="6TS-vI-g9S" id="1Hb-pO-vhF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oiz-36-Xoi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -976,7 +982,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4K8-B3-aoj" id="EOp-Qx-LzT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T5-ol-uaS">
@@ -997,7 +1003,7 @@
                                                 <rect key="frame" x="0.0" y="68" width="375" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iXa-Up-28I" id="c0N-Fm-9gB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="TMp-nk-v4o">

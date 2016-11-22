@@ -14,6 +14,11 @@ class ShareViewController: UIViewController, UICloudSharingControllerDelegate {
     var currentRecord: CKRecord?
     var privateDatabase: CKDatabase?
     
+    var flag = 0
+    var timer: Timer!
+    
+    @IBOutlet weak var shareButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,8 +27,15 @@ class ShareViewController: UIViewController, UICloudSharingControllerDelegate {
         
         print("CURRENT RECORD É:\n")
         print(currentRecord as Any)
+        
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(ShareViewController.check), userInfo: nil, repeats: true)
     }
     
+    func check() {
+        if self.flag == 1 {
+            performSegue(withIdentifier: "go2MainElder", sender: self)
+        }
+    }
     
     @IBAction func share(_ sender: Any) {
         
@@ -48,6 +60,7 @@ class ShareViewController: UIViewController, UICloudSharingControllerDelegate {
                     print(error?.localizedDescription as Any)
                 }
                 preparationCompletionHandler(share, CKContainer.default(), error)
+                self.flag = 1
             }
             self.privateDatabase?.add(modifyRecordsOperation)
         }
@@ -58,9 +71,9 @@ class ShareViewController: UIViewController, UICloudSharingControllerDelegate {
         
         
         self.present(controller, animated: true)
-        
-       // performSegue(withIdentifier: "go2MainElder", sender: self)
     }
+    
+    
     
     // UICloudSharingController Delegate
     

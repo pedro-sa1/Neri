@@ -19,10 +19,9 @@ class MainCaretakerViewController: UIViewController {
     var nome = ""
     var idade = ""
     var tel = ""
+    
     var recordid: CKRecordID?
-    
     var ctUsers = [CKRecord]()
-    
     var timer: Timer!
     
     override func viewDidLoad() {
