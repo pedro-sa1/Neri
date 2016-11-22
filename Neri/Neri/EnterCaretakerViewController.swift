@@ -18,7 +18,7 @@ class EnterCaretakerViewController: UIViewController {
     var idadeIdoso = String()
     var recordID: CKRecordID?
     
-    var nextVC = MainCareTakerViewController()
+    var nextVC = MainCaretakerViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,7 @@ class EnterCaretakerViewController: UIViewController {
             
             print("PRINTNADO O TELEFONE DA PREPARE FOR SEGUE:\n\(self.tel.text)")
             
-            let vc = segue.destination as! MainCareTakerViewController
+            let vc = segue.destination as! MainCaretakerViewController
             vc.nome = nomeIdoso
             vc.idade = idadeIdoso
             vc.tel = tel.text!

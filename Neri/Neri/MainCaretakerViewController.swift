@@ -1,5 +1,5 @@
 //
-//  MainCareTakerViewController.swift
+//  MainCaretakerViewController.swift
 //  Neri
 //
 //  Created by Pedro de Sá on 20/11/16.
@@ -9,7 +9,7 @@
 import UIKit
 import CloudKit
 
-class MainCareTakerViewController: UIViewController {
+class MainCaretakerViewController: UIViewController {
     
     @IBOutlet weak var elderName: UILabel!
     @IBOutlet weak var elderAge: UILabel!
@@ -36,7 +36,7 @@ class MainCareTakerViewController: UIViewController {
         self.elderName.text = nome
         self.elderAge.text = idade
         
-        timer = Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(MainCareTakerViewController.fetchHeartRate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(MainCaretakerViewController.fetchHeartRate), userInfo: nil, repeats: true)
         
         //fetchHeartRate()
 //        let container = CKContainer(identifier: "iCloud.pedro.Neri")
