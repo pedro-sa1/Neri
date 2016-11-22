@@ -243,7 +243,7 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
             
             // MANDAR PRO CLOUD KIT ESSE DADO: String(Int(value))
             
-            self.fetchRecordZone(heartRate: String(value))
+            self.fetchRecordZone(heartRate: String(Int(value)))
             
         }
         

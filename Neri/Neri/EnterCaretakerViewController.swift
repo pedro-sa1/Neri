@@ -60,8 +60,7 @@ class EnterCaretakerViewController: UIViewController {
     }
     
     
-    
-    @IBAction func `continue`(_ sender: Any) {
+    @IBAction func continue2Main(_ sender: Any) {
         print("\nBUTTON CLICKED")
         print("\n\n\(self.nomeIdoso)\n\n")
         if tel.text != nil {

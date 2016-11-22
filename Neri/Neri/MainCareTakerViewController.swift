@@ -23,43 +23,60 @@ class MainCareTakerViewController: UIViewController {
     
     var ctUsers = [CKRecord]()
     
-    
+    var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-        print("nome do idoso é: \(nome)\n")
+        print("\nnome do idoso é: \(nome)\n")
         print("idade do idoso é: \(idade)\n")
+        print("o id do record é: \(recordid)\n")
         
         self.elderName.text = nome
         self.elderAge.text = idade
         
-        let container = CKContainer(identifier: "iCloud.pedro.Neri")
-        var sharedData = container.sharedCloudDatabase
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(MainCareTakerViewController.fetchHeartRate), userInfo: nil, repeats: true)
         
-        sharedData = CKContainer.default().sharedCloudDatabase
-        sharedData.fetchAllRecordZones { (recordZone, error) in
-            if error != nil {
-                print(error?.localizedDescription)
-            }
-            if let recordZones = recordZone {
-                
-            }
-        }
+        //fetchHeartRate()
+//        let container = CKContainer(identifier: "iCloud.pedro.Neri")
+//        var sharedData = container.sharedCloudDatabase
+//        
+//        sharedData = CKContainer.default().sharedCloudDatabase
+//        sharedData.fetchAllRecordZones { (recordZone, error) in
+//            if error != nil {
+//                print(error?.localizedDescription as Any)
+//            }
+//            if recordZone != nil {
+//                
+//            }
+//        }
     }
     
     
     
     func fetchHeartRate() {
         ctUsers = [CKRecord]()
-        
+        print("CHEGOU NA FETCHHEARTRATE\n")
         let container = CKContainer(identifier: "iCloud.pedro.Neri")
         let sharedData = container.sharedCloudDatabase
         let predicate = NSPredicate(format: "TRUEPREDICATE")
         let query = CKQuery(recordType: "Elder", predicate: predicate)
         
-        //sharedData.fetch(withRecordID: <#T##CKRecordID#>, completionHandler: <#T##(CKRecord?, Error?) -> Void#>)
+        sharedData.fetch(withRecordID: recordid!, completionHandler: { (record, error) in
+            
+            if error != nil {
+                print("ERRO NA MAIN TENTANDO DAR FETCH NO RECORD")
+            } else {
+                print("PRINTANDO O RECORD:\n")
+                print(record)
+                
+                DispatchQueue.main.async() {
+                    self.heartRateLabel.text = record?.object(forKey: "HeartRate") as? String
+                }
+            }
+            
+        })
         
     }
     
