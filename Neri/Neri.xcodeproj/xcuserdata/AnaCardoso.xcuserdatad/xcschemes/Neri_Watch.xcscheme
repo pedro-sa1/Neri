@@ -42,6 +42,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6565831F1DE4CB3600D61ECF"
+               BuildableName = "NeriTests.xctest"
+               BlueprintName = "NeriTests"
+               ReferencedContainer = "container:Neri.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6565832D1DE4CB6B00D61ECF"
+               BuildableName = "NeriUITests.xctest"
+               BlueprintName = "NeriUITests"
+               ReferencedContainer = "container:Neri.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

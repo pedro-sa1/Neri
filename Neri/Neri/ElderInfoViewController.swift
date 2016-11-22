@@ -9,14 +9,18 @@
 import UIKit
 import CloudKit
 
-class ElderInfoViewController: UIViewController {
+class ElderInfoViewController: UIViewController/*, UITextFieldDelegate*/ {
 
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var age: UITextField!
     @IBOutlet weak var adress: UITextField!
     @IBOutlet weak var city: UITextField!
     @IBOutlet weak var state: UITextField!
+    
     @IBOutlet weak var telephone: UITextField!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    var activeField: UITextField?
+    @IBOutlet weak var view2: UIView!
     
     var privateDatabase: CKDatabase?
     var currentRecord: CKRecord?
@@ -46,6 +50,17 @@ class ElderInfoViewController: UIViewController {
                 print("Custom zone created successfuly.\n")
             }
         })
+        
+//        self.name.delegate = self
+//        self.age.delegate = self
+//        self.adress.delegate = self
+//        self.city.delegate = self
+//        self.state.delegate = self
+//        self.telephone.delegate = self
+//        
+////        NotificationCenter.default.addObserver(self, selector: #selector(ElderInfoViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+////        
+////        NotificationCenter.default.addObserver(self, selector: #selector(ElderInfoViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     
@@ -84,6 +99,16 @@ class ElderInfoViewController: UIViewController {
         }
     }
     
+//    func textFieldDidBeginEditing(_ textField: UITextField)
+//    {
+//        activeField = textField
+//    }
+//    
+//    func textFieldDidEndEditing(_ textField: UITextField)
+//    {
+//        activeField = nil
+//    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         name.endEditing(true)
         age.endEditing(true)
@@ -92,4 +117,53 @@ class ElderInfoViewController: UIViewController {
         state.endEditing(true)
         telephone.endEditing(true)
     }
+    
+//    func keyboardWillShow(notification:NSNotification) {
+//        adjustingHeight(show: true, notification: notification)
+//    }
+//    
+//    func keyboardWillHide(notification:NSNotification) {
+//        adjustingHeight(show: false, notification: notification)
+//    }
+//    
+//    func adjustingHeight(show:Bool, notification:NSNotification) {
+//        var userInfo = notification.userInfo!
+//        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+//        let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+//        //let changeInHeight = (keyboardFrame.height) * (show ? 1 : -1)
+//        
+//        var aRect : CGRect = self.view.frame
+//        aRect.size.height -= keyboardFrame.height
+//        print(aRect.size.height)
+//        print(activeField!)
+//        
+//        if activeField != nil
+//        {
+//            print(aRect.size.height)
+//            print(activeField!)
+//            print((activeField!.superview?.convert(activeField!.frame.origin, to: nil))!)
+//            
+//            if (aRect.contains((activeField!.superview?.convert(activeField!.frame.origin, to: nil))!)) != true
+//            {
+//                
+//                UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
+//                    self.bottomConstraint.constant += keyboardFrame.height
+//                })
+//            }
+//        }
+//        
+//        else
+//        {
+//            UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
+//                self.bottomConstraint.constant -= keyboardFrame.height
+//            })
+//        }
+//
+//        
+//    }
+//    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//    }
 }
