@@ -23,8 +23,8 @@ class ViewController: UIViewController {
                 print("DEU MERDA PEGANDO O RECORD ID DO USUARIO!\n")
                 print(error?.localizedDescription as Any)
             }
-            print("O ID DO USUARIO É:\(userRecordID?.recordName)\n")
-            self.fetchID(id: String(describing: userRecordID?.recordName))
+            print("O ID DO USUARIO É:\(userRecordID?.recordName.description)\n")
+            self.fetchID(id: String(describing: userRecordID?.recordName.description))
         }
     }
     
