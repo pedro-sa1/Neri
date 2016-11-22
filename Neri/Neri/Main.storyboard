@@ -1217,10 +1217,10 @@
             </objects>
             <point key="canvasLocation" x="1905" y="490.14084507042253"/>
         </scene>
-        <!--Main Care Taker View Controller-->
+        <!--Main Caretaker View Controller-->
         <scene sceneID="AuB-4s-eKg">
             <objects>
-                <viewController id="CQZ-ph-Z1k" customClass="MainCareTakerViewController" customModule="Neri" sceneMemberID="viewController">
+                <viewController id="CQZ-ph-Z1k" customClass="MainCaretakerViewController" customModule="Neri" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GwT-XT-aWd"/>
                         <viewControllerLayoutGuide type="bottom" id="PvB-mB-LCc"/>
