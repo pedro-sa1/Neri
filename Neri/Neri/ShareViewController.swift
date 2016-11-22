@@ -60,7 +60,7 @@ class ShareViewController: UIViewController, UICloudSharingControllerDelegate {
                     print(error?.localizedDescription as Any)
                 }
                 preparationCompletionHandler(share, CKContainer.default(), error)
-                self.flag = 1
+//                self.flag = 1
             }
             self.privateDatabase?.add(modifyRecordsOperation)
         }
@@ -71,6 +71,7 @@ class ShareViewController: UIViewController, UICloudSharingControllerDelegate {
         
         
         self.present(controller, animated: true)
+        self.flag = 1
     }
     
     

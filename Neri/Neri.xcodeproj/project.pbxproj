@@ -914,6 +914,7 @@
 				656583291DE4CB3600D61ECF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		656583351DE4CB6B00D61ECF /* Build configuration list for PBXNativeTarget "NeriUITests" */ = {
 			isa = XCConfigurationList;
@@ -922,6 +923,7 @@
 				656583371DE4CB6B00D61ECF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		657F7AD21DD3864E000D111B /* Build configuration list for PBXNativeTarget "Neri_Watch Extension" */ = {
 			isa = XCConfigurationList;

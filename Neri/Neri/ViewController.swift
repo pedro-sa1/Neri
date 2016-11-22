@@ -48,7 +48,7 @@ class ViewController: UIViewController {
                 if self.ctUsers.count != 0 {
                     print("VOCÊ JÁ ESTÁ CADASTRADO NO APP!\n")
                     DispatchQueue.main.async() {
-                        self.performSegue(withIdentifier: "xablau", sender: self)
+                       // self.performSegue(withIdentifier: "xablau", sender: self)
                     }
                 }
                 else {
