@@ -47,7 +47,9 @@ class ViewController: UIViewController {
                 print("\nHow many users in cloud: \(self.ctUsers.count)\n")
                 if self.ctUsers.count != 0 {
                     print("VOCÊ JÁ ESTÁ CADASTRADO NO APP!\n")
-                    
+                    DispatchQueue.main.async() {
+                        self.performSegue(withIdentifier: "xablau", sender: self)
+                    }
                 }
                 else {
                     print("USUARIO NOVO!\n")
