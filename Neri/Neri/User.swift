@@ -13,6 +13,16 @@ class User {
 //    var name: String!
     var birthDay: String!   // String format: MM/dd/yyyy
     var phone: String!
+    var userID: String!
+    
+    
+    
+    func getUserID() -> String {
+        return userID
+    }
+    func setUserID(id: String) {
+        self.userID = id
+    }
     
     // MARK: - Class Functions -
     

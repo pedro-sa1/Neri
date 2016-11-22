@@ -25,8 +25,19 @@ class ElderInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         let container = CKContainer.default
         privateDatabase = container().privateCloudDatabase
+        
+        container().fetchUserRecordID { (userRecordID, error) in
+            if error != nil {
+                print("DEU MERDA PEGANDO O RECORD ID DO USUARIO!\n")
+                print(error?.localizedDescription as Any)
+            }
+            print("O ID DO USUARIO É:\(userRecordID?.recordName)\n")
+            Elder.singleton.setUserID(id: String(describing: userRecordID?.recordName))
+        }
+        
         recordZone = CKRecordZone(zoneName: "MedicalRecord")
         privateDatabase?.save(recordZone!, completionHandler: {(recordzone, error) in
             if (error != nil) {
@@ -48,6 +59,7 @@ class ElderInfoViewController: UIViewController {
             Elder.singleton.setElderCity(city: city.text!)
             Elder.singleton.setElderState(state: state.text!)
             Elder.singleton.setElderPhone(phone: telephone.text!)
+            
             
             CloudKitDAO().loadElderUser(phone: Elder.singleton.getElderPhone()) { (success) in
                 

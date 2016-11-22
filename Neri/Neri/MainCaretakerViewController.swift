@@ -13,7 +13,6 @@ class MainCaretakerViewController: UIViewController {
     
     @IBOutlet weak var elderName: UILabel!
     @IBOutlet weak var elderAge: UILabel!
-    
     @IBOutlet weak var heartRateLabel: UILabel!
     
     var nome = ""
@@ -23,6 +22,7 @@ class MainCaretakerViewController: UIViewController {
     var recordid: CKRecordID?
     var ctUsers = [CKRecord]()
     var timer: Timer!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,9 +74,7 @@ class MainCaretakerViewController: UIViewController {
                     self.heartRateLabel.text = record?.object(forKey: "HeartRate") as? String
                 }
             }
-            
         })
-        
     }
     
 }
