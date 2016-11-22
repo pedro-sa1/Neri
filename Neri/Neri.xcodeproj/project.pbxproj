@@ -11,6 +11,8 @@
 		6505FD7F1DDCDAE1003D2A75 /* HeartRateInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505FD7E1DDCDAE1003D2A75 /* HeartRateInterfaceController.swift */; };
 		651AB8841DDFB65D001014E8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651AB8831DDFB65D001014E8 /* HealthKit.framework */; };
 		656583171DE3577E00D61ECF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656583161DE3577E00D61ECF /* Interface.storyboard */; };
+		656583231DE4CB3600D61ECF /* NeriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656583221DE4CB3600D61ECF /* NeriTests.swift */; };
+		656583311DE4CB6B00D61ECF /* NeriUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656583301DE4CB6B00D61ECF /* NeriUITests.swift */; };
 		657F7AB51DD3864E000D111B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657F7AB41DD3864E000D111B /* Assets.xcassets */; };
 		657F7ABC1DD3864E000D111B /* Neri_Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 657F7ABB1DD3864E000D111B /* Neri_Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		657F7AC51DD3864E000D111B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657F7AC41DD3864E000D111B /* ExtensionDelegate.swift */; };
@@ -39,6 +41,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		656583251DE4CB3600D61ECF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB5E7A081DCCF6440073923D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB5E7A0F1DCCF6440073923D;
+			remoteInfo = Neri;
+		};
+		656583331DE4CB6B00D61ECF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB5E7A081DCCF6440073923D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB5E7A0F1DCCF6440073923D;
+			remoteInfo = Neri;
+		};
 		657F7ABD1DD3864E000D111B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EB5E7A081DCCF6440073923D /* Project object */;
@@ -87,6 +103,12 @@
 		651AB8831DDFB65D001014E8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		651AB8851DDFB65D001014E8 /* Neri_Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Neri_Watch Extension.entitlements"; sourceTree = "<group>"; };
 		656583161DE3577E00D61ECF /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
+		656583201DE4CB3600D61ECF /* NeriTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeriTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		656583221DE4CB3600D61ECF /* NeriTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeriTests.swift; sourceTree = "<group>"; };
+		656583241DE4CB3600D61ECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6565832E1DE4CB6B00D61ECF /* NeriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		656583301DE4CB6B00D61ECF /* NeriUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeriUITests.swift; sourceTree = "<group>"; };
+		656583321DE4CB6B00D61ECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		657F7AAF1DD3864E000D111B /* Neri_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neri_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		657F7AB41DD3864E000D111B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		657F7AB61DD3864E000D111B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,6 +142,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6565831D1DE4CB3600D61ECF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6565832B1DE4CB6B00D61ECF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		657F7AB81DD3864E000D111B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +188,24 @@
 				6505FD771DD65690003D2A75 /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		656583211DE4CB3600D61ECF /* NeriTests */ = {
+			isa = PBXGroup;
+			children = (
+				656583221DE4CB3600D61ECF /* NeriTests.swift */,
+				656583241DE4CB3600D61ECF /* Info.plist */,
+			);
+			path = NeriTests;
+			sourceTree = "<group>";
+		};
+		6565832F1DE4CB6B00D61ECF /* NeriUITests */ = {
+			isa = PBXGroup;
+			children = (
+				656583301DE4CB6B00D61ECF /* NeriUITests.swift */,
+				656583321DE4CB6B00D61ECF /* Info.plist */,
+			);
+			path = NeriUITests;
 			sourceTree = "<group>";
 		};
 		657F7AB01DD3864E000D111B /* Neri_Watch */ = {
@@ -246,6 +300,8 @@
 				EB5E7A121DCCF6440073923D /* Neri_iPhone */,
 				657F7AB01DD3864E000D111B /* Neri_Watch */,
 				657F7ABF1DD3864E000D111B /* Neri_Watch Extension */,
+				656583211DE4CB3600D61ECF /* NeriTests */,
+				6565832F1DE4CB6B00D61ECF /* NeriUITests */,
 				EB5E7A111DCCF6440073923D /* Products */,
 				6505FD761DD65690003D2A75 /* Frameworks */,
 			);
@@ -257,6 +313,8 @@
 				EB5E7A101DCCF6440073923D /* Neri.app */,
 				657F7AAF1DD3864E000D111B /* Neri_Watch.app */,
 				657F7ABB1DD3864E000D111B /* Neri_Watch Extension.appex */,
+				656583201DE4CB3600D61ECF /* NeriTests.xctest */,
+				6565832E1DE4CB6B00D61ECF /* NeriUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -276,6 +334,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6565831F1DE4CB3600D61ECF /* NeriTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 656583271DE4CB3600D61ECF /* Build configuration list for PBXNativeTarget "NeriTests" */;
+			buildPhases = (
+				6565831C1DE4CB3600D61ECF /* Sources */,
+				6565831D1DE4CB3600D61ECF /* Frameworks */,
+				6565831E1DE4CB3600D61ECF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				656583261DE4CB3600D61ECF /* PBXTargetDependency */,
+			);
+			name = NeriTests;
+			productName = NeriTests;
+			productReference = 656583201DE4CB3600D61ECF /* NeriTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6565832D1DE4CB6B00D61ECF /* NeriUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 656583351DE4CB6B00D61ECF /* Build configuration list for PBXNativeTarget "NeriUITests" */;
+			buildPhases = (
+				6565832A1DE4CB6B00D61ECF /* Sources */,
+				6565832B1DE4CB6B00D61ECF /* Frameworks */,
+				6565832C1DE4CB6B00D61ECF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				656583341DE4CB6B00D61ECF /* PBXTargetDependency */,
+			);
+			name = NeriUITests;
+			productName = NeriUITests;
+			productReference = 6565832E1DE4CB6B00D61ECF /* NeriUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		657F7AAE1DD3864E000D111B /* Neri_Watch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 657F7AD41DD3864E000D111B /* Build configuration list for PBXNativeTarget "Neri_Watch" */;
@@ -339,6 +433,18 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Pedro de Sá";
 				TargetAttributes = {
+					6565831F1DE4CB3600D61ECF = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 896LGT4P2R;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EB5E7A0F1DCCF6440073923D;
+					};
+					6565832D1DE4CB6B00D61ECF = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 896LGT4P2R;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EB5E7A0F1DCCF6440073923D;
+					};
 					657F7AAE1DD3864E000D111B = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 92E4YSM59Z;
@@ -398,11 +504,27 @@
 				EB5E7A0F1DCCF6440073923D /* Neri */,
 				657F7AAE1DD3864E000D111B /* Neri_Watch */,
 				657F7ABA1DD3864E000D111B /* Neri_Watch Extension */,
+				6565831F1DE4CB3600D61ECF /* NeriTests */,
+				6565832D1DE4CB6B00D61ECF /* NeriUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6565831E1DE4CB3600D61ECF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6565832C1DE4CB6B00D61ECF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		657F7AAD1DD3864E000D111B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -433,6 +555,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6565831C1DE4CB3600D61ECF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				656583231DE4CB3600D61ECF /* NeriTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6565832A1DE4CB6B00D61ECF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				656583311DE4CB6B00D61ECF /* NeriUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		657F7AB71DD3864E000D111B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -466,6 +604,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		656583261DE4CB3600D61ECF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB5E7A0F1DCCF6440073923D /* Neri */;
+			targetProxy = 656583251DE4CB3600D61ECF /* PBXContainerItemProxy */;
+		};
+		656583341DE4CB6B00D61ECF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB5E7A0F1DCCF6440073923D /* Neri */;
+			targetProxy = 656583331DE4CB6B00D61ECF /* PBXContainerItemProxy */;
+		};
 		657F7ABE1DD3864E000D111B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 657F7ABA1DD3864E000D111B /* Neri_Watch Extension */;
@@ -490,6 +638,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		656583281DE4CB3600D61ECF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 896LGT4P2R;
+				INFOPLIST_FILE = NeriTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielBendia.NeriTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Neri.app/Neri";
+			};
+			name = Debug;
+		};
+		656583291DE4CB3600D61ECF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 896LGT4P2R;
+				INFOPLIST_FILE = NeriTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielBendia.NeriTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Neri.app/Neri";
+			};
+			name = Release;
+		};
+		656583361DE4CB6B00D61ECF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 896LGT4P2R;
+				INFOPLIST_FILE = NeriUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielBendia.NeriUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Neri;
+			};
+			name = Debug;
+		};
+		656583371DE4CB6B00D61ECF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 896LGT4P2R;
+				INFOPLIST_FILE = NeriUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielBendia.NeriUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Neri;
+			};
+			name = Release;
+		};
 		657F7ACE1DD3864E000D111B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -697,6 +903,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		656583271DE4CB3600D61ECF /* Build configuration list for PBXNativeTarget "NeriTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				656583281DE4CB3600D61ECF /* Debug */,
+				656583291DE4CB3600D61ECF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		656583351DE4CB6B00D61ECF /* Build configuration list for PBXNativeTarget "NeriUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				656583361DE4CB6B00D61ECF /* Debug */,
+				656583371DE4CB6B00D61ECF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		657F7AD21DD3864E000D111B /* Build configuration list for PBXNativeTarget "Neri_Watch Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
