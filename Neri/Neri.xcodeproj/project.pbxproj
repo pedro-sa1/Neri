@@ -26,7 +26,6 @@
 		E10476A61DDF89ED0056D4C5 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10476A51DDF89ED0056D4C5 /* ProgressHUD.swift */; };
 		E10476A81DDF8A900056D4C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10476A71DDF8A900056D4C5 /* Main.storyboard */; };
 		E10476AA1DDF8EA70056D4C5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10476A91DDF8EA70056D4C5 /* GradientView.swift */; };
-		E1278E521DE5017000FD54A1 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1278E511DE5017000FD54A1 /* KeyboardLayoutConstraint.swift */; };
 		EB5789A01DE21B2000A0FA04 /* EnterCaretakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57899F1DE21B2000A0FA04 /* EnterCaretakerViewController.swift */; };
 		EB5789A21DE221DA00A0FA04 /* MainCaretakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5789A11DE221DA00A0FA04 /* MainCaretakerViewController.swift */; };
 		EB5789A41DE22E0200A0FA04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5789A31DE22E0200A0FA04 /* MapKit.framework */; };
@@ -127,7 +126,6 @@
 		E10476A51DDF89ED0056D4C5 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		E10476A71DDF8A900056D4C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E10476A91DDF8EA70056D4C5 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		E1278E511DE5017000FD54A1 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		EB57899F1DE21B2000A0FA04 /* EnterCaretakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterCaretakerViewController.swift; sourceTree = "<group>"; };
 		EB5789A11DE221DA00A0FA04 /* MainCaretakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCaretakerViewController.swift; sourceTree = "<group>"; };
 		EB5789A31DE22E0200A0FA04 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -268,7 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				E10476A51DDF89ED0056D4C5 /* ProgressHUD.swift */,
-				E1278E511DE5017000FD54A1 /* KeyboardLayoutConstraint.swift */,
 				E10476A91DDF8EA70056D4C5 /* GradientView.swift */,
 				E10476A71DDF8A900056D4C5 /* Main.storyboard */,
 				EB5E7A1C1DCCF6440073923D /* LaunchScreen.storyboard */,
@@ -599,7 +596,6 @@
 				E10476A61DDF89ED0056D4C5 /* ProgressHUD.swift in Sources */,
 				EB5E7A141DCCF6440073923D /* AppDelegate.swift in Sources */,
 				65D171021DCCFAE90042E6B3 /* User.swift in Sources */,
-				E1278E521DE5017000FD54A1 /* KeyboardLayoutConstraint.swift in Sources */,
 				E10476AA1DDF8EA70056D4C5 /* GradientView.swift in Sources */,
 				EB5789A21DE221DA00A0FA04 /* MainCaretakerViewController.swift in Sources */,
 				EB5789A01DE21B2000A0FA04 /* EnterCaretakerViewController.swift in Sources */,

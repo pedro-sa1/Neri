@@ -100,16 +100,6 @@ class ElderInfoViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-//    func textFieldDidBeginEditing(_ textField: UITextField)
-//    {
-//        activeField = textField
-//    }
-//    
-//    func textFieldDidEndEditing(_ textField: UITextField)
-//    {
-//        activeField = nil
-//    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         name.endEditing(true)
         age.endEditing(true)
@@ -122,7 +112,7 @@ class ElderInfoViewController: UIViewController, UITextFieldDelegate {
     func keyboardWillShow(notification:NSNotification) {
         
         guard let userInfo = notification.userInfo else { return }
-        guard let beginKeyboardFrame: CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue  else { return }
+        guard let _: CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue  else { return }
         guard let endKeyboardFrame: CGRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue  else { return }
         guard let activeTextField = self.activeTextField else { return }
         guard let activeTextFieldFrame = activeTextField.superview?.convert(activeTextField.frame, to: nil)else { return }
@@ -139,45 +129,5 @@ class ElderInfoViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.activeTextField = textField
     }
-//
-//    func adjustingHeight(show:Bool, notification:NSNotification) {
-//        var userInfo = notification.userInfo!
-//        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-//        let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
-//        //let changeInHeight = (keyboardFrame.height) * (show ? 1 : -1)
-//        
-//        var aRect : CGRect = self.view.frame
-//        aRect.size.height -= keyboardFrame.height
-//        print(aRect.size.height)
-//        print(activeField!)
-//        
-//        if activeField != nil
-//        {
-//            print(aRect.size.height)
-//            print(activeField!)
-//            print((activeField!.superview?.convert(activeField!.frame.origin, to: nil))!)
-//            
-//            if (aRect.contains((activeField!.superview?.convert(activeField!.frame.origin, to: nil))!)) != true
-//            {
-//                
-//                UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
-//                    self.bottomConstraint.constant += keyboardFrame.height
-//                })
-//            }
-//        }
-//        
-//        else
-//        {
-//            UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
-//                self.bottomConstraint.constant -= keyboardFrame.height
-//            })
-//        }
-//
-//        
-//    }
-//    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-//    }
+
 }

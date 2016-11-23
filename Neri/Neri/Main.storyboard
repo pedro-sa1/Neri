@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CRW-cm-xqe">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CRW-cm-xqe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -863,8 +863,6 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="QWP-Qj-kdU" firstAttribute="centerX" secondItem="vpy-8V-4if" secondAttribute="centerX" id="21K-DI-x82"/>
-                                            <constraint firstAttribute="trailing" secondItem="QWP-Qj-kdU" secondAttribute="trailing" constant="30" id="2z6-fH-bhM"/>
-                                            <constraint firstItem="QWP-Qj-kdU" firstAttribute="leading" secondItem="vpy-8V-4if" secondAttribute="leading" constant="30" id="KM6-pO-oEX"/>
                                             <constraint firstItem="yWH-y8-fcN" firstAttribute="top" secondItem="mcw-p4-RXk" secondAttribute="bottom" constant="1" id="Nn0-su-gn6"/>
                                             <constraint firstItem="QWP-Qj-kdU" firstAttribute="centerY" secondItem="vpy-8V-4if" secondAttribute="centerY" id="Zuy-Rb-s0B"/>
                                             <constraint firstItem="mcw-p4-RXk" firstAttribute="centerX" secondItem="vpy-8V-4if" secondAttribute="centerX" id="cCE-YZ-Wcf"/>
@@ -1001,9 +999,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4K8-B3-aoj" id="EOp-Qx-LzT">
-
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
-
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T5-ol-uaS">
@@ -1024,9 +1020,7 @@
                                                 <rect key="frame" x="0.0" y="68" width="375" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iXa-Up-28I" id="c0N-Fm-9gB">
-
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
-
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="TMp-nk-v4o">
@@ -1159,7 +1153,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" text="Rua Marquês de São Vicente, 255" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPI-T5-1fY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" text="Rua Marquês de São Vicente, 255" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="GPI-T5-1fY">
                                         <rect key="frame" x="84" y="263" width="275" height="21.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
