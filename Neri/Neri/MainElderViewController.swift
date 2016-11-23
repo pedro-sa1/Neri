@@ -37,13 +37,14 @@ class MainElderViewController: UIViewController {
         
         fetchRecordZone()
         
-        timer = Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(MainCaretakerViewController.fetchHeartRate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(MainElderViewController.fetchRecordZone), userInfo: nil, repeats: true)
         
         
     }
     
     func fetchHeartRate() {
         DispatchQueue.main.async() {
+            print("\nMUDANDO A LABEL DO BATIMENTO CARDÍACO!!\n")
             self.heartRateLabel.text = self.fetchedRecord?.value(forKey: "HeartRate") as! String?
         }
     }
@@ -112,6 +113,7 @@ class MainElderViewController: UIViewController {
                                 DispatchQueue.main.async() {
                                     self.nameLabel.text = self.fetchedRecord?.object(forKey: "name") as? String
                                     self.ageLabel.text = self.fetchedRecord?.object(forKey: "age") as? String
+                                    self.heartRateLabel.text = self.fetchedRecord?.object(forKey: "HeartRate") as? String
                                 }
                             }
                         })
