@@ -242,7 +242,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6hI-T9-VvS">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6hI-T9-VvS">
                                                         <rect key="frame" x="194.5" y="117" width="164" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -279,7 +279,6 @@
                                                     <constraint firstAttribute="trailing" secondItem="eEq-Pp-BrU" secondAttribute="trailing" constant="16" id="KqX-BC-lcH"/>
                                                     <constraint firstAttribute="trailing" secondItem="eEq-Pp-BrU" secondAttribute="trailing" constant="16" id="MoY-i4-vYU"/>
                                                     <constraint firstItem="vfV-PG-03o" firstAttribute="top" secondItem="eEq-Pp-BrU" secondAttribute="bottom" constant="40" id="OUW-8W-9VJ"/>
-                                                    <constraint firstItem="Asv-oP-kc2" firstAttribute="top" secondItem="Aog-YF-CzH" secondAttribute="bottom" constant="16" id="PPk-ZA-kbD"/>
                                                     <constraint firstItem="eEq-Pp-BrU" firstAttribute="top" secondItem="Asv-oP-kc2" secondAttribute="bottom" constant="16" id="RSL-Qz-05u"/>
                                                     <constraint firstItem="eEq-Pp-BrU" firstAttribute="top" secondItem="q7y-0K-u7P" secondAttribute="bottom" constant="16" id="Rdf-li-5sF"/>
                                                     <constraint firstItem="Asv-oP-kc2" firstAttribute="leading" secondItem="q7y-0K-u7P" secondAttribute="trailing" constant="14" id="VM0-Pe-5C4"/>
@@ -296,6 +295,7 @@
                                                     <constraint firstItem="6hI-T9-VvS" firstAttribute="width" secondItem="GDm-OM-biQ" secondAttribute="width" id="oQ9-0V-sUd"/>
                                                     <constraint firstItem="VO8-vl-5M4" firstAttribute="leading" secondItem="UaN-Ms-2HL" secondAttribute="leading" constant="16" id="qTN-mb-1Oc"/>
                                                     <constraint firstItem="GDm-OM-biQ" firstAttribute="leading" secondItem="UaN-Ms-2HL" secondAttribute="leading" constant="16" id="ugX-Mk-8b7"/>
+                                                    <constraint firstItem="Aog-YF-CzH" firstAttribute="top" secondItem="GDm-OM-biQ" secondAttribute="bottom" constant="16" id="w0V-Fm-9EI"/>
                                                     <constraint firstItem="zcd-m1-u4m" firstAttribute="top" secondItem="eEq-Pp-BrU" secondAttribute="bottom" constant="40" id="wEt-gC-Hwg"/>
                                                     <constraint firstItem="eEq-Pp-BrU" firstAttribute="leading" secondItem="UaN-Ms-2HL" secondAttribute="leading" constant="16" id="y2f-OV-G46"/>
                                                     <constraint firstItem="1VK-zS-sOn" firstAttribute="top" secondItem="UaN-Ms-2HL" secondAttribute="top" constant="25" id="zlM-3Y-O85"/>
@@ -1001,7 +1001,9 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4K8-B3-aoj" id="EOp-Qx-LzT">
+
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T5-ol-uaS">
@@ -1022,7 +1024,9 @@
                                                 <rect key="frame" x="0.0" y="68" width="375" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iXa-Up-28I" id="c0N-Fm-9gB">
+
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="TMp-nk-v4o">

@@ -9,7 +9,7 @@
 import UIKit
 import CloudKit
 
-class ElderInfoViewController: UIViewController/*, UITextFieldDelegate*/ {
+class ElderInfoViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var age: UITextField!
@@ -19,12 +19,13 @@ class ElderInfoViewController: UIViewController/*, UITextFieldDelegate*/ {
     
     @IBOutlet weak var telephone: UITextField!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    var activeField: UITextField?
     @IBOutlet weak var view2: UIView!
     
     var privateDatabase: CKDatabase?
     var currentRecord: CKRecord?
     var recordZone: CKRecordZone?
+    
+    var activeTextField: UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,16 +52,16 @@ class ElderInfoViewController: UIViewController/*, UITextFieldDelegate*/ {
             }
         })
         
-//        self.name.delegate = self
-//        self.age.delegate = self
-//        self.adress.delegate = self
-//        self.city.delegate = self
-//        self.state.delegate = self
-//        self.telephone.delegate = self
-//        
-////        NotificationCenter.default.addObserver(self, selector: #selector(ElderInfoViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-////        
-////        NotificationCenter.default.addObserver(self, selector: #selector(ElderInfoViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        self.name.delegate = self
+        self.age.delegate = self
+        self.adress.delegate = self
+        self.city.delegate = self
+        self.state.delegate = self
+        self.telephone.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ElderInfoViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ElderInfoViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     
@@ -118,14 +119,27 @@ class ElderInfoViewController: UIViewController/*, UITextFieldDelegate*/ {
         telephone.endEditing(true)
     }
     
-//    func keyboardWillShow(notification:NSNotification) {
-//        adjustingHeight(show: true, notification: notification)
-//    }
-//    
-//    func keyboardWillHide(notification:NSNotification) {
-//        adjustingHeight(show: false, notification: notification)
-//    }
-//    
+    func keyboardWillShow(notification:NSNotification) {
+        
+        guard let userInfo = notification.userInfo else { return }
+        guard let beginKeyboardFrame: CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue  else { return }
+        guard let endKeyboardFrame: CGRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue  else { return }
+        guard let activeTextField = self.activeTextField else { return }
+        guard let activeTextFieldFrame = activeTextField.superview?.convert(activeTextField.frame, to: nil)else { return }
+        
+        if activeTextFieldFrame.maxY > endKeyboardFrame.origin.y {
+            self.bottomConstraint.constant = (activeTextFieldFrame.maxY - endKeyboardFrame.origin.y) + 8
+        }
+    }
+    
+    func keyboardWillHide(notification:NSNotification) {
+        self.bottomConstraint.constant = 0
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.activeTextField = textField
+    }
+//
 //    func adjustingHeight(show:Bool, notification:NSNotification) {
 //        var userInfo = notification.userInfo!
 //        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
