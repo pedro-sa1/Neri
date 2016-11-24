@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var vc = EnterCaretakerViewController()
     
-    
     // Sharing:
     func application(_ application: UIApplication, userDidAcceptCloudKitShareWith cloudKitShareMetadata: CKShareMetadata) {
         
@@ -46,9 +45,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CKContainer(identifier: cloudKitShareMetadata.containerIdentifier).add(acceptSharesOperation)
     }
     
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let notificationManager = NotificationManager()
+        notificationManager.registerForNotifications()
+        
         return true
     }
 
@@ -83,7 +85,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
     }
-
 
 }
 

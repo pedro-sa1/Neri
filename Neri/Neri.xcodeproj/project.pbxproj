@@ -13,6 +13,12 @@
 		656583171DE3577E00D61ECF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656583161DE3577E00D61ECF /* Interface.storyboard */; };
 		656583231DE4CB3600D61ECF /* NeriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656583221DE4CB3600D61ECF /* NeriTests.swift */; };
 		656583311DE4CB6B00D61ECF /* NeriUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656583301DE4CB6B00D61ECF /* NeriUITests.swift */; };
+		656583391DE5DFEB00D61ECF /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656583381DE5DFEB00D61ECF /* NotificationManager.swift */; };
+		656583401DE5FCE800D61ECF /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6565833F1DE5FCE800D61ECF /* UserNotifications.framework */; };
+		656583421DE5FCE800D61ECF /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656583411DE5FCE800D61ECF /* UserNotificationsUI.framework */; };
+		656583451DE5FCE800D61ECF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656583441DE5FCE800D61ECF /* NotificationViewController.swift */; };
+		656583481DE5FCE800D61ECF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656583461DE5FCE800D61ECF /* MainInterface.storyboard */; };
+		6565834C1DE5FCE800D61ECF /* Neri_CustomNotification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6565833E1DE5FCE800D61ECF /* Neri_CustomNotification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		657F7AB51DD3864E000D111B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657F7AB41DD3864E000D111B /* Assets.xcassets */; };
 		657F7ABC1DD3864E000D111B /* Neri_Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 657F7ABB1DD3864E000D111B /* Neri_Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		657F7AC51DD3864E000D111B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657F7AC41DD3864E000D111B /* ExtensionDelegate.swift */; };
@@ -56,6 +62,13 @@
 			remoteGlobalIDString = EB5E7A0F1DCCF6440073923D;
 			remoteInfo = Neri;
 		};
+		6565834A1DE5FCE800D61ECF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB5E7A081DCCF6440073923D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6565833D1DE5FCE800D61ECF;
+			remoteInfo = Neri_CustomNotification;
+		};
 		657F7ABD1DD3864E000D111B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EB5E7A081DCCF6440073923D /* Project object */;
@@ -73,6 +86,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		656583501DE5FCE800D61ECF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6565834C1DE5FCE800D61ECF /* Neri_CustomNotification.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		657F7AD31DD3864E000D111B /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,6 +134,13 @@
 		6565832E1DE4CB6B00D61ECF /* NeriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		656583301DE4CB6B00D61ECF /* NeriUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeriUITests.swift; sourceTree = "<group>"; };
 		656583321DE4CB6B00D61ECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		656583381DE5DFEB00D61ECF /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = ../Neri/NotificationManager.swift; sourceTree = "<group>"; };
+		6565833E1DE5FCE800D61ECF /* Neri_CustomNotification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Neri_CustomNotification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6565833F1DE5FCE800D61ECF /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		656583411DE5FCE800D61ECF /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		656583441DE5FCE800D61ECF /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		656583471DE5FCE800D61ECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		656583491DE5FCE800D61ECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		657F7AAF1DD3864E000D111B /* Neri_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neri_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		657F7AB41DD3864E000D111B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		657F7AB61DD3864E000D111B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,6 +189,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6565833B1DE5FCE800D61ECF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				656583421DE5FCE800D61ECF /* UserNotificationsUI.framework in Frameworks */,
+				656583401DE5FCE800D61ECF /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		657F7AB81DD3864E000D111B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -188,6 +228,8 @@
 				EB8E50ED1DE1FB9200177284 /* CloudKit.framework */,
 				651AB8831DDFB65D001014E8 /* HealthKit.framework */,
 				6505FD771DD65690003D2A75 /* HealthKit.framework */,
+				6565833F1DE5FCE800D61ECF /* UserNotifications.framework */,
+				656583411DE5FCE800D61ECF /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -208,6 +250,17 @@
 				656583321DE4CB6B00D61ECF /* Info.plist */,
 			);
 			path = NeriUITests;
+			sourceTree = "<group>";
+		};
+		656583431DE5FCE800D61ECF /* Neri_CustomNotification */ = {
+			isa = PBXGroup;
+			children = (
+				656583381DE5DFEB00D61ECF /* NotificationManager.swift */,
+				656583441DE5FCE800D61ECF /* NotificationViewController.swift */,
+				656583461DE5FCE800D61ECF /* MainInterface.storyboard */,
+				656583491DE5FCE800D61ECF /* Info.plist */,
+			);
+			path = Neri_CustomNotification;
 			sourceTree = "<group>";
 		};
 		657F7AB01DD3864E000D111B /* Neri_Watch */ = {
@@ -303,6 +356,7 @@
 				EB5E7A121DCCF6440073923D /* Neri_iPhone */,
 				657F7AB01DD3864E000D111B /* Neri_Watch */,
 				657F7ABF1DD3864E000D111B /* Neri_Watch Extension */,
+				656583431DE5FCE800D61ECF /* Neri_CustomNotification */,
 				656583211DE4CB3600D61ECF /* NeriTests */,
 				6565832F1DE4CB6B00D61ECF /* NeriUITests */,
 				EB5E7A111DCCF6440073923D /* Products */,
@@ -318,6 +372,7 @@
 				657F7ABB1DD3864E000D111B /* Neri_Watch Extension.appex */,
 				656583201DE4CB3600D61ECF /* NeriTests.xctest */,
 				6565832E1DE4CB6B00D61ECF /* NeriUITests.xctest */,
+				6565833E1DE5FCE800D61ECF /* Neri_CustomNotification.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -373,6 +428,23 @@
 			productReference = 6565832E1DE4CB6B00D61ECF /* NeriUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		6565833D1DE5FCE800D61ECF /* Neri_CustomNotification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6565834D1DE5FCE800D61ECF /* Build configuration list for PBXNativeTarget "Neri_CustomNotification" */;
+			buildPhases = (
+				6565833A1DE5FCE800D61ECF /* Sources */,
+				6565833B1DE5FCE800D61ECF /* Frameworks */,
+				6565833C1DE5FCE800D61ECF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Neri_CustomNotification;
+			productName = Neri_CustomNotification;
+			productReference = 6565833E1DE5FCE800D61ECF /* Neri_CustomNotification.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		657F7AAE1DD3864E000D111B /* Neri_Watch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 657F7AD41DD3864E000D111B /* Build configuration list for PBXNativeTarget "Neri_Watch" */;
@@ -415,11 +487,13 @@
 				EB5E7A0D1DCCF6440073923D /* Frameworks */,
 				EB5E7A0E1DCCF6440073923D /* Resources */,
 				657F7AD51DD3864E000D111B /* Embed Watch Content */,
+				656583501DE5FCE800D61ECF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				657F7ACC1DD3864E000D111B /* PBXTargetDependency */,
+				6565834B1DE5FCE800D61ECF /* PBXTargetDependency */,
 			);
 			name = Neri;
 			productName = Neri;
@@ -447,6 +521,16 @@
 						DevelopmentTeam = 896LGT4P2R;
 						ProvisioningStyle = Automatic;
 						TestTargetID = EB5E7A0F1DCCF6440073923D;
+					};
+					6565833D1DE5FCE800D61ECF = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 92E4YSM59Z;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					657F7AAE1DD3864E000D111B = {
 						CreatedOnToolsVersion = 8.1;
@@ -509,6 +593,7 @@
 				657F7ABA1DD3864E000D111B /* Neri_Watch Extension */,
 				6565831F1DE4CB3600D61ECF /* NeriTests */,
 				6565832D1DE4CB6B00D61ECF /* NeriUITests */,
+				6565833D1DE5FCE800D61ECF /* Neri_CustomNotification */,
 			);
 		};
 /* End PBXProject section */
@@ -525,6 +610,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6565833C1DE5FCE800D61ECF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				656583481DE5FCE800D61ECF /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +667,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6565833A1DE5FCE800D61ECF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				656583451DE5FCE800D61ECF /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		657F7AB71DD3864E000D111B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -594,6 +695,7 @@
 				EB5E7A161DCCF6440073923D /* ViewController.swift in Sources */,
 				65D171041DCCFDC70042E6B3 /* ErrorType.swift in Sources */,
 				E10476A61DDF89ED0056D4C5 /* ProgressHUD.swift in Sources */,
+				656583391DE5DFEB00D61ECF /* NotificationManager.swift in Sources */,
 				EB5E7A141DCCF6440073923D /* AppDelegate.swift in Sources */,
 				65D171021DCCFAE90042E6B3 /* User.swift in Sources */,
 				E10476AA1DDF8EA70056D4C5 /* GradientView.swift in Sources */,
@@ -618,6 +720,11 @@
 			target = EB5E7A0F1DCCF6440073923D /* Neri */;
 			targetProxy = 656583331DE4CB6B00D61ECF /* PBXContainerItemProxy */;
 		};
+		6565834B1DE5FCE800D61ECF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6565833D1DE5FCE800D61ECF /* Neri_CustomNotification */;
+			targetProxy = 6565834A1DE5FCE800D61ECF /* PBXContainerItemProxy */;
+		};
 		657F7ABE1DD3864E000D111B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 657F7ABA1DD3864E000D111B /* Neri_Watch Extension */;
@@ -631,6 +738,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		656583461DE5FCE800D61ECF /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				656583471DE5FCE800D61ECF /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		EB5E7A1C1DCCF6440073923D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -697,6 +812,34 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Neri;
+			};
+			name = Release;
+		};
+		6565834E1DE5FCE800D61ECF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 92E4YSM59Z;
+				INFOPLIST_FILE = Neri_CustomNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pedro.Neri.Neri-CustomNotification";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6565834F1DE5FCE800D61ECF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 92E4YSM59Z;
+				INFOPLIST_FILE = Neri_CustomNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pedro.Neri.Neri-CustomNotification";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -877,6 +1020,7 @@
 		EB5E7A231DCCF6440073923D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Neri/Neri.entitlements;
 				DEVELOPMENT_TEAM = 92E4YSM59Z;
@@ -892,6 +1036,7 @@
 		EB5E7A241DCCF6440073923D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Neri/Neri.entitlements;
 				DEVELOPMENT_TEAM = 92E4YSM59Z;
@@ -924,6 +1069,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		6565834D1DE5FCE800D61ECF /* Build configuration list for PBXNativeTarget "Neri_CustomNotification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6565834E1DE5FCE800D61ECF /* Debug */,
+				6565834F1DE5FCE800D61ECF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		657F7AD21DD3864E000D111B /* Build configuration list for PBXNativeTarget "Neri_Watch Extension" */ = {
 			isa = XCConfigurationList;

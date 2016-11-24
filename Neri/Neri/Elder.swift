@@ -88,6 +88,14 @@ class Elder: User {
     
     // MARK: - Class Functions -
     
+    /**
+     
+     * Caretaker phone must exist
+     * If the phone is for another region (country or state), it has to be complete
+     * In case the call can't be completed the app shows an alert with the error message
+     
+     */
+    
     func callCaretaker(caretakerPhone: String) -> ErrorType {
         
         /*******************************************************
@@ -153,6 +161,15 @@ class Elder: User {
          
          * Ajeitar função e comentários
          
+         * Evaluate current Heart Rate based on a maximum calculated using the users age
+         * Max Heart Rate: 220 - age
+         * Low Heart Rates: Values below 45 BPM
+         * Send Low or High Heart Rate notification based on the emergency level
+            * Low Level: Push Notification to the main caretaker
+            * Medium Level: Push Notification to all caretakers and text message to the main caretaker
+            * High Level: Push Notification, e-mail and text message to all caretakers
+         * If is there any error, the app shows an alert with an error message
+         
          */
         
         let age = self.calculateAge()
@@ -160,37 +177,84 @@ class Elder: User {
         
         if heartRate >= maxHeartRate {
             
-            /* High emergency high heart rate notification */
+            /* 
+             * High emergency high heart rate notification 
+             * Every type of notification (COMPLETAR PORQUE SO TEM PUSH NOTIFICATION)
+             */
+            
+            let notificationManager = NotificationManager()
+            notificationManager.registerForNotifications()
+            notificationManager.setupAndGenerateLocalHighHeartRateNotification(currentHeartRate: heartRate)
+            
             return ErrorType.OK
             
         } else if Double(heartRate) >= Double(maxHeartRate) * 0.85 {
             
-            /* Medium emergency high heart rate notification */
+            /* 
+             * Medium emergency high heart rate notification
+             * Push notification and SMS
+             */
+            
+            let notificationManager = NotificationManager()
+            notificationManager.registerForNotifications()
+            notificationManager.setupAndGenerateLocalHighHeartRateNotification(currentHeartRate: heartRate)
+            
             return ErrorType.OK
             
         } else if Double(heartRate) >= Double(maxHeartRate) * 0.75 {
             
-            /* Low emergency high heart rate notification */
+            /*
+             * Low emergency high heart rate notification
+             */
+            
+            let notificationManager = NotificationManager()
+            notificationManager.registerForNotifications()
+            notificationManager.setupAndGenerateLocalHighHeartRateNotification(currentHeartRate: heartRate)
+            
             return ErrorType.OK
             
-        } else if Double(heartRate) <= 50 {
+        } else if Double(heartRate) <= 45 {
             
-            /* Low emergency low heart rate notification */
+            /*
+             * Low emergency low heart rate notification
+             */
+            
+            let notificationManager = NotificationManager()
+            notificationManager.registerForNotifications()
+            notificationManager.setupAndGenerateLocalLowHeartRateNotification(currentHeartRate: heartRate)
+            
             return ErrorType.OK
             
         } else if Double(heartRate) <= 40 {
             
-            /* Medium emergency low heart rate notification */
+            /*
+             * Medium emergency low heart rate notification
+             * Push notification and SMS (COMPLETAR PORQUE SO TEM PUSH NOTIFICATION)
+             */
+            
+            let notificationManager = NotificationManager()
+            notificationManager.registerForNotifications()
+            notificationManager.setupAndGenerateLocalHighHeartRateNotification(currentHeartRate: heartRate)
+            
             return ErrorType.OK
             
         } else if Double(heartRate) <= 30 {
             
-            /* High emergency low heart rate notification */
+            /*
+             * High emergency low heart rate notification
+             * Every type of notification (COMPLETAR PORQUE SO TEM PUSH NOTIFICATION)
+             */
+            
+            let notificationManager = NotificationManager()
+            notificationManager.registerForNotifications()
+            notificationManager.setupAndGenerateLocalLowHeartRateNotification(currentHeartRate: heartRate)
+            
             return ErrorType.OK
             
         } else if Double(heartRate) < 0 {
             
             /* Verification Failed */
+            
             return ErrorType.VerificationFailed
             
         }
@@ -199,67 +263,67 @@ class Elder: User {
         
     }
     
-    func sendLowHeartRateNotification(level: String) -> ErrorType {
-        
-        /*******************************************************
-         **                                                   **
-         **         SEND LOW HEARTRATE NOTIFICATION           **
-         **                                                   **
-         *******************************************************/
-        
-        /*
-         
-         * Send Low Heart Rate notification based on the emergency level
-            * Low Level: Push Notification to the main caretaker
-            * Medium Level: Push Notification to all caretakers and text message to the main caretaker
-            * High Level: Push Notification, e-mail and text message to all caretakers
-         * If is there any error, the app shows an alert with an error message
-         
-         */
-        
-        return ErrorType.OK
-        
-    }
-    
-    func sendHighHeartRateNotification(level: String) -> ErrorType {
-        
-        /*******************************************************
-         **                                                   **
-         **         SEND HIGH HEARTRATE NOTIFICATION          **
-         **                                                   **
-         *******************************************************/
-        
-        /*
-         
-         * Send High Heart Rate notification based on the emergency level
-            * Low Level: Push Notification to the main caretaker
-            * Medium Level: Push Notification to all caretakers and text message to the main caretaker
-            * High Level: Push Notification, e-mail and text message to all caretakers
-         * If is there any error, the app shows an alert with an error message
-         
-         */
-        
-        return ErrorType.OK
-        
-    }
-    
-    func sendFallNotification(level: String) -> ErrorType {
-        
-        /*******************************************************
-         **                                                   **
-         **              SEND FALL NOTIFICATION               **
-         **                                                   **
-         *******************************************************/
-        
-        /*
-         
-         *
-         
-         */
-        
-        return ErrorType.OK
-        
-    }
+//    func sendLowHeartRateNotification(level: String) -> ErrorType {
+//        
+//        /*******************************************************
+//         **                                                   **
+//         **         SEND LOW HEARTRATE NOTIFICATION           **
+//         **                                                   **
+//         *******************************************************/
+//        
+//        /*
+//         
+//         * Send Low Heart Rate notification based on the emergency level
+//            * Low Level: Push Notification to the main caretaker
+//            * Medium Level: Push Notification to all caretakers and text message to the main caretaker
+//            * High Level: Push Notification, e-mail and text message to all caretakers
+//         * If is there any error, the app shows an alert with an error message
+//         
+//         */
+//        
+//        return ErrorType.OK
+//        
+//    }
+//    
+//    func sendHighHeartRateNotification(level: String) -> ErrorType {
+//        
+//        /*******************************************************
+//         **                                                   **
+//         **         SEND HIGH HEARTRATE NOTIFICATION          **
+//         **                                                   **
+//         *******************************************************/
+//        
+//        /*
+//         
+//         * Send High Heart Rate notification based on the emergency level
+//            * Low Level: Push Notification to the main caretaker
+//            * Medium Level: Push Notification to all caretakers and text message to the main caretaker
+//            * High Level: Push Notification, e-mail and text message to all caretakers
+//         * If is there any error, the app shows an alert with an error message
+//         
+//         */
+//        
+//        return ErrorType.OK
+//        
+//    }
+//    
+//    func sendFallNotification(level: String) -> ErrorType {
+//        
+//        /*******************************************************
+//         **                                                   **
+//         **              SEND FALL NOTIFICATION               **
+//         **                                                   **
+//         *******************************************************/
+//        
+//        /*
+//         
+//         *
+//         
+//         */
+//        
+//        return ErrorType.OK
+//        
+//    }
     
     func sendLocation() -> ErrorType {
         
