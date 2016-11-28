@@ -23,9 +23,15 @@ class MainCaretakerViewController: UIViewController {
     var ctUsers = [CKRecord]()
     var timer: Timer!
     
+    let progressHUD = ProgressHUD(text: "Loading")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Activity indicator
+        self.view.addSubview(progressHUD)
+        progressHUD.show()
+        // Activicty indicator iniciado.
 
         
         print("\nnome do idoso é: \(nome)\n")
@@ -72,6 +78,9 @@ class MainCaretakerViewController: UIViewController {
                 
                 DispatchQueue.main.async() {
                     self.heartRateLabel.text = record?.object(forKey: "HeartRate") as? String
+                    
+                    // Encerrando o Activity indicator:
+                    self.progressHUD.hide()
                 }
             }
         })

@@ -53,6 +53,35 @@ class ViewController: UIViewController {
                 }
                 else {
                     print("USUARIO NOVO!\n")
+                    self.fetchIDCaretaker(id: id)
+                }
+            }
+        }
+    }
+    
+    func fetchIDCaretaker(id: String) {
+        let privateData = CKContainer.default().privateCloudDatabase
+        let predicate = NSPredicate(format: "cloudID == %@", id)
+        let query = CKQuery(recordType: "Caretaker", predicate: predicate)
+        
+        privateData.perform(query, inZoneWith: nil) { results, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Fetch Establishments: \(error)")
+                }
+                return
+            }
+            if let users = results {
+                self.ctUsers = users
+                print("\nHow many users in cloud: \(self.ctUsers.count)\n")
+                if self.ctUsers.count != 0 {
+                    print("CARETAKER JÁ CADASTRADO NO APP!\n")
+                    DispatchQueue.main.async() {
+                        self.performSegue(withIdentifier: "xablauCT", sender: self)
+                    }
+                }
+                else {
+                    print("USUARIO NOVO!\n")
                 }
             }
         }

@@ -16,6 +16,13 @@ public class CloudKitDAO {
     var currentRecord: CKRecord?
     var privateDatabase: CKDatabase?
     
+    
+    /*******************************************************
+     **                                                   **
+     **                      ELDER                        **
+     **                                                   **
+     *******************************************************/
+    
     typealias CompletionHandler2 = (_ success:Bool) -> Void
     func sendElder(usuario: Elder, zoneID: CKRecordZoneID, completionHandler: @escaping CompletionHandler2) -> CKRecord {
         
@@ -31,8 +38,7 @@ public class CloudKitDAO {
         user["adress"] = usuario.getElderStreet() as CKRecordValue
         user["city"] = usuario.getElderCity() as CKRecordValue
         user["state"] = usuario.getElderState() as CKRecordValue
-        user["telephone"] = usuario.getUserPhone()
-            as CKRecordValue
+        user["telephone"] = usuario.getUserPhone() as CKRecordValue
         user["cloudID"] = usuario.getUserID() as CKRecordValue?
         user["HeartRate"] = "-" as CKRecordValue?
         
@@ -86,4 +92,76 @@ public class CloudKitDAO {
             }
         }
     }
+    
+    
+    
+    /*******************************************************
+     **                                                   **
+     **                     CARETAKER                     **
+     **                                                   **
+     *******************************************************/
+    
+    typealias CompletionHandler3 = (_ success:Bool) -> Void
+    func sendCareaker(usuario: Caretaker, zoneID: CKRecordZoneID, completionHandler: @escaping CompletionHandler3) -> CKRecord {
+        
+        let container = CKContainer.default
+        privateDatabase = container().privateCloudDatabase
+        
+        print("CHEGOU NA SEND CARETAKER")
+        
+        let user = CKRecord(recordType: "Caretaker", zoneID: zoneID)
+        
+        user["telephone"] = usuario.getUserPhone() as CKRecordValue
+        user["cloudID"] = usuario.getUserID() as CKRecordValue?
+        
+        let modifyRecordsOperation = CKModifyRecordsOperation(recordsToSave: [user], recordIDsToDelete: nil)
+        
+        modifyRecordsOperation.timeoutIntervalForRequest = 10
+        modifyRecordsOperation.timeoutIntervalForResource = 10
+        
+        modifyRecordsOperation.modifyRecordsCompletionBlock = { records, recordIDs, error in
+            if error != nil {
+                print("Save Error")
+                print(error?.localizedDescription as Any)
+            } else {
+                DispatchQueue.main.async {
+                    print("Caretaker saved successfully")
+                    completionHandler(true)
+                }
+                self.currentRecord = user
+            }
+        }
+        privateDatabase?.add(modifyRecordsOperation)
+        return user
+    }
+    
+    typealias CompletionHandler4 = (_ success:Bool) -> Void
+    func loadCaretakerUser(id: String, completionHandler: @escaping CompletionHandler4) {
+        
+        ctUsers = [CKRecord]()
+        
+        let privateData = CKContainer.default().privateCloudDatabase
+        let predicate = NSPredicate(format: "cloudID == %@", id)
+        let query = CKQuery(recordType: "Caretaker", predicate: predicate)
+        
+        privateData.perform(query, inZoneWith: nil) { results, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Fetch Establishments: \(error)")
+                }
+                return
+            }
+            if let users = results {
+                self.ctUsers = users
+                print("\nHow many users in cloud: \(self.ctUsers.count)\n")
+                if self.ctUsers.count != 0 {
+                    completionHandler(false)
+                }
+                else {
+                    completionHandler(true)
+                }
+            }
+        }
+    }
+    
 }

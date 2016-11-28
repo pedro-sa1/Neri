@@ -21,8 +21,18 @@ class MainElderViewController: UIViewController {
     var timer: Timer!
     var id: String!
     
+    
+    let progressHUD = ProgressHUD(text: "Loading")
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Activity indicator
+        self.view.addSubview(progressHUD)
+        progressHUD.show()
+        // Activicty indicator iniciado.
+        
         
         let container = CKContainer(identifier: "iCloud.pedro.Neri")
         
@@ -46,6 +56,9 @@ class MainElderViewController: UIViewController {
         DispatchQueue.main.async() {
             print("\nMUDANDO A LABEL DO BATIMENTO CARDÍACO!!\n")
             self.heartRateLabel.text = self.fetchedRecord?.value(forKey: "HeartRate") as! String?
+            
+            // Encerrando o Activity indicator:
+            //self.progressHUD.hide()
         }
     }
     
@@ -114,6 +127,9 @@ class MainElderViewController: UIViewController {
                                     self.nameLabel.text = self.fetchedRecord?.object(forKey: "name") as? String
                                     self.ageLabel.text = self.fetchedRecord?.object(forKey: "age") as? String
                                     self.heartRateLabel.text = self.fetchedRecord?.object(forKey: "HeartRate") as? String
+                                    
+                                    // Encerrando o Activity indicator:
+                                    self.progressHUD.hide()
                                 }
                             }
                         })

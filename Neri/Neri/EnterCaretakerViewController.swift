@@ -17,12 +17,27 @@ class EnterCaretakerViewController: UIViewController {
     var nomeIdoso = String()
     var idadeIdoso = String()
     var recordID: CKRecordID?
+    var ctUsers = [CKRecord]()
+    var userID: String!
+    
+    
     
     var nextVC = MainCaretakerViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let container = CKContainer(identifier: "iCloud.pedro.Neri")
+        print("AAAAAAAAAAAAA")
+        container.fetchUserRecordID { (userRecordID, error) in
+            if error != nil {
+                print("DEU MERDA PEGANDO O RECORD ID DO USUARIO!\n")
+                print(error?.localizedDescription as Any)
+            }
+            print("OOOOOOO ID DO USUARIO É:\(userRecordID?.recordName.description)\n")
+            self.userID = userRecordID?.recordName.description
+            self.fetchID(id: self.userID)
+        }
     }
     
     func fetchShare(_ metadata: CKShareMetadata) {
@@ -36,7 +51,7 @@ class EnterCaretakerViewController: UIViewController {
                 print(error?.localizedDescription as Any)
             }
             if record != nil {
-
+                
                 print("PRINTANDO O RECORD DA ENTER CARETAKER:\n")
                 print(record as Any)
                 self.currentRecord = record
@@ -48,7 +63,10 @@ class EnterCaretakerViewController: UIViewController {
                 print("OS DADOS DO IDOSO SÃO:\n")
                 print(self.nomeIdoso)
                 print(self.idadeIdoso)
-
+                
+                
+                print("\n\((record?.object(forKey: "cloudID")))\n")
+                //self.fetchID(id: (record?.object(forKey: "cloudID"))! as! String)
             }
         }
         operation.fetchRecordsCompletionBlock = { _, error in
@@ -60,10 +78,101 @@ class EnterCaretakerViewController: UIViewController {
     }
     
     
+    
+    
+    func fetchID(id: String) {  // ID DO USUARIO
+        ctUsers = [CKRecord]()
+        
+        let container = CKContainer(identifier: "iCloud.pedro.Neri")
+        let privateData = container.privateCloudDatabase
+        let predicate = NSPredicate(format: "cloudID == %@", id)
+        let query = CKQuery(recordType: "Caretaker", predicate: predicate)
+        
+        privateData.perform(query, inZoneWith: nil) { results, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Fetch Establishments: \(error)")
+                }
+                return
+            }
+            if let users = results {
+                self.ctUsers = users
+                print("\nENTER CARETAKER - How many users in cloud: \(self.ctUsers.count)\n")
+                
+                if self.ctUsers.count != 0 {
+                    print("VOCÊ JÁ ESTÁ CADASTRADO NO APP!\n")
+                    DispatchQueue.main.async() {
+                        self.performSegue(withIdentifier: "go2MainCT", sender: self)
+                    }
+                }
+                else {
+                    print("USUARIO NOVO!\n")
+                    
+                    let container = CKContainer(identifier: "iCloud.pedro.Neri")
+                    let privateData = container.privateCloudDatabase
+                    let ctRecord = CKRecord(recordType: "Caretaker")
+                    privateData.save(ctRecord, completionHandler: { (record, error) in
+                        if error != nil {
+                            print("ERRO AO SALVAR CARETAKER NA NUVEM!\n\(error?.localizedDescription)")
+                        } else {
+                            print("CARETAKER SALVO COM SUCESSO!\n")
+                        }
+                    })
+                }
+            }
+        }
+    }
+    
+    
+    
+    
+    
     @IBAction func continue2Main(_ sender: Any) {
+        
+        var alreadyExists = false
+        
         print("\nBUTTON CLICKED")
         print("\n\n\(self.nomeIdoso)\n\n")
         if tel.text != nil {
+            
+            
+            Caretaker.singleton.setUserID(id: userID)
+            Caretaker.singleton.setUserPhone(phone: tel.text!)
+            
+            
+            let container = CKContainer(identifier: "iCloud.pedro.Neri")
+            let sharedData = container.sharedCloudDatabase
+            
+            for item in (self.currentRecord?.object(forKey: "CaretakerTelephone")) as! [String] {
+                if item == self.tel.text {
+                    // ja ta pareado
+                    // faz a segue
+                    alreadyExists = true
+                    DispatchQueue.main.async() {
+                        self.performSegue(withIdentifier: "go2MainCT", sender: self)
+                    }
+                }
+            }
+            
+            if alreadyExists == false {
+                // não ta pareado
+                // adiciona
+                
+                var ar = self.currentRecord?.object(forKey: "CaretakerTelephone") as! [String]
+                ar.append(self.tel.text!)
+                
+                
+                self.currentRecord?.setObject(ar as CKRecordValue?, forKey: "CaretakerTelephone")
+                
+                sharedData.save(self.currentRecord!, completionHandler: { (record, error) in
+                    if error != nil {
+                        print("ERRO AO ATUALIZAR MEDICAL RECORD COM TELEFONE DO CUIDADOR!!: \(error?.localizedDescription)")
+                    } else {
+                        print("MEDICAL RECORD ATUALIZADA COM O TELEFONE DO CUIDADOR COM SUCESSO!!\n")
+                    }
+                })
+            }
+            
             performSegue(withIdentifier: "go2MainCT", sender: self)
         }
     }
