@@ -20,7 +20,7 @@
                     <items>
                         <group width="1" height="141" alignment="center" verticalAlignment="center" backgroundImage="watch-heart" contentMode="scaleAspectFit" layout="vertical" id="Jwk-cn-qvl">
                             <items>
-                                <label width="136" height="43" alignment="center" verticalAlignment="center" text="-" textAlignment="center" id="DUb-JW-9u3">
+                                <label width="136" height="43" alignment="center" verticalAlignment="center" text="--" textAlignment="center" id="DUb-JW-9u3">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="font" type="system" pointSize="42"/>
                                 </label>
