@@ -10,6 +10,7 @@ import WatchKit
 import Foundation
 import HealthKit
 import CloudKit
+import CoreMotion
 
 class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDelegate {
     
@@ -61,15 +62,40 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
      **                                                   **
      *******************************************************/
     
+    // MARK: - CloudKit Variables -
     
     var ctUsers = [CKRecord]()
     var fetchedRecord:CKRecord?
     
     /*******************************************************
      **                                                   **
-     **               END: CLOUDKIT VARIABLES             **
+     **              END: CLOUDKIT VARIABLES              **
      **                                                   **
      *******************************************************/
+    
+    /*******************************************************
+     **                                                   **
+     **              ACCELEROMETER VARIABLES              **
+     **                                                   **
+     *******************************************************/
+    
+    // MARK: - Accelerometer Variables -
+    
+    var accelerometerValue = 3.0
+    
+    // Motion Manager -> Handle Accelerometer and Gyroscope Data
+    let motionManager = CMMotionManager()
+    
+    // Activity Manager -> Handle Activity Data: Running and walking
+    let activityManager = CMMotionActivityManager()
+    
+    /*******************************************************
+     **                                                   **
+     **            END: ACELLEROMETER VARIABLES           **
+     **                                                   **
+     *******************************************************/
+    
+    // MARK: - End: Variables -
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -87,11 +113,11 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
          **                                                   **
          *******************************************************/
         
-        // MARK: - HealthKit: Start Getting HeartRate -
+        // MARK: - HealthKit: Start Getting Heart Rate -
         
         guard HKHealthStore.isHealthDataAvailable() == true else {
             
-            /* APAGAR ESSE COMENTARIOS
+            /* APAGAR ESSE COMENTARIO
              
              * Caso NÃO TENHA autorização do HealthKit
              * Fazer tratamento das coisas que tem que mudar
@@ -138,6 +164,54 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
         /*******************************************************
          **                                                   **
          **      END HEALTHKIT: START GETTING HEARTRATE       **
+         **                                                   **
+         *******************************************************/
+        
+    }
+    
+    override func didAppear() {
+        
+        /*******************************************************
+         **                                                   **
+         **             GET ACCELEROMETER DATA                **
+         **                                                   **
+         *******************************************************/
+        
+        // MARK: - Get Accelerometer Data -
+        
+        if !motionManager.isAccelerometerActive {
+            
+            motionManager.accelerometerUpdateInterval = 0.2
+            
+            motionManager.startAccelerometerUpdates(to: .main, withHandler: { (accelerometerData: CMAccelerometerData?, error: NSError?) in
+                
+                if fabs(accelerometerData!.acceleration.x) >= 3.0 || fabs(accelerometerData!.acceleration.y) >= 3.0 || fabs(accelerometerData!.acceleration.z) >= 3.0 {
+                    
+                    print("\n\nFall detected!!\n\n")
+                    print("x: \(accelerometerData?.acceleration.x)\ny: \(accelerometerData?.acceleration.y)\nz: \(accelerometerData?.acceleration.z)\n")
+                    
+                    /************************************************
+ 
+                     * AQUI TEM QUE PASSAR PRO CLOUD QUE CAIU PRA MUDAR NO IPHONE E FAZER A VERIFICAÇÃO PARA MANDAR A NOTIFICAÇÃO
+                     
+                     ************************************************/
+                    
+                    self.motionManager.stopAccelerometerUpdates()
+                    
+                    // Go to emergency button screen on the Apple Watch
+                    self.presentController(withName: "CountdownInterfaceController", context: self)
+                    
+                } else {
+                    print("Nothing detected")
+                }
+                
+            } as! CMAccelerometerHandler)
+            
+        }
+        
+        /*******************************************************
+         **                                                   **
+         **           END: GET ACCELEROMETER DATA             **
          **                                                   **
          *******************************************************/
         

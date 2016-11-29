@@ -23,6 +23,8 @@ public class CloudKitDAO {
      **                                                   **
      *******************************************************/
     
+    // MARK: - Elder DAO -
+    
     typealias CompletionHandler2 = (_ success:Bool) -> Void
     func sendElder(usuario: Elder, zoneID: CKRecordZoneID, completionHandler: @escaping CompletionHandler2) -> CKRecord {
         
@@ -100,6 +102,8 @@ public class CloudKitDAO {
      **                     CARETAKER                     **
      **                                                   **
      *******************************************************/
+    
+    // MARK: - Caretaker DAO -
     
     typealias CompletionHandler3 = (_ success:Bool) -> Void
     func sendCareaker(usuario: Caretaker, zoneID: CKRecordZoneID, completionHandler: @escaping CompletionHandler3) -> CKRecord {

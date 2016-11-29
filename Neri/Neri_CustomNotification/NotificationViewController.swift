@@ -11,8 +11,6 @@ import UserNotifications
 import UserNotificationsUI
 
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
-
-    @IBOutlet var label: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +18,14 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     }
     
     func didReceive(_ notification: UNNotification) {
-        self.label?.text = notification.request.content.body
+
+        // AQUI TEM QUE BOTAR AS COISAS CERTAS CONSIDERANDO O ESTADO (NOTIFICAÇÃO ATUAL)
+        // IMAGEM DO CORAÇÃO
+        // TEXTO DO CORAÇÃO
+        // IMAGEM DE ALERTA
+        // TEXTO DO ALERTA
+        // MAPA
+    
     }
 
 }

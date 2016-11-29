@@ -13,7 +13,7 @@ class Caretaker: User {
     
     static let singleton = Caretaker()
     
-    // MARK: - Class Functions -
+    // MARK: - Class Methods -
     
     func updateData() -> ErrorType {
        

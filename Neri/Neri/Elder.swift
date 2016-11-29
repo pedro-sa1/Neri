@@ -86,7 +86,7 @@ class Elder: User {
         self.caretakerId = id
     }
     
-    // MARK: - Class Functions -
+    // MARK: - Class Methods -
     
     /**
      
@@ -123,6 +123,8 @@ class Elder: User {
     
     func verifyFall(accelerometerData: CMAccelerometerData) -> ErrorType {
         
+        // FALL IS STILL IN DEVELOPMENT
+        
         /*******************************************************
          **                                                   **
          **             ALGORITHM TO VERIFY FALL              **
@@ -144,6 +146,12 @@ class Elder: User {
         // Analisa os dados do acelerometro pela equação gerada pelos dados
         // Futuramente, usará rede neural pra analisar
         // Caso aconteça algum problema, mandar notificação
+        
+        
+        
+        // NEURAL NETWORK (IN DEVELOPMENT)
+        
+        
         
         return ErrorType.OK
         

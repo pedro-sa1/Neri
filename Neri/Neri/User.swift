@@ -47,7 +47,7 @@ class User {
         self.userID = id
     }
     
-    // MARK: - Class Functions -
+    // MARK: - Class Methods -
     
     func calculateAge() -> Int {
         
