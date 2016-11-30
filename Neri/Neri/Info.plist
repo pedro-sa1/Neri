@@ -26,6 +26,8 @@
 	<string>For testing</string>
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>For testing</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Precisamos saber sua localização!</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

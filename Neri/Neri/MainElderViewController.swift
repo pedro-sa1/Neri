@@ -8,18 +8,37 @@
 
 import UIKit
 import CloudKit
+import MapKit
 
-class MainElderViewController: UIViewController {
+struct Adress
+{
+    var coordinate : CLLocationCoordinate2D?
+    var thoroughfare : String?
+    var subThoroughfare : String?
+    var subLocality : String?
+    var locality : String?
+    var administrativeArea : String?
+    var country : String?
+}
 
+class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+
+    let locationManager = CLLocationManager()
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var heartRateLabel: UILabel!
+    @IBOutlet weak var map: MKMapView!
     
     var fetchedRecord:CKRecord?
     var recordid: CKRecordID?
     var ctUsers = [CKRecord]()
     var timer: Timer!
     var id: String!
+    
+    var adress = Adress()
+    
+    var firstTime = true
     
     
     let progressHUD = ProgressHUD(text: "Loading")
@@ -28,6 +47,11 @@ class MainElderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userLocation()
+        
+        map.delegate = self
+        map.showsUserLocation = true
+
         // Activity indicator
         self.view.addSubview(progressHUD)
         progressHUD.show()
@@ -177,5 +201,115 @@ class MainElderViewController: UIViewController {
                 self.id = results?.first?.object(forKey: "cloudID") as! String!
             }
         }
+    }
+    
+    func userLocation()
+    {
+        print("USER LOCATIONNNNNNN")
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+    }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation)
+    {
+        let center = CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.026, longitudeDelta: 0.026))
+        self.map.setRegion(region, animated: true)
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = center
+        
+        
+        CLGeocoder().reverseGeocodeLocation(locationManager.location!, completionHandler: {(placemarks, error)-> Void in
+            if (error != nil)
+            {
+                print("Reverse geocoder failed with error" + (error?.localizedDescription)!)
+                return
+            }
+            
+            if placemarks!.count > 0
+            {
+                let pm = (placemarks?[0])! as CLPlacemark
+                print("\n\n\n************ADRESS******************\n\n\n")
+                print([String(describing: pm.location?.coordinate), String(describing: pm.thoroughfare), String(describing: pm.subThoroughfare), String(describing: pm.subLocality), String(describing: pm.locality), String(describing: pm.administrativeArea)])
+                
+                self.adress.coordinate = pm.location?.coordinate
+                self.adress.thoroughfare = String(describing: pm.thoroughfare) ?? ""
+                self.adress.subThoroughfare = String(describing: pm.subThoroughfare) ?? ("" as String)
+                self.adress.subLocality = String(describing: pm.subLocality) ?? ""
+                self.adress.locality = String(describing: pm.locality) ?? ""
+                self.adress.administrativeArea = String(describing: pm.administrativeArea) ?? ""
+                self.adress.country = String(describing: pm.country) ?? ""
+                
+                
+                
+                print(self.adress)
+                
+                if self.adress.thoroughfare != nil && self.adress.subThoroughfare != nil && self.adress.administrativeArea != nil && self.adress.locality != nil && self.adress.country != nil
+                {
+                    annotation.title = ((self.adress.thoroughfare!) + ", " + (self.adress.subThoroughfare!))
+                    annotation.subtitle = ((self.adress.locality!) + ", " + (self.adress.administrativeArea!) + " - " + (self.adress.country)!)
+                    
+                    annotation.title = annotation.title?.replacingOccurrences(of: "Optional", with: "")
+                    annotation.title = annotation.title?.replacingOccurrences(of: "(\"", with: "")
+                    annotation.title = annotation.title?.replacingOccurrences(of: "\")", with: "")
+                    
+                    annotation.subtitle = annotation.subtitle?.replacingOccurrences(of: "Optional", with: "")
+                    annotation.subtitle = annotation.subtitle?.replacingOccurrences(of: "(\"", with: "")
+                    annotation.subtitle = annotation.subtitle?.replacingOccurrences(of: "\")", with: "")
+                }
+                
+            }
+            else
+            {
+                print("Problem with the data received from geocoder")
+            }
+        })
+        
+        self.map.removeAnnotations(self.map.annotations)
+        self.map.addAnnotation(annotation)
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
+    {
+        let userIdentifier = "UserLocation"
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: userIdentifier)
+        if annotationView == nil
+        {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: userIdentifier)
+            annotationView!.canShowCallout = true
+            annotationView!.image = UIImage(named: "location")
+        }
+        else
+        {
+            annotationView!.annotation = annotation
+        }
+        
+        return annotationView
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        if firstTime == true {
+            
+            //CloudKitDAO().enviaCoordsPraCloud(lat: String(locationManager.location!.coordinate.latitude), long: String(locationManager.location!.coordinate.longitude), tel: self.telefoneIdoso)
+            firstTime = false
+            
+        } else {
+            if locations.last != locations[locations.endIndex-1] {
+                //mandar pro cloud
+            }
+            else {
+                //NÃO mandar pro cloud
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        print("Error while updating location " + error.localizedDescription)
     }
 }
