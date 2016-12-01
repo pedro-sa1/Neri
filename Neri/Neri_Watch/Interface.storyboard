@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
+    <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,6 +13,39 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Main Interface Controller-->
+        <scene sceneID="IWX-fJ-HYo">
+            <objects>
+                <controller id="Toe-ry-J0P" customClass="MainInterfaceController" customModule="Neri_Watch_Extension">
+                    <items>
+                        <group width="1" height="0.5" alignment="left" id="GL7-CP-85t">
+                            <items>
+                                <group width="0.5" height="1" alignment="left" verticalAlignment="center" backgroundImage="watch-heart" contentMode="scaleAspectFit" layout="vertical" spacing="0.0" id="yqt-Pz-c2N">
+                                    <items>
+                                        <label width="0.69999999999999996" alignment="center" verticalAlignment="center" text="80" textAlignment="center" id="kSs-us-Vz0">
+                                            <fontDescription key="font" type="system" pointSize="24"/>
+                                        </label>
+                                        <label alignment="center" verticalAlignment="center" text="bpm" textAlignment="center" id="Jhb-kn-s7p">
+                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="0.5" height="0.80000000000000004" alignment="right" verticalAlignment="center" backgroundImage="watch-walking" contentMode="scaleAspectFit" id="7vR-BW-Uvm"/>
+                            </items>
+                        </group>
+                        <group width="1" height="0.5" alignment="center" verticalAlignment="bottom" id="has-xl-uGx">
+                            <items>
+                                <map height="1" alignment="left" id="tVj-62-O7P"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <segue destination="AgC-eL-Hgc" kind="relationship" relationship="nextPage" id="yfj-qD-yDe"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-72" y="345"/>
+        </scene>
         <!--Heart Rate Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
@@ -79,19 +112,7 @@
         <!--Interface Controller-->
         <scene sceneID="9UL-fF-Spo">
             <objects>
-                <controller id="Rcq-NP-ajQ">
-                    <items>
-                        <group width="1" height="109" alignment="center" verticalAlignment="bottom" backgroundImage="watch-active" contentMode="scaleAspectFit" id="TVK-0E-2on"/>
-                        <group width="1" alignment="left" verticalAlignment="bottom" id="PUE-Qe-GAz">
-                            <items>
-                                <label height="22" alignment="center" text="monitoramento ativo" textAlignment="center" id="6DA-Zj-nc2">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <fontDescription key="font" type="system" pointSize="13"/>
-                                </label>
-                            </items>
-                        </group>
-                    </items>
-                </controller>
+                <controller id="Rcq-NP-ajQ"/>
             </objects>
             <point key="canvasLocation" x="1049" y="345"/>
         </scene>
