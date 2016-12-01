@@ -320,7 +320,6 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
             self.fetchRecordZone(heartRate: String(Int(value)))
             
         }
-        
     }
     
     /********************************************************

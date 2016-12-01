@@ -25,6 +25,9 @@ class MainCaretakerViewController: UIViewController {
     
     let progressHUD = ProgressHUD(text: "Loading")
     
+    var lat:String!
+    var long:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,6 +81,8 @@ class MainCaretakerViewController: UIViewController {
                 
                 DispatchQueue.main.async() {
                     self.heartRateLabel.text = record?.object(forKey: "HeartRate") as? String
+                    self.lat = record?.object(forKey: "lat") as? String
+                    self.long = record?.object(forKey: "long") as? String
                     
                     // Encerrando o Activity indicator:
                     self.progressHUD.hide()

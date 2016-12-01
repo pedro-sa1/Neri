@@ -44,6 +44,9 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
     
     let progressHUD = ProgressHUD(text: "Loading")
     
+    var latitude:String?
+    var longitude:String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,6 +109,9 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
                     print("zone name iS: \(zoneName)")
                     if(zoneName == "MedicalRecord"){
                         self.fetchInfo(id: item.zoneID)
+                        
+                        //print("VAI MANDAR A LOCALIZAÇÃO!!!\n")
+                        //self.sendLatLong(id: item.zoneID, lat: self.latitude!, long: self.longitude!)
                     }
                 }
             }
@@ -118,10 +124,11 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
     //
     //_______________________________
     
-    func sendHeartRate(id: CKRecordZoneID, heartRate: String) {
+    func sendLatLong(id: CKRecordZoneID, lat: String, long: String) { // send location
         ctUsers = [CKRecord]()
         
         print("SHARED ZONE VERDADEIRA: \(id)")
+        print("CHEGOU NA SEND LAT LONG\n")
         
         let container = CKContainer(identifier: "iCloud.pedro.Neri")
         let privateData = container.privateCloudDatabase
@@ -141,17 +148,20 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
                 print("\nO ID DO RECORD É:\n")
                 print(results?.first?.recordID as Any)
                 
-                self.fetchRecord(recordid: (results?.first?.recordID)!, completionHandler: { (success) in
+                self.fetchRecord2(recordid: (results?.first?.recordID)!, completionHandler2: { (success) in
                     if success {
                         
-                        self.fetchedRecord2?.setObject(heartRate as CKRecordValue?, forKey: "HeartRate")
+                        print("ATUALIZANDO A LATITUDE E A LONGITUDE NA NUVEM!\n")
+                        
+                        self.fetchedRecord2?.setObject(lat as CKRecordValue?, forKey: "lat")
+                        self.fetchedRecord2?.setObject(long as CKRecordValue?, forKey: "long")
                         
                         privateData.save(self.fetchedRecord2!, completionHandler: { (record, error) in
                             if error != nil {
                                 print("DEU MERDA TENTANDO SALVAR O RECORD PUXADO\n")
                                 print(error?.localizedDescription)
                             } else {
-                                print("RECORD ATUALIZADO!!!!!!!!!\n")
+                                print("LOCALIAÇÃO ATUALIZADA!!!!!!!!!\n")
                             }
                         })
                     }
@@ -161,7 +171,9 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
     }
     
     typealias CompletionHandler2 = (_ success:Bool) -> Void
-    func fetchRecord(recordid: CKRecordID, completionHandler2: @escaping CompletionHandler) {
+    func fetchRecord2(recordid: CKRecordID, completionHandler2: @escaping CompletionHandler) {
+        
+        print("\nCHEGOU NA FETCH RECORD 2\n")
         
         let container = CKContainer(identifier: "iCloud.pedro.Neri")
         let privateData = container.privateCloudDatabase
@@ -173,7 +185,7 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
                 completionHandler2(false)
             } else {
                 print("CHEGOU PRA SALVAR NO FETCHED RECORD!!\n")
-                self.fetchedRecord = record
+                self.fetchedRecord2 = record
                 completionHandler2(true)
             }
         })
@@ -284,6 +296,7 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation)
@@ -368,14 +381,87 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
+        
+        print("\n\nENTROU NO LOCATION MANAGER\n\n")
         if firstTime == true {
             
-            //CloudKitDAO().enviaCoordsPraCloud(lat: String(locationManager.location!.coordinate.latitude), long: String(locationManager.location!.coordinate.longitude), tel: self.telefoneIdoso)
+            self.latitude = String(describing: locations.last?.coordinate.latitude)
+            self.longitude = String(describing: locations.last?.coordinate.longitude)
+            
+            latitude = latitude?.replacingOccurrences(of: "Optional", with: "")
+            latitude = latitude?.replacingOccurrences(of: "(\"", with: "")
+            latitude = latitude?.replacingOccurrences(of: "\")", with: "")
+            latitude = latitude?.replacingOccurrences(of: "(", with: "")
+            latitude = latitude?.replacingOccurrences(of: ")", with: "")
+            
+            longitude = longitude?.replacingOccurrences(of: "Optional", with: "")
+            longitude = longitude?.replacingOccurrences(of: "(\"", with: "")
+            longitude = longitude?.replacingOccurrences(of: "\")", with: "")
+            longitude = longitude?.replacingOccurrences(of: "(", with: "")
+            longitude = longitude?.replacingOccurrences(of: ")", with: "")
+            
+            print("COORDENADAS: \(self.latitude) \(self.longitude)\n")
+            
+            let container = CKContainer(identifier: "iCloud.pedro.Neri")
+            let privateData = container.privateCloudDatabase
+            privateData.fetchAllRecordZones { (recordZones, error) in
+                if error != nil {
+                    print("DEU MERDA NA FETCH RECORDZONE\n")
+                    print(error?.localizedDescription)
+                }
+                if recordZones != nil {
+                    print(recordZones)
+                    let count = recordZones?.count
+                    for item in recordZones!{
+                        
+                        let zoneName = (item.value(forKey: "_zoneID") as! CKRecordZoneID).value(forKey: "_zoneName") as! String
+                        print("zone name iS: \(zoneName)")
+                        if(zoneName == "MedicalRecord"){
+                            
+                            print("VAI MANDAR A LOCALIZAÇÃO!!!\n")
+                            self.sendLatLong(id: item.zoneID, lat: self.latitude!, long: self.longitude!)
+                        }
+                    }
+                }
+            }
+            
+            
+            
             firstTime = false
             
         } else {
             if locations.last != locations[locations.endIndex-1] {
-                //mandar pro cloud
+                
+                self.latitude = String(describing: locations.last?.coordinate.latitude)
+                self.longitude = String(describing: locations.last?.coordinate.longitude)
+                
+                print("COORDENADAS PIRU:\n\(self.latitude)\n\(self.longitude)\n")
+                
+                let container = CKContainer(identifier: "iCloud.pedro.Neri")
+                let privateData = container.privateCloudDatabase
+                privateData.fetchAllRecordZones { (recordZones, error) in
+                    if error != nil {
+                        print("DEU MERDA NA FETCH RECORDZONE\n")
+                        print(error?.localizedDescription)
+                    }
+                    if recordZones != nil {
+                        print(recordZones)
+                        let count = recordZones?.count
+                        for item in recordZones!{
+                            
+                            let zoneName = (item.value(forKey: "_zoneID") as! CKRecordZoneID).value(forKey: "_zoneName") as! String
+                            print("zone name iS: \(zoneName)")
+                            if(zoneName == "MedicalRecord"){
+                                
+                                print("VAI MANDAR A LOCALIZAÇÃO!!!\n")
+                                self.sendLatLong(id: item.zoneID, lat: self.latitude!, long: self.longitude!)
+                            }
+                        }
+                    }
+                }
+                
+                
+                
             }
             else {
                 //NÃO mandar pro cloud
