@@ -9,7 +9,7 @@
 import UIKit
 import CloudKit
 
-class ViewController: UIViewController {
+class LoadingViewController: UIViewController {
     
     var ctUsers = [CKRecord]()
     

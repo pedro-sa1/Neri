@@ -33,11 +33,14 @@
 		E10476A81DDF8A900056D4C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10476A71DDF8A900056D4C5 /* Main.storyboard */; };
 		E10476AA1DDF8EA70056D4C5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10476A91DDF8EA70056D4C5 /* GradientView.swift */; };
 		E1E1B7461DF0A0090083E035 /* MainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E1B7451DF0A0090083E035 /* MainInterfaceController.swift */; };
+		E1E1B74A1DF0BBC70083E035 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E1B7491DF0BBC70083E035 /* InitialViewController.swift */; };
+		E1E1B74C1DF0BC340083E035 /* EldersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E1B74B1DF0BC340083E035 /* EldersViewController.swift */; };
+		E1E1B74E1DF0BC960083E035 /* EditElderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E1B74D1DF0BC960083E035 /* EditElderViewController.swift */; };
 		EB5789A01DE21B2000A0FA04 /* EnterCaretakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57899F1DE21B2000A0FA04 /* EnterCaretakerViewController.swift */; };
 		EB5789A21DE221DA00A0FA04 /* MainCaretakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5789A11DE221DA00A0FA04 /* MainCaretakerViewController.swift */; };
 		EB5789A41DE22E0200A0FA04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5789A31DE22E0200A0FA04 /* MapKit.framework */; };
 		EB5E7A141DCCF6440073923D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E7A131DCCF6440073923D /* AppDelegate.swift */; };
-		EB5E7A161DCCF6440073923D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E7A151DCCF6440073923D /* ViewController.swift */; };
+		EB5E7A161DCCF6440073923D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E7A151DCCF6440073923D /* LoadingViewController.swift */; };
 		EB5E7A1B1DCCF6440073923D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB5E7A1A1DCCF6440073923D /* Assets.xcassets */; };
 		EB5E7A1E1DCCF6440073923D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB5E7A1C1DCCF6440073923D /* LaunchScreen.storyboard */; };
 		EB8B701E1DE3B469000C9D9A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8B701D1DE3B469000C9D9A /* CloudKit.framework */; };
@@ -159,12 +162,15 @@
 		E10476A71DDF8A900056D4C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E10476A91DDF8EA70056D4C5 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E1E1B7451DF0A0090083E035 /* MainInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterfaceController.swift; sourceTree = "<group>"; };
+		E1E1B7491DF0BBC70083E035 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		E1E1B74B1DF0BC340083E035 /* EldersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EldersViewController.swift; sourceTree = "<group>"; };
+		E1E1B74D1DF0BC960083E035 /* EditElderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditElderViewController.swift; sourceTree = "<group>"; };
 		EB57899F1DE21B2000A0FA04 /* EnterCaretakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterCaretakerViewController.swift; sourceTree = "<group>"; };
 		EB5789A11DE221DA00A0FA04 /* MainCaretakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCaretakerViewController.swift; sourceTree = "<group>"; };
 		EB5789A31DE22E0200A0FA04 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EB5E7A101DCCF6440073923D /* Neri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5E7A131DCCF6440073923D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB5E7A151DCCF6440073923D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EB5E7A151DCCF6440073923D /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		EB5E7A1A1DCCF6440073923D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB5E7A1D1DCCF6440073923D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB5E7A1F1DCCF6440073923D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -332,13 +338,10 @@
 		65D170FB1DCCFA7C0042E6B3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EB5E7A131DCCF6440073923D /* AppDelegate.swift */,
-				EB5E7A151DCCF6440073923D /* ViewController.swift */,
-				EB5789A11DE221DA00A0FA04 /* MainCaretakerViewController.swift */,
-				EB8E50E71DE1EEF600177284 /* ElderInfoViewController.swift */,
-				EB8E50EF1DE206BE00177284 /* ShareViewController.swift */,
-				EB57899F1DE21B2000A0FA04 /* EnterCaretakerViewController.swift */,
-				EBADCE671DE4C6D8000C2E0A /* MainElderViewController.swift */,
+				EB5E7A151DCCF6440073923D /* LoadingViewController.swift */,
+				E1E1B7491DF0BBC70083E035 /* InitialViewController.swift */,
+				E1E1B7481DF0BACE0083E035 /* Caretaker */,
+				E1E1B7471DF0BA560083E035 /* Elder */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -351,6 +354,27 @@
 				EB5E7A1F1DCCF6440073923D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1E1B7471DF0BA560083E035 /* Elder */ = {
+			isa = PBXGroup;
+			children = (
+				EB8E50E71DE1EEF600177284 /* ElderInfoViewController.swift */,
+				EB8E50EF1DE206BE00177284 /* ShareViewController.swift */,
+				EBADCE671DE4C6D8000C2E0A /* MainElderViewController.swift */,
+				E1E1B74D1DF0BC960083E035 /* EditElderViewController.swift */,
+			);
+			name = Elder;
+			sourceTree = "<group>";
+		};
+		E1E1B7481DF0BACE0083E035 /* Caretaker */ = {
+			isa = PBXGroup;
+			children = (
+				EB57899F1DE21B2000A0FA04 /* EnterCaretakerViewController.swift */,
+				E1E1B74B1DF0BC340083E035 /* EldersViewController.swift */,
+				EB5789A11DE221DA00A0FA04 /* MainCaretakerViewController.swift */,
+			);
+			name = Caretaker;
 			sourceTree = "<group>";
 		};
 		EB5E7A071DCCF6440073923D = {
@@ -383,6 +407,7 @@
 		EB5E7A121DCCF6440073923D /* Neri_iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				EB5E7A131DCCF6440073923D /* AppDelegate.swift */,
 				65D170F91DCCFA720042E6B3 /* Model */,
 				65D170FA1DCCFA780042E6B3 /* View */,
 				65D170FB1DCCFA7C0042E6B3 /* Controller */,
@@ -696,7 +721,8 @@
 				EB8E50E81DE1EEF600177284 /* ElderInfoViewController.swift in Sources */,
 				EB8E50F01DE206BE00177284 /* ShareViewController.swift in Sources */,
 				EBADCE681DE4C6D8000C2E0A /* MainElderViewController.swift in Sources */,
-				EB5E7A161DCCF6440073923D /* ViewController.swift in Sources */,
+				EB5E7A161DCCF6440073923D /* LoadingViewController.swift in Sources */,
+				E1E1B74C1DF0BC340083E035 /* EldersViewController.swift in Sources */,
 				65D171041DCCFDC70042E6B3 /* ErrorType.swift in Sources */,
 				E10476A61DDF89ED0056D4C5 /* ProgressHUD.swift in Sources */,
 				656583391DE5DFEB00D61ECF /* NotificationManager.swift in Sources */,
@@ -708,6 +734,8 @@
 				65D170FE1DCCFAD50042E6B3 /* Elder.swift in Sources */,
 				65D171001DCCFAE00042E6B3 /* Caretaker.swift in Sources */,
 				EB8E50EA1DE1F22700177284 /* CloudKitDAO.swift in Sources */,
+				E1E1B74A1DF0BBC70083E035 /* InitialViewController.swift in Sources */,
+				E1E1B74E1DF0BC960083E035 /* EditElderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
