@@ -170,11 +170,11 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
             if error != nil {
                 print("DEU MERDA PROCURANDO O RECORD COM RECORDID\n")
                 print(error?.localizedDescription as Any)
-                completionHandler(false)
+                completionHandler2(false)
             } else {
                 print("CHEGOU PRA SALVAR NO FETCHED RECORD!!\n")
                 self.fetchedRecord = record
-                completionHandler(true)
+                completionHandler2(true)
             }
         })
     }
@@ -307,15 +307,15 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
             {
                 let pm = (placemarks?[0])! as CLPlacemark
                 print("\n\n\n************ADRESS******************\n\n\n")
-                print([String(describing: pm.location?.coordinate), String(describing: pm.thoroughfare), String(describing: pm.subThoroughfare), String(describing: pm.subLocality), String(describing: pm.locality), String(describing: pm.administrativeArea)])
+                print([String(describing: pm.location?.coordinate), pm.thoroughfare!, pm.subThoroughfare!, pm.subLocality!, pm.locality!, pm.administrativeArea!])
                 
                 self.adress.coordinate = pm.location?.coordinate
-                self.adress.thoroughfare = String(describing: pm.thoroughfare) ?? ""
-                self.adress.subThoroughfare = String(describing: pm.subThoroughfare) ?? ("" as String)
-                self.adress.subLocality = String(describing: pm.subLocality) ?? ""
-                self.adress.locality = String(describing: pm.locality) ?? ""
-                self.adress.administrativeArea = String(describing: pm.administrativeArea) ?? ""
-                self.adress.country = String(describing: pm.country) ?? ""
+                self.adress.thoroughfare = pm.thoroughfare ?? ""
+                self.adress.subThoroughfare = pm.subThoroughfare ?? ("" as String)
+                self.adress.subLocality = pm.subLocality ?? ""
+                self.adress.locality = pm.locality ?? ""
+                self.adress.administrativeArea = pm.administrativeArea ?? ""
+                self.adress.country = pm.country ?? ""
                 
                 
                 
