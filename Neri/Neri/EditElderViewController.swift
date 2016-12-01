@@ -13,6 +13,6 @@ import UIKit
 class EditElderViewController: UIViewController {
     
     override func viewDidLoad() {
-        <#code#>
+        print("oi")
     }
 }

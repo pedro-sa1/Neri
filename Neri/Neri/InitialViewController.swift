@@ -12,6 +12,6 @@ import UIKit
 class InitialViewController: UIViewController {
     
     override func viewDidLoad() {
-        <#code#>
+        print("oi")
     }
 }

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b8z-9B-jxw">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b8z-9B-jxw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -43,6 +43,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="yAL-a8-asZ" secondAttribute="trailing" constant="40" id="w1y-BA-9MH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="HVc-NE-8Ag" kind="presentation" identifier="showElder" id="6ew-C1-cip"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bV-5r-EvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -143,9 +146,6 @@
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <connections>
-                        <segue destination="HVc-NE-8Ag" kind="presentation" identifier="xablau" id="nI1-T7-YSX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ld-mE-COD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1061,7 +1061,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4K8-B3-aoj" id="EOp-Qx-LzT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T5-ol-uaS">
@@ -1082,7 +1082,7 @@
                                                 <rect key="frame" x="0.0" y="68" width="375" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iXa-Up-28I" id="c0N-Fm-9gB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="TMp-nk-v4o">
@@ -1555,7 +1555,7 @@
         <image name="walking" width="57" height="94"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="803-vX-GwY"/>
         <segue reference="ACA-VW-tIO"/>
+        <segue reference="6ew-C1-cip"/>
     </inferredMetricsTieBreakers>
 </document>
