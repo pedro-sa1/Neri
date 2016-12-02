@@ -179,44 +179,54 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
         
         // MARK: - Get Accelerometer Data -
         
-        if !motionManager.isAccelerometerActive {
-            
-            motionManager.accelerometerUpdateInterval = 0.2
-            
-            motionManager.startAccelerometerUpdates(to: .main, withHandler: { (accelerometerData: CMAccelerometerData?, error: NSError?) in
-                
-                
-                
-                
-                
-                // AQUI TEM QUE FAZER A VERIFICAÇÃO DA QUEDA COM O CÓDICO CERTO PARA PASSAR PRA CLOUD. POR ENQUANTO TA NO ANTIGO
-                
-                
-                
-                
-                if fabs(accelerometerData!.acceleration.x) >= 3.0 || fabs(accelerometerData!.acceleration.y) >= 3.0 || fabs(accelerometerData!.acceleration.z) >= 3.0 {
-                    
-                    print("\n\nFall detected!!\n\n")
-                    print("x: \(accelerometerData?.acceleration.x)\ny: \(accelerometerData?.acceleration.y)\nz: \(accelerometerData?.acceleration.z)\n")
-                    
-                    /************************************************
- 
-                     * AQUI TEM QUE PASSAR PRO CLOUD QUE CAIU PRA MUDAR NO IPHONE E MANDAR A NOTIFICAÇÃO
-                     
-                     ************************************************/
-                    
-                    self.motionManager.stopAccelerometerUpdates()
-                    
-                    // Go to emergency button screen on the Apple Watch
-                    self.presentController(withName: "CountdownInterfaceController", context: self)
-                    
-                } else {
-                    print("Nothing detected")
-                }
-                
-            } as! CMAccelerometerHandler)
-            
-        }
+//        if !motionManager.isAccelerometerActive {
+//            
+//            motionManager.accelerometerUpdateInterval = 0.2
+//            
+//            let accelerometerHandler = { (accelerometerData: CMAccelerometerData?, error: NSError?) in
+//                
+//                
+//                
+//                
+//                
+//                // AQUI TEM QUE FAZER A VERIFICAÇÃO DA QUEDA COM O CÓDICO CERTO PARA PASSAR PRA CLOUD. POR ENQUANTO TA NO ANTIGO
+//                
+//                
+//                
+//                
+//                if fabs(accelerometerData!.acceleration.x) >= 3.0 || fabs(accelerometerData!.acceleration.y) >= 3.0 || fabs(accelerometerData!.acceleration.z) >= 3.0 {
+//                    
+//                    print("\n\nFall detected!!\n\n")
+//                    print("x: \(accelerometerData?.acceleration.x)\ny: \(accelerometerData?.acceleration.y)\nz: \(accelerometerData?.acceleration.z)\n")
+//                    
+//                    /************************************************
+//                     
+//                     * AQUI TEM QUE PASSAR PRO CLOUD QUE CAIU PRA MUDAR NO IPHONE E MANDAR A NOTIFICAÇÃO
+//                     
+//                     ************************************************/
+//                    
+//                    self.motionManager.stopAccelerometerUpdates()
+//                    
+//                    // Go to emergency button screen on the Apple Watch
+//                    self.presentController(withName: "CountdownInterfaceController", context: self)
+//                    
+//                } else {
+//                    print("Nothing detected")
+//                }
+//                
+//                } as! CMAccelerometerHandler
+//            
+//            motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler: accelerometerHandler)
+//            
+//        }
+        
+        motionManager.startAccelerometerUpdates()
+        
+        let timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(HeartRateInterfaceController.verifyFall), userInfo: nil, repeats: true)
+        
+        timer.fire()
+        
+        print("consegui!")
         
         /*******************************************************
          **                                                   **
@@ -225,6 +235,65 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
          *******************************************************/
         
     }
+    
+    
+    
+    
+    
+    
+    
+    func verifyFall() -> Void {
+        
+        // FALL IS STILL IN DEVELOPMENT
+        
+        /*******************************************************
+         **                                                   **
+         **             ALGORITHM TO VERIFY FALL              **
+         **                                                   **
+         *******************************************************/
+        
+        /*
+         
+         * Uses an algorithm to analise the accelerometer data
+         * Neural Network used to learn from the user
+         * User has 15 seconds to confirm that he's OK
+         * If the time passes or the user asks for help, send notification to emergency contact
+         
+         */
+        
+        // Vai jogando os dados recebidos em vetores de tamanho 10
+        // Caso já esteja cheio, retira a primeira infromação e anda com o resto para frente
+        // Joga a informação nova na ultima casa
+        // Analisa os dados do acelerometro pela equação gerada pelos dados
+        // Futuramente, usará rede neural pra analisar
+        // Caso aconteça algum problema, mandar notificação
+        
+        
+        
+        // NEURAL NETWORK (IN DEVELOPMENT)
+        
+        
+        
+//        let notificationManager = NotificationManager()
+//        notificationManager.registerForNotifications()
+//        notificationManager.setupAndGenerateLocalFallNotification()
+        
+        
+        print(motionManager.accelerometerData?.acceleration.x)
+        print(motionManager.accelerometerData?.acceleration.y)
+        print(motionManager.accelerometerData?.acceleration.z)
+        
+
+        print("entrei na funçao")
+        
+    }
+
+    
+    
+    
+    
+    
+    
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible

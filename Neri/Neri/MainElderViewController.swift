@@ -320,7 +320,6 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
             {
                 let pm = (placemarks?[0])! as CLPlacemark
                 print("\n\n\n************ADRESS******************\n\n\n")
-                print([String(describing: pm.location?.coordinate), pm.thoroughfare!, pm.subThoroughfare!, pm.subLocality!, pm.locality!, pm.administrativeArea!])
                 
                 self.adress.coordinate = pm.location?.coordinate
                 self.adress.thoroughfare = pm.thoroughfare ?? ""

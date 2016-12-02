@@ -51,12 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notificationManager = NotificationManager()
         notificationManager.registerForNotifications()
         
-        
-        
-        notificationManager.setupAndGenerateLocalHighHeartRateNotification(currentHeartRate: 300)
-        
-        
-        
         return true
     }
 

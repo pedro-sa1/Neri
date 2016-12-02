@@ -12,14 +12,11 @@ import UserNotificationsUI
 
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
     
-    @IBOutlet weak var heartRateLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-    
+        
+        
     }
     
     func didReceive(_ notification: UNNotification) {
@@ -43,31 +40,13 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
             
             print("HighHeartRate Notification")
             
-            // Label configuration
-            heartRateLabel.text = notification.request.content.body.replacingOccurrences(of: "Current Heart Rate: ", with: "")
-            heartRateLabel.text = heartRateLabel.text?.replacingOccurrences(of: " BPM", with: "")
-            heartRateLabel.textAlignment = .center
-            heartRateLabel.textColor = UIColor.white
-            
-            // Image configuration
-            self.imageView.image = UIImage(named: "notification-heart")
-            imageView.backgroundColor = UIColor.black
-            
         case "LowHeartRate":
             
             print("LowHeartRate Notification")
             
-            // Label configuration
-            heartRateLabel.text = notification.request.content.body.replacingOccurrences(of: "Current Heart Rate: ", with: "")
-            heartRateLabel.text = heartRateLabel.text?.replacingOccurrences(of: " BPM", with: "")
-            heartRateLabel.textAlignment = .center
-            heartRateLabel.textColor = UIColor.white
+        default:
             
-            // Image configuration
-            self.imageView.image = UIImage(named: "notification-heart")
-
-            
-        default: print("Map Notification")
+            print("Map Notification")
             
         }
         

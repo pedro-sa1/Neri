@@ -58,6 +58,62 @@ class NotificationManager: NSObject {
         content.sound = UNNotificationSound.default()
         content.categoryIdentifier = "myNotificationCategory"
         
+        // Adding the image
+        
+//        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+//        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+//        let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+//        if let dirPath          = paths.first
+//        {
+//            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("logo.png")
+//            
+//            do {
+//                let attachment = try UNNotificationAttachment(identifier: "logo", url: imageURL, options: nil)
+//                content.attachments = [attachment]
+//                print("Attachment")
+//            } catch {
+//                print("The attachment was not loaded.")
+//            }
+//            print("Saída->Attachment")
+//            
+//        }
+        
+        if let resourcePath = Bundle.main.resourcePath {
+            let imgName = "logo.png"
+            let path = resourcePath + "/" + imgName
+            
+            print(path)
+            
+            let url = URL(fileURLWithPath: path)
+            
+            do {
+                let attachment = try UNNotificationAttachment(identifier: "logo", url: url, options: nil)
+                content.attachments = [attachment]
+                print("Attachment")
+            } catch {
+                print("The attachment was not loaded.")
+            }
+            print("Saída->Attachment")
+            
+        }
+        
+        
+        if let path = Bundle.main.path(forResource: "logo", ofType: "png") {
+            print("Entrada->Attachment")
+            let url = URL(fileURLWithPath: path)
+            
+            do {
+                let attachment = try UNNotificationAttachment(identifier: "logo", url: url, options: nil)
+                content.attachments = [attachment]
+                print("Attachment")
+            } catch {
+                print("The attachment was not loaded.")
+            }
+            print("Saída->Attachment")
+        }
+        
+        print("Fora if Attachment")
+        
         // Setting the notification to be delivered imediatly
         let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest.init(identifier: "HighHeartRate", content: content, trigger: trigger)
