@@ -185,6 +185,15 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
             
             motionManager.startAccelerometerUpdates(to: .main, withHandler: { (accelerometerData: CMAccelerometerData?, error: NSError?) in
                 
+                
+                
+                
+                
+                // AQUI TEM QUE FAZER A VERIFICAÇÃO DA QUEDA COM O CÓDICO CERTO PARA PASSAR PRA CLOUD. POR ENQUANTO TA NO ANTIGO
+                
+                
+                
+                
                 if fabs(accelerometerData!.acceleration.x) >= 3.0 || fabs(accelerometerData!.acceleration.y) >= 3.0 || fabs(accelerometerData!.acceleration.z) >= 3.0 {
                     
                     print("\n\nFall detected!!\n\n")
@@ -192,7 +201,7 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
                     
                     /************************************************
  
-                     * AQUI TEM QUE PASSAR PRO CLOUD QUE CAIU PRA MUDAR NO IPHONE E FAZER A VERIFICAÇÃO PARA MANDAR A NOTIFICAÇÃO
+                     * AQUI TEM QUE PASSAR PRO CLOUD QUE CAIU PRA MUDAR NO IPHONE E MANDAR A NOTIFICAÇÃO
                      
                      ************************************************/
                     

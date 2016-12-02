@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,7 +22,7 @@
                             <items>
                                 <group width="0.5" height="1" alignment="left" verticalAlignment="center" backgroundImage="watch-heart" contentMode="scaleAspectFit" layout="vertical" spacing="0.0" id="yqt-Pz-c2N">
                                     <items>
-                                        <label width="0.69999999999999996" alignment="center" verticalAlignment="center" text="80" textAlignment="center" id="kSs-us-Vz0">
+                                        <label width="0.69999999999999996" height="29" alignment="center" verticalAlignment="center" text="--" textAlignment="center" id="kSs-us-Vz0">
                                             <fontDescription key="font" type="system" pointSize="24"/>
                                         </label>
                                         <label alignment="center" verticalAlignment="center" text="bpm" textAlignment="center" id="Jhb-kn-s7p">
@@ -44,7 +44,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-72" y="345"/>
+            <point key="canvasLocation" x="-72.358974358974365" y="344.79487179487182"/>
         </scene>
         <!--Heart Rate Interface Controller-->
         <scene sceneID="aou-V4-d1y">

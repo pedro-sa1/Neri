@@ -59,7 +59,7 @@ class NotificationManager: NSObject {
         content.categoryIdentifier = "myNotificationCategory"
         
         // Setting the notification to be delivered imediatly
-        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 0, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest.init(identifier: "HighHeartRate", content: content, trigger: trigger)
         
         // Schedule the notification
@@ -91,7 +91,7 @@ class NotificationManager: NSObject {
         content.categoryIdentifier = "myNotificationCategory"
         
         // Setting the notification to be delivered imediatly
-        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 0, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 2, repeats: false)
         let request = UNNotificationRequest.init(identifier: "LowHeartRate", content: content, trigger: trigger)
         
         // Schedule the notification
@@ -114,7 +114,7 @@ class NotificationManager: NSObject {
      **                                                   **
      *******************************************************/
     
-    func setupAndGenerateLocalFallNotification(currentHeartRate: Int) {
+    func setupAndGenerateLocalFallNotification() {
         
         let content = UNMutableNotificationContent()
         content.title = NSString.localizedUserNotificationString(forKey: "Warning!", arguments: nil)
@@ -123,7 +123,7 @@ class NotificationManager: NSObject {
         content.categoryIdentifier = "myNotificationCategory"
         
         // Setting the notification to be delivered imediatly
-        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 0, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 2, repeats: false)
         let request = UNNotificationRequest.init(identifier: "Fall", content: content, trigger: trigger)
         
         // Schedule the notification

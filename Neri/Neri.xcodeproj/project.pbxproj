@@ -284,8 +284,8 @@
 			isa = PBXGroup;
 			children = (
 				6505FD7E1DDCDAE1003D2A75 /* HeartRateInterfaceController.swift */,
-				657F7AC61DD3864E000D111B /* NotificationController.swift */,
 				E1E1B7451DF0A0090083E035 /* MainInterfaceController.swift */,
+				657F7AC61DD3864E000D111B /* NotificationController.swift */,
 				657F7AC41DD3864E000D111B /* ExtensionDelegate.swift */,
 				657F7AC01DD3864E000D111B /* Supporting Files */,
 			);

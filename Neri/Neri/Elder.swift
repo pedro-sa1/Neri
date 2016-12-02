@@ -153,6 +153,10 @@ class Elder: User {
         
         
         
+        let notificationManager = NotificationManager()
+        notificationManager.registerForNotifications()
+        notificationManager.setupAndGenerateLocalFallNotification()
+        
         return ErrorType.OK
         
     }
