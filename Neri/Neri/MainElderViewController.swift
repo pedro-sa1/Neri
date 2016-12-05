@@ -29,6 +29,7 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var heartRateLabel: UILabel!
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var photo: UIImageView!
     
     var fetchedRecord:CKRecord?
     var fetchedRecord2:CKRecord?
@@ -55,6 +56,9 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
         
         map.delegate = self
         map.showsUserLocation = true
+        
+        photo.layer.cornerRadius = self.photo.frame.size.width / 2;
+        photo.clipsToBounds = true
 
         // Activity indicator
         self.view.addSubview(progressHUD)

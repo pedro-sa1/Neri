@@ -9,7 +9,7 @@
 import UIKit
 import CloudKit
 
-class ElderInfoViewController: UIViewController, UITextFieldDelegate {
+class ElderInfoViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var age: UITextField!
@@ -27,9 +27,10 @@ class ElderInfoViewController: UIViewController, UITextFieldDelegate {
     
     var activeTextField: UITextField?
     
+    var imagePicked: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let container = CKContainer.default
         privateDatabase = container().privateCloudDatabase
@@ -129,5 +130,22 @@ class ElderInfoViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.activeTextField = textField
     }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        imagePicked = image
+        self.dismiss(animated: true, completion: nil);
+    }
 
+    @IBAction func openCameraButton(_ sender: Any) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        
+    }
+    
 }
