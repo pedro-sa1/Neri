@@ -152,6 +152,7 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
             if let workout = self.session {
                 healthStore.end(workout)
             }
+            
         } else {
             
             // Start a new workout
@@ -272,14 +273,14 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
         
         // NEURAL NETWORK (IN DEVELOPMENT)
         
-        print("Entrei na função de verificação de queda")
+//        print("Entrei na função de verificação de queda")
         
         
         if evaluateAccelerometerData(motionManager.accelerometerData) {
             
             // MANDA AQUI PRO CLOUD KIT
             
-            print("Mandando que caiu pro cláudio")
+//            print("Mandando que caiu pro cláudio")
             
             
             let container = CKContainer(identifier: "iCloud.pedro.Neri")
@@ -305,7 +306,7 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
         }
         
         
-        print("Saí da função de verificação de queda")
+//        print("Saí da função de verificação de queda")
         
     }
     
@@ -315,9 +316,9 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
             
             if fabs((accelerometerData?.acceleration.x)!) >= 2.5 || fabs((accelerometerData?.acceleration.y)!) >= 2.5 || fabs((accelerometerData?.acceleration.z)!) >= 2.5 {
                 
-                print(fabs((motionManager.accelerometerData?.acceleration.x)!))
-                print(fabs((motionManager.accelerometerData?.acceleration.y)!))
-                print(fabs((motionManager.accelerometerData?.acceleration.z)!))
+//                print(fabs((motionManager.accelerometerData?.acceleration.x)!))
+//                print(fabs((motionManager.accelerometerData?.acceleration.y)!))
+//                print(fabs((motionManager.accelerometerData?.acceleration.z)!))
                 
                 return true
             }
@@ -464,9 +465,16 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
     
     func updateHeartRate(_ samples: [HKSample]?) {
         
+        print("Entrei na updateHeartRate")
+        
         guard let heartRateSamples = samples as? [HKQuantitySample] else {return}
         
+        print("passei do guard let")
+        
         DispatchQueue.main.async {
+            
+            print("Entrei no dispatch")
+            
             guard let sample = heartRateSamples.first else{return}
             let value = sample.quantity.doubleValue(for: self.heartRateUnit)
             
@@ -476,7 +484,11 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
             
             self.fetchRecordZone(heartRate: String(Int(value)))
             
+            print(String(Int(value)))
+            
         }
+        
+        print("Sai da updateHeartRate")
     }
     
     /********************************************************

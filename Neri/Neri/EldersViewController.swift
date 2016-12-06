@@ -20,7 +20,7 @@ class EldersViewController: UIViewController, UICollectionViewDelegate, UICollec
     var tel = ""
     var recordid: CKRecordID?
     
-    var nameArray = ["Pedro","Maria Luisa"]
+    var nameArray = ["Pedro"]
     
     
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ class EldersViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         
         cell.elderNameLabel.text = nameArray[indexPath.row]
-        cell.elderImageView.image = UIImage(named: "idosa1")
+        cell.elderImageView.image = UIImage(named: "nophoto")
         
         
         return cell
