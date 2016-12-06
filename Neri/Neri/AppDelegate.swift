@@ -29,17 +29,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error?.localizedDescription as Any)
             } else {
                 
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let initialViewController = mainStoryboard.instantiateViewController(withIdentifier: "Entrada") as! EnterCaretakerViewController
-                initialViewController.fetchShare(cloudKitShareMetadata)
-                initialViewController.view.frame = UIScreen.main.bounds
-                
-                DispatchQueue.main.async() {
+                DispatchQueue.main.async {
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let initialViewController = mainStoryboard.instantiateViewController(withIdentifier: "Entrada") as! EnterCaretakerViewController
+                    initialViewController.fetchShare(cloudKitShareMetadata)
+                    initialViewController.view.frame = UIScreen.main.bounds
+                    
                     UIView.transition(with: self.window!, duration: 0.5, options: .transitionCrossDissolve, animations: {
                         self.window!.rootViewController = initialViewController
                     }, completion: nil)
                     self.window?.makeKeyAndVisible()
                 }
+                
+                
+                
+//                DispatchQueue.main.async() {
+//                    UIView.transition(with: self.window!, duration: 0.5, options: .transitionCrossDissolve, animations: {
+//                        self.window!.rootViewController = initialViewController
+//                    }, completion: nil)
+//                    self.window?.makeKeyAndVisible()
+//                }
             }
         }
         CKContainer(identifier: cloudKitShareMetadata.containerIdentifier).add(acceptSharesOperation)

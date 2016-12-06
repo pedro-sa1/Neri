@@ -98,6 +98,7 @@ class ElderInfoViewController: UIViewController, UITextFieldDelegate, UIImagePic
         if segue.identifier == "go2Share" {
             let vc = segue.destination as! ShareViewController
             vc.currentRecord = self.currentRecord
+            vc.foto = self.imagePicked
         }
     }
     
@@ -133,6 +134,23 @@ class ElderInfoViewController: UIViewController, UITextFieldDelegate, UIImagePic
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         imagePicked = image
+        print("A FOTO É:\n")
+        print(imagePicked)
+        print("-----")
+        print(image)
+        print("----------------")
+        self.dismiss(animated: true, completion: nil);
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print(info)
+        print("-----")
+        if let foto = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imagePicked = foto
+            print("A FOTO É:\n")
+            print(imagePicked!)
+            print("-----")
+        }
         self.dismiss(animated: true, completion: nil);
     }
 

@@ -16,11 +16,16 @@ class ShareViewController: UIViewController, UICloudSharingControllerDelegate {
     
     var flag = 0
     var timer: Timer!
+    var foto:UIImage?
     
     @IBOutlet weak var shareButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("A FOTO É:\n")
+        print(foto)
+        print("----------------")
         
         let container = CKContainer.default
         privateDatabase = container().privateCloudDatabase
@@ -28,7 +33,7 @@ class ShareViewController: UIViewController, UICloudSharingControllerDelegate {
         print("CURRENT RECORD É:\n")
         print(currentRecord as Any)
         
-        timer = Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(ShareViewController.check), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self, selector: #selector(ShareViewController.check), userInfo: nil, repeats: true)
     }
     
     func check() {
@@ -75,6 +80,13 @@ class ShareViewController: UIViewController, UICloudSharingControllerDelegate {
     }
     
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "go2MainElder"{
+            let vc = segue.destination as! MainElderViewController
+            vc.elderFoto = self.foto
+        }
+    }
     
     // UICloudSharingController Delegate
     

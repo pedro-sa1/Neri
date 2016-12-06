@@ -22,7 +22,7 @@ class EnterCaretakerViewController: UIViewController {
     
     
     
-    var nextVC = MainCaretakerViewController()
+    //var nextVC = EldersViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class EnterCaretakerViewController: UIViewController {
             }
             print("OOOOOOO ID DO USUARIO É:\(userRecordID?.recordName.description)\n")
             self.userID = userRecordID?.recordName.description
-            self.fetchID(id: self.userID)
+//            self.fetchID(id: self.userID)
         }
     }
     
@@ -66,7 +66,7 @@ class EnterCaretakerViewController: UIViewController {
                 
                 
                 print("\n\((record?.object(forKey: "cloudID")))\n")
-                //self.fetchID(id: (record?.object(forKey: "cloudID"))! as! String)
+                self.fetchID(id: (record?.object(forKey: "cloudID"))! as! String)
             }
         }
         operation.fetchRecordsCompletionBlock = { _, error in
@@ -133,26 +133,36 @@ class EnterCaretakerViewController: UIViewController {
         
         print("\nBUTTON CLICKED")
         print("\n\n\(self.nomeIdoso)\n\n")
+        print("NOME: \(nomeIdoso)")
+        print("IDADE: \(idadeIdoso)")
+        print("ID DO RECORD: \(recordID)")
+        
         if tel.text != nil {
             
+            print("NOME222: \(nomeIdoso)")
+            print("IDADE222: \(idadeIdoso)")
+            print("ID DO RECORD222: \(recordID)")
             
             Caretaker.singleton.setUserID(id: userID)
             Caretaker.singleton.setUserPhone(phone: tel.text!)
-            
             
             let container = CKContainer(identifier: "iCloud.pedro.Neri")
             let sharedData = container.sharedCloudDatabase
             
             for item in (self.currentRecord?.object(forKey: "CaretakerTelephone")) as! [String] {
+                print("Entrei no for")
+                print("O NUMERO DE ITENS É: \(item)")
                 if item == self.tel.text {
                     // ja ta pareado
                     // faz a segue
                     alreadyExists = true
                     DispatchQueue.main.async() {
-                        self.performSegue(withIdentifier: "go2MainCT", sender: self)
+                        self.performSegue(withIdentifier: "go2Elders", sender: self)
                     }
                 }
             }
+            
+            print("sai do for")
             
             if alreadyExists == false {
                 // não ta pareado
@@ -161,6 +171,7 @@ class EnterCaretakerViewController: UIViewController {
                 var ar = self.currentRecord?.object(forKey: "CaretakerTelephone") as! [String]
                 ar.append(self.tel.text!)
                 
+                print(ar)
                 
                 self.currentRecord?.setObject(ar as CKRecordValue?, forKey: "CaretakerTelephone")
                 
@@ -173,16 +184,20 @@ class EnterCaretakerViewController: UIViewController {
                 })
             }
             
-            performSegue(withIdentifier: "go2MainCT", sender: self)
+            performSegue(withIdentifier: "go2Elders", sender: self)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "go2MainCT" {
+        if segue.identifier == "go2Elders" {
             
             print("PRINTNADO O TELEFONE DA PREPARE FOR SEGUE:\n\(self.tel.text)")
+            print("NOME: \(nomeIdoso)")
+            print("IDADE: \(idadeIdoso)")
+            print("ID DO RECORD: \(recordID)")
             
-            let vc = segue.destination as! MainCaretakerViewController
+            
+            let vc = segue.destination as! EldersViewController
             vc.nome = nomeIdoso
             vc.idade = idadeIdoso
             vc.tel = tel.text!

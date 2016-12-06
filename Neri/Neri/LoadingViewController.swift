@@ -53,7 +53,11 @@ class LoadingViewController: UIViewController {
                 }
                 else {
                     print("USUARIO NOVO!\n")
-                    self.fetchIDCaretaker(id: id)
+                    DispatchQueue.main.async() {
+                        self.fetchIDCaretaker(id: id)
+                        self.performSegue(withIdentifier: "showInitial", sender: self)
+                    }
+                    
                 }
             }
         }

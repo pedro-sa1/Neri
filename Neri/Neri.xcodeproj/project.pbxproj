@@ -36,6 +36,7 @@
 		E1E1B74A1DF0BBC70083E035 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E1B7491DF0BBC70083E035 /* InitialViewController.swift */; };
 		E1E1B74C1DF0BC340083E035 /* EldersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E1B74B1DF0BC340083E035 /* EldersViewController.swift */; };
 		E1E1B74E1DF0BC960083E035 /* EditElderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E1B74D1DF0BC960083E035 /* EditElderViewController.swift */; };
+		EB14E42F1DF0C1D600BC1520 /* ElderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E42E1DF0C1D600BC1520 /* ElderCollectionViewCell.swift */; };
 		EB5789A01DE21B2000A0FA04 /* EnterCaretakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57899F1DE21B2000A0FA04 /* EnterCaretakerViewController.swift */; };
 		EB5789A21DE221DA00A0FA04 /* MainCaretakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5789A11DE221DA00A0FA04 /* MainCaretakerViewController.swift */; };
 		EB5789A41DE22E0200A0FA04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5789A31DE22E0200A0FA04 /* MapKit.framework */; };
@@ -165,6 +166,7 @@
 		E1E1B7491DF0BBC70083E035 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		E1E1B74B1DF0BC340083E035 /* EldersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EldersViewController.swift; sourceTree = "<group>"; };
 		E1E1B74D1DF0BC960083E035 /* EditElderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditElderViewController.swift; sourceTree = "<group>"; };
+		EB14E42E1DF0C1D600BC1520 /* ElderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElderCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB57899F1DE21B2000A0FA04 /* EnterCaretakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterCaretakerViewController.swift; sourceTree = "<group>"; };
 		EB5789A11DE221DA00A0FA04 /* MainCaretakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCaretakerViewController.swift; sourceTree = "<group>"; };
 		EB5789A31DE22E0200A0FA04 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -331,6 +333,7 @@
 				E10476A91DDF8EA70056D4C5 /* GradientView.swift */,
 				E10476A71DDF8A900056D4C5 /* Main.storyboard */,
 				EB5E7A1C1DCCF6440073923D /* LaunchScreen.storyboard */,
+				EB14E42E1DF0C1D600BC1520 /* ElderCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB8E50E81DE1EEF600177284 /* ElderInfoViewController.swift in Sources */,
+				EB14E42F1DF0C1D600BC1520 /* ElderCollectionViewCell.swift in Sources */,
 				EB8E50F01DE206BE00177284 /* ShareViewController.swift in Sources */,
 				EBADCE681DE4C6D8000C2E0A /* MainElderViewController.swift in Sources */,
 				EB5E7A161DCCF6440073923D /* LoadingViewController.swift in Sources */,

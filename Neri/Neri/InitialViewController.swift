@@ -11,7 +11,9 @@ import UIKit
 
 class InitialViewController: UIViewController {
     
+    @IBOutlet weak var gradientView: GradientView!
+    
     override func viewDidLoad() {
-        print("oi")
+        //self.view.addSubview(gradientView)
     }
 }

@@ -37,6 +37,7 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
     var ctUsers = [CKRecord]()
     var timer: Timer!
     var id: String!
+    var elderFoto: UIImage?
     
     var adress = Adress()
     
@@ -51,12 +52,14 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         userLocation()
         
         map.delegate = self
         map.showsUserLocation = true
         
+        photo.image = self.elderFoto
         photo.layer.cornerRadius = self.photo.frame.size.width / 2;
         photo.clipsToBounds = true
 
@@ -428,8 +431,6 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
                 }
             }
             
-            
-            
             firstTime = false
             
         } else {
@@ -462,17 +463,12 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
                         }
                     }
                 }
-                
-                
-                
             }
             else {
                 //NÃO mandar pro cloud
             }
         }
     }
-    
-    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {
         print("Error while updating location " + error.localizedDescription)
