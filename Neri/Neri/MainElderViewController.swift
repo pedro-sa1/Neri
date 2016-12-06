@@ -59,6 +59,7 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
         map.delegate = self
         map.showsUserLocation = true
         
+        photo.image = elderFoto
         photo.layer.masksToBounds = false
         photo.contentMode = .scaleAspectFit
         photo.layer.cornerRadius = photo.frame.width/2;
