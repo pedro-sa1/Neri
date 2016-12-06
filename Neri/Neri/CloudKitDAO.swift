@@ -43,6 +43,7 @@ public class CloudKitDAO {
         user["telephone"] = usuario.getUserPhone() as CKRecordValue
         user["cloudID"] = usuario.getUserID() as CKRecordValue?
         user["HeartRate"] = "-" as CKRecordValue?
+        user["Fall"] = false as CKRecordValue?
         
         let modifyRecordsOperation = CKModifyRecordsOperation(recordsToSave: [user], recordIDsToDelete: nil)
         

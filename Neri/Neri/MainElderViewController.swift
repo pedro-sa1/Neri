@@ -477,4 +477,18 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
     {
         print("Error while updating location " + error.localizedDescription)
     }
+
+    @IBAction func callButtonAction(_ sender: Any) {
+        
+        print("Call button clicked")
+        
+        // PEGAR TELEFONE DO CARETAKER E MANDAR PARA A FUNÇÃO
+        // POR ENQUANTO TA COM UM TELEFONE FIXO PARA DEMONSTRAÇÃO
+        
+        let returnedCondition = Elder.singleton.callCaretaker(caretakerPhone: "+552988191552")
+        
+        print(returnedCondition)
+        
+    }
+
 }

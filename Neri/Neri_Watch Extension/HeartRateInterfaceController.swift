@@ -179,46 +179,46 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
         
         // MARK: - Get Accelerometer Data -
         
-//        if !motionManager.isAccelerometerActive {
-//            
-//            motionManager.accelerometerUpdateInterval = 0.2
-//            
-//            let accelerometerHandler = { (accelerometerData: CMAccelerometerData?, error: NSError?) in
-//                
-//                
-//                
-//                
-//                
-//                // AQUI TEM QUE FAZER A VERIFICAÇÃO DA QUEDA COM O CÓDICO CERTO PARA PASSAR PRA CLOUD. POR ENQUANTO TA NO ANTIGO
-//                
-//                
-//                
-//                
-//                if fabs(accelerometerData!.acceleration.x) >= 3.0 || fabs(accelerometerData!.acceleration.y) >= 3.0 || fabs(accelerometerData!.acceleration.z) >= 3.0 {
-//                    
-//                    print("\n\nFall detected!!\n\n")
-//                    print("x: \(accelerometerData?.acceleration.x)\ny: \(accelerometerData?.acceleration.y)\nz: \(accelerometerData?.acceleration.z)\n")
-//                    
-//                    /************************************************
-//                     
-//                     * AQUI TEM QUE PASSAR PRO CLOUD QUE CAIU PRA MUDAR NO IPHONE E MANDAR A NOTIFICAÇÃO
-//                     
-//                     ************************************************/
-//                    
-//                    self.motionManager.stopAccelerometerUpdates()
-//                    
-//                    // Go to emergency button screen on the Apple Watch
-//                    self.presentController(withName: "CountdownInterfaceController", context: self)
-//                    
-//                } else {
-//                    print("Nothing detected")
-//                }
-//                
-//                } as! CMAccelerometerHandler
-//            
-//            motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler: accelerometerHandler)
-//            
-//        }
+        //        if !motionManager.isAccelerometerActive {
+        //
+        //            motionManager.accelerometerUpdateInterval = 0.2
+        //
+        //            let accelerometerHandler = { (accelerometerData: CMAccelerometerData?, error: NSError?) in
+        //
+        //
+        //
+        //
+        //
+        //                // AQUI TEM QUE FAZER A VERIFICAÇÃO DA QUEDA COM O CÓDICO CERTO PARA PASSAR PRA CLOUD. POR ENQUANTO TA NO ANTIGO
+        //
+        //
+        //
+        //
+        //                if fabs(accelerometerData!.acceleration.x) >= 3.0 || fabs(accelerometerData!.acceleration.y) >= 3.0 || fabs(accelerometerData!.acceleration.z) >= 3.0 {
+        //
+        //                    print("\n\nFall detected!!\n\n")
+        //                    print("x: \(accelerometerData?.acceleration.x)\ny: \(accelerometerData?.acceleration.y)\nz: \(accelerometerData?.acceleration.z)\n")
+        //
+        //                    /************************************************
+        //
+        //                     * AQUI TEM QUE PASSAR PRO CLOUD QUE CAIU PRA MUDAR NO IPHONE E MANDAR A NOTIFICAÇÃO
+        //
+        //                     ************************************************/
+        //
+        //                    self.motionManager.stopAccelerometerUpdates()
+        //
+        //                    // Go to emergency button screen on the Apple Watch
+        //                    self.presentController(withName: "CountdownInterfaceController", context: self)
+        //
+        //                } else {
+        //                    print("Nothing detected")
+        //                }
+        //
+        //                } as! CMAccelerometerHandler
+        //
+        //            motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler: accelerometerHandler)
+        //
+        //        }
         
         motionManager.startAccelerometerUpdates()
         
@@ -256,7 +256,7 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
          
          * Uses an algorithm to analise the accelerometer data
          * Neural Network used to learn from the user
-         * User has 15 seconds to confirm that he's OK
+         * User has 30 seconds to confirm that he's OK
          * If the time passes or the user asks for help, send notification to emergency contact
          
          */
@@ -272,23 +272,102 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
         
         // NEURAL NETWORK (IN DEVELOPMENT)
         
+        print("Entrei na função de verificação de queda")
         
         
-//        let notificationManager = NotificationManager()
-//        notificationManager.registerForNotifications()
-//        notificationManager.setupAndGenerateLocalFallNotification()
+        if evaluateAccelerometerData(motionManager.accelerometerData) {
+            
+            // MANDA AQUI PRO CLOUD KIT
+            
+            print("Mandando que caiu pro cláudio")
+            
+            
+            let container = CKContainer(identifier: "iCloud.pedro.Neri")
+            let privateData = container.privateCloudDatabase
+            privateData.fetchAllRecordZones { (recordZones, error) in
+                if error != nil {
+                    print("DEU MERDA NA FETCH RECORDZONE\n")
+                    print(error?.localizedDescription)
+                }
+                if recordZones != nil {
+                    print(recordZones)
+                    let count = recordZones?.count
+                    for item in recordZones!{
+                        
+                        let zoneName = (item.value(forKey: "_zoneID") as! CKRecordZoneID).value(forKey: "_zoneName") as! String
+                        print("zone name iS: \(zoneName)")
+                        if(zoneName == "MedicalRecord"){
+                            self.sendFall(id: item.zoneID, fall: true)
+                        }
+                    }
+                }
+            }
+        }
         
         
-        print(motionManager.accelerometerData?.acceleration.x)
-        print(motionManager.accelerometerData?.acceleration.y)
-        print(motionManager.accelerometerData?.acceleration.z)
-        
-
-        print("entrei na funçao")
+        print("Saí da função de verificação de queda")
         
     }
-
     
+    func evaluateAccelerometerData(_ accelerometerData: CMAccelerometerData?) -> Bool {
+        
+        if accelerometerData?.acceleration.x != nil && accelerometerData?.acceleration.y != nil && accelerometerData?.acceleration.z != nil {
+            
+            if fabs((accelerometerData?.acceleration.x)!) >= 2.5 || fabs((accelerometerData?.acceleration.y)!) >= 2.5 || fabs((accelerometerData?.acceleration.z)!) >= 2.5 {
+                
+                print(fabs((motionManager.accelerometerData?.acceleration.x)!))
+                print(fabs((motionManager.accelerometerData?.acceleration.y)!))
+                print(fabs((motionManager.accelerometerData?.acceleration.z)!))
+                
+                return true
+            }
+            
+        }
+        
+        return false
+        
+    }
+    
+    func sendFall(id: CKRecordZoneID, fall: Bool) {
+        ctUsers = [CKRecord]()
+        
+        
+        let container = CKContainer(identifier: "iCloud.pedro.Neri")
+        let privateData = container.privateCloudDatabase
+        let predicate = NSPredicate(format: "TRUEPREDICATE")
+        let query = CKQuery(recordType: "Elder", predicate: predicate)
+        
+        privateData.perform(query, inZoneWith: id) { results, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Fetch Establishments: \(error)")
+                }
+                return
+            }
+            if results != nil {
+                print("PRINTANDO OS RESULTS\n")
+                print(results as Any)
+                print("\nO ID DO RECORD É:\n")
+                print(results?.first?.recordID as Any)
+                
+                self.fetchRecord(recordid: (results?.first?.recordID)!, completionHandler: { (success) in
+                    if success {
+                        
+                        self.fetchedRecord?.setObject(fall as CKRecordValue?, forKey: "Fall")
+                        
+                        privateData.save(self.fetchedRecord!, completionHandler: { (record, error) in
+                            if error != nil {
+                                print("DEU MERDA TENTANDO SALVAR O RECORD PUXADO\n")
+                                print(error?.localizedDescription)
+                            } else {
+                                print("QUEDA ATUALIZADA!!!!!!!!!\n")
+                            }
+                        })
+                    }
+                })
+            }
+        }
+    }
     
     
     
