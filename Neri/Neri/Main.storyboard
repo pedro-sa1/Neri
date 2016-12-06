@@ -904,7 +904,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nophoto" translatesAutoresizingMaskIntoConstraints="NO" id="Qtb-4P-AFn">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nophoto" translatesAutoresizingMaskIntoConstraints="NO" id="Qtb-4P-AFn">
                                                 <rect key="frame" x="16" y="49.5" width="85" height="85"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Qtb-4P-AFn" secondAttribute="height" multiplier="1:1" id="wAc-kG-BLh"/>
