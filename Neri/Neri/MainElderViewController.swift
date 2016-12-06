@@ -59,8 +59,9 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
         map.delegate = self
         map.showsUserLocation = true
         
-        photo.image = self.elderFoto
-        photo.layer.cornerRadius = self.photo.frame.size.width / 2;
+        photo.layer.masksToBounds = false
+        photo.layer.cornerRadius = photo.frame.width / 2;
+
         photo.clipsToBounds = true
 
         // Activity indicator

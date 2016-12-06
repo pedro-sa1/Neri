@@ -31,6 +31,7 @@ public class CloudKitDAO {
         let container = CKContainer.default
         privateDatabase = container().privateCloudDatabase
         
+        
         print("CHEGOU NA SEND ELDER")
         
         let user = CKRecord(recordType: "Elder", zoneID: zoneID)
@@ -44,6 +45,7 @@ public class CloudKitDAO {
         user["cloudID"] = usuario.getUserID() as CKRecordValue?
         user["HeartRate"] = "-" as CKRecordValue?
         user["Fall"] = false as CKRecordValue?
+        user["CaretakerTelephone"] = ["-"] as CKRecordValue?
         
         let modifyRecordsOperation = CKModifyRecordsOperation(recordsToSave: [user], recordIDsToDelete: nil)
         
