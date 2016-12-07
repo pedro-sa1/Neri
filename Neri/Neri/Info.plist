@@ -27,9 +27,9 @@
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>For testing</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Precisamos saber sua localização!</string>
+	<string>We need to know your location!</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Precisamos da sua foto!</string>
+	<string>We need your photo!</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
