@@ -59,11 +59,11 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
         map.delegate = self
         map.showsUserLocation = true
         
-        photo.image = elderFoto
-        photo.layer.masksToBounds = false
-        photo.contentMode = .scaleAspectFit
-        photo.layer.cornerRadius = photo.frame.width/2;
-        photo.clipsToBounds = true
+//        photo.image = elderFoto
+//        photo.layer.masksToBounds = false
+//        photo.contentMode = .scaleAspectFit
+//        photo.layer.cornerRadius = photo.frame.width/2;
+//        photo.clipsToBounds = true
 
         // Activity indicator
         self.view.addSubview(progressHUD)
@@ -483,7 +483,7 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
         // PEGAR TELEFONE DO CARETAKER E MANDAR PARA A FUNÇÃO
         // POR ENQUANTO TA COM UM TELEFONE FIXO PARA DEMONSTRAÇÃO
         
-        let returnedCondition = Elder.singleton.callCaretaker(caretakerPhone: "+552988191552")
+        let returnedCondition = Elder.singleton.callCaretaker(caretakerPhone: "+5521988191552")
         
         print(returnedCondition)
         

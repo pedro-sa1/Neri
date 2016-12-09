@@ -33,7 +33,7 @@ class ShareViewController: UIViewController, UICloudSharingControllerDelegate {
         print("CURRENT RECORD É:\n")
         print(currentRecord as Any)
         
-        timer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self, selector: #selector(ShareViewController.check), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(11), target: self, selector: #selector(ShareViewController.check), userInfo: nil, repeats: true)
     }
     
     func check() {
