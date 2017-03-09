@@ -483,9 +483,9 @@ class MainElderViewController: UIViewController, CLLocationManagerDelegate, MKMa
         // PEGAR TELEFONE DO CARETAKER E MANDAR PARA A FUNÇÃO
         // POR ENQUANTO TA COM UM TELEFONE FIXO PARA DEMONSTRAÇÃO
         
-        let returnedCondition = Elder.singleton.callCaretaker(caretakerPhone: "+5521988191552")
-        
-        print(returnedCondition)
+//        let returnedCondition = Elder.singleton.callCaretaker(caretakerPhone: "+5521988191552")
+//        
+//        print(returnedCondition)
         
     }
 
