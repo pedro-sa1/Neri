@@ -221,13 +221,13 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
         //
         //        }
         
-        motionManager.startAccelerometerUpdates()
-        
-        let timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(HeartRateInterfaceController.verifyFall), userInfo: nil, repeats: true)
-        
-        timer.fire()
-        
-        print("consegui!")
+//        motionManager.startAccelerometerUpdates()
+//        
+//        let timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(HeartRateInterfaceController.verifyFall), userInfo: nil, repeats: true)
+//        
+//        timer.fire()
+//        
+//        print("consegui!")
         
         /*******************************************************
          **                                                   **
